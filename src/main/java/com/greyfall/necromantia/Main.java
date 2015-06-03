@@ -85,6 +85,7 @@ public void preInit(FMLPreInitializationEvent event)
 	blockLatex = new BlockLatex(Material.sponge).setBlockName("BlockLatex").setBlockTextureName("necromantia:latexblock").setCreativeTab(tabnecromantia);
 	blockCandle = new BlockCandle(Material.ground).setBlockName("BlockCandle").setBlockTextureName("necromantia:candle").setCreativeTab(tabnecromantia);
 	blockIrontreebrick = new BlockIrontreebrick(Material.ground).setBlockName("BlockIrontreebrick").setBlockTextureName("necromantia:irontreebrick").setCreativeTab(tabnecromantia);
+	//todo add item that catches nekosune's and puts them in a box for me to take home
 	//armour
 		//Pink Latex
 	pinklatexHelmet = new ItemPinklatexArmour(pinklatexArmourMaterial, 0, 0).setUnlocalizedName("ItemPinklatexHelmet").setTextureName("necromantia:itempinklatexhelm").setCreativeTab(tabnecromantiaarmor);
