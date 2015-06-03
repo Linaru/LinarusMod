@@ -14,7 +14,14 @@ buildscript {
         classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
     }
 }
-
+sourceSets {
+    main {
+        sourceSets { main { output.resourcesDir = output.classesDir } }
+        java {
+            srcDirs = []
+        }
+    }
+}
 apply plugin: 'forge'
 
 repositories {
