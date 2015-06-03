@@ -14,6 +14,8 @@ buildscript {
         classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
     }
 }
+
+apply plugin: 'forge'
 sourceSets {
     main {
         sourceSets { main { output.resourcesDir = output.classesDir } }
@@ -22,8 +24,6 @@ sourceSets {
         }
     }
 }
-apply plugin: 'forge'
-
 repositories {
     ivy {
 
