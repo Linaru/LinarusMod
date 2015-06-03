@@ -30,12 +30,12 @@ public class EntityPinkslimeMob extends EntitySlime{
 	
 	protected void applyEntityAttributes(){
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(16.0F);
+		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(32.0F);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.5D);
 	}
 	@Override
 	protected Item getDropItem()
 	{
-		return this.getSlimeSize() == 1 ? Main.itemLatex : Item.getItemById(0);
+		return this.getSlimeSize() == 1 ? Main.itemSlimelatex : Item.getItemById(0);
 	}
 }
