@@ -15,10 +15,12 @@ public class EntityRenderPinkslimeMob extends RenderLiving {
        
     private static final ResourceLocation slimeTextures = new ResourceLocation("necromantia:textures/entity/pinkslime.png");
     private static final String __OBFID = "CL_00001024";
+    private ModelBase scaleAmount;
  
     public EntityRenderPinkslimeMob()
     {
-        super(new ModelPinkslimeMob(), 1.0f);
+        super(new ModelPinkslimeMob(64), 0.75f);
+        scaleAmount=new ModelPinkslimeMob(0);
     }
  
     /**
@@ -32,6 +34,7 @@ public class EntityRenderPinkslimeMob extends RenderLiving {
         }
         else if (p_77032_2_ == 0)
         {
+            this.setRenderPassModel(this.scaleAmount);
             GL11.glEnable(GL11.GL_NORMALIZE);
             GL11.glEnable(GL11.GL_BLEND);
             GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);

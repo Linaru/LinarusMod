@@ -12,17 +12,26 @@ public class ModelPinkslimeMob extends ModelBase
     ModelRenderer Left_Ear;
     ModelRenderer Slime_transparent;
   
-  public ModelPinkslimeMob()
+  public ModelPinkslimeMob(int offset)
   {
     textureWidth = 128;
     textureHeight = 64;
-    
-      Slime = new ModelRenderer(this, 64, 0);
-      Slime.addBox(0F, -1F, 0F, 14, 10, 14);
-      Slime.setRotationPoint(-7F, 14F, -6F);
-      Slime.setTextureSize(128, 64);
-      Slime.mirror = true;
-      setRotation(Slime, 0F, 0F, 0F);
+
+    Slime_transparent = new ModelRenderer(this, offset, 0);
+    Slime_transparent.addBox(0F, 0F, 0F, 16, 12, 16);
+    Slime_transparent.setRotationPoint(-8F, 12F, -7F);
+    Slime_transparent.setTextureSize(128, 64);
+    Slime_transparent.mirror = true;
+    setRotation(Slime_transparent, 0F, 0F, 0F);
+    if(offset>0) {
+      Slime_transparent = new ModelRenderer(this, offset, 0);
+      Slime_transparent.addBox(0F, -1F, 0F, 14, 10, 14);
+      Slime_transparent.setRotationPoint(-7F, 14F, -6F);
+      Slime_transparent.setTextureSize(128, 64);
+      Slime_transparent.mirror = true;
+      setRotation(Slime_transparent, 0F, 0F, 0F);
+    }
+    else {
       Right_Ear = new ModelRenderer(this, 0, 28);
       Right_Ear.addBox(0F, 0F, 0F, 6, 4, 6);
       Right_Ear.setRotationPoint(4F, 10F, 0F);
@@ -35,22 +44,19 @@ public class ModelPinkslimeMob extends ModelBase
       Left_Ear.setTextureSize(128, 64);
       Left_Ear.mirror = true;
       setRotation(Left_Ear, 0F, 0F, 0F);
-      Slime_transparent = new ModelRenderer(this, 0, 0);
-      Slime_transparent.addBox(0F, 0F, 0F, 16, 12, 16);
-      Slime_transparent.setRotationPoint(-8F, 12F, -7F);
-      Slime_transparent.setTextureSize(128, 64);
-      Slime_transparent.mirror = true;
-      setRotation(Slime_transparent, 0F, 0F, 0F);
+    }
+
   }
   
   public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
   {
     super.render(entity, f, f1, f2, f3, f4, f5);
     setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-    Slime.render(f5);
-    Right_Ear.render(f5);
-    Left_Ear.render(f5);
     Slime_transparent.render(f5);
+    if(Right_Ear!=null) {
+      Right_Ear.render(f5);
+      Left_Ear.render(f5);
+    }
   }
   
   private void setRotation(ModelRenderer model, float x, float y, float z)
