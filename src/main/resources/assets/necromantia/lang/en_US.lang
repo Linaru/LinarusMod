@@ -1,0 +1,28 @@
+//Blocks
+tile.BlockSlimelatex.name=Pink Latex Rubber
+tile.BlockLatex.name=Latex Rubber
+tile.BlockIrontreebrick.name=Iron Tree Brick
+tile.BlockCandle.name=Candle
+//Items
+item.ItemSlimelatex.name=Latex Slime
+item.ItemLatex.name=Latex Rubber
+item.ItemSiliconerubber.name=Silicone Rubber
+item.ItemGoldcoin.name=Gold Coin
+item.ItemSilicondioxide.name=Silica
+item.ItemMortar.name=Mortar and Pestle
+//Armour
+    //Pink latex
+item.ItemPinklatexHelmet.name=Pink Latex Hood
+item.ItemPinklatexChestplate.name=Pink Latex Top
+item.ItemPinklatexLeggings.name=Pink Latex Leggings
+item.ItemPinklatexBoots.name=Pink Latex Socks
+    //Silicone
+item.ItemSiliconeHelmet.name=Under Armour Mask
+item.ItemSiliconeChestplate.name=Under Armour Chest
+item.ItemSiliconeLeggings.name=Under Armour Legs
+item.ItemSiliconeBoots.name=Under Armour Boots
+//mobs
+entity.PinkSlime.name=Rubbery Slime
+//Creative tabs
+itemGroup.tabnecromantia=Necromantia Main
+itemGroup.tabnecromantiaarmor=Necromantia Armour

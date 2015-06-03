@@ -1,0 +1,16 @@
+[
+{
+  "modid": "necromantia",
+  "name": "Necromantia",
+  "description": "Necromantia is a mod made specifically for the TransCraft community. among other features it overhauls mobs to make them tough enough to stand up to the equipment other mods tend to add.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Lina Greyfall"],
+  "credits": "Mod and pixel art by Lina Greyfall (Linaru), Special thanks to Nekosune who helped fix 80% of the mods errors and problems",
+  "logoFile": "NMLogo.png",
+  "screenshots": [],
+  "dependencies": [mod_MinecraftForge]
+}
+]
