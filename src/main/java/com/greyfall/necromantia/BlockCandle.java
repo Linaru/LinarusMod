@@ -2,6 +2,9 @@ package com.greyfall.necromantia;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
 
 public class BlockCandle extends Block {
 
@@ -9,6 +12,33 @@ public class BlockCandle extends Block {
 		super(material);
 		this.setHardness(0.2F);
 		this.setStepSound(Block.soundTypeWood);
+	}
+
+	//Make sure you set this as your TileEntity class relevant for the block!
+	public TileEntity createNewTileEntity(World world) {
+		return new TileEntityCandleEntity();
+	}
+
+	//You don't want the normal render type, or it wont render properly.
+	@Override
+	public int getRenderType() {
+		return -1;
+	}
+
+	//It's not an opaque cube, so you need this.
+	@Override
+	public boolean isOpaqueCube() {
+		return false;
+	}
+
+	//It's not a normal block, so you need this too.
+	public boolean renderAsNormalBlock() {
+		return false;
+	}
+
+	//This is the icon to use for showing the block in your hand.
+	public void registerIcons(IIconRegister icon) {
+		this.blockIcon = icon.registerIcon("nectomantia:candle_held");
 	}
 
 }

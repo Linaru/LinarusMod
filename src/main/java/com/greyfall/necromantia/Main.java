@@ -118,6 +118,7 @@ public void preInit(FMLPreInitializationEvent event)
 	GameRegistry.registerBlock(blockWax, blockWax.getUnlocalizedName().substring(5));
 	GameRegistry.registerBlock(blockIrontreebrick, blockIrontreebrick.getUnlocalizedName().substring(5));
 	GameRegistry.registerBlock(blockCandle, blockCandle.getUnlocalizedName().substring(5));
+	GameRegistry.registerTileEntity(TileEntityCandleEntity.class, "tileEntityCandle");
 	//armours
 	GameRegistry.registerItem(pinklatexHelmet, pinklatexHelmet.getUnlocalizedName().substring(5));
 	GameRegistry.registerItem(pinklatexChestplate, pinklatexChestplate.getUnlocalizedName().substring(5));
@@ -135,7 +136,7 @@ public void init(FMLInitializationEvent event)
 {
 	//Proxy, TileEntity, entity, Gui and Packet Registering
 	proxy.init();
-	
+
 	
 	//Crafting Recipes
 		//Pink Latex Block
