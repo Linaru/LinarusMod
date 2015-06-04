@@ -2,6 +2,8 @@
 tile.BlockSlimelatex.name=Pink Latex Rubber
 tile.BlockLatex.name=Latex Rubber
 tile.BlockWax.name=Wax Block
+tile.BlockWax.name=Crate
+tile.BlockEnchantedwood.name=Enchanted Wood
 tile.BlockIrontreebrick.name=Iron Tree Brick
 tile.BlockCandle.name=Candle
 //Items
