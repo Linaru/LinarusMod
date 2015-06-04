@@ -139,27 +139,20 @@ public void init(FMLInitializationEvent event)
 	
 	//Crafting Recipes
 		//Pink Latex Block
-	GameRegistry.addRecipe(new ItemStack(blockSlimelatex), new Object[]{"LL ", "LL ", "   ", 'L', Main.itemSlimelatex});
-	GameRegistry.addRecipe(new ItemStack(blockSlimelatex), new Object[]{" LL", " LL", "   ", 'L', Main.itemSlimelatex});
-	GameRegistry.addRecipe(new ItemStack(blockSlimelatex), new Object[]{"   ", "LL ", "LL ", 'L', Main.itemSlimelatex});
-	GameRegistry.addRecipe(new ItemStack(blockSlimelatex), new Object[]{"   ", " LL", " LL", 'L', Main.itemSlimelatex});
+	GameRegistry.addRecipe(new ItemStack(blockSlimelatex), new Object[]{"LL", "LL", 'L', Main.itemSlimelatex});
 		//Latex Block
-	GameRegistry.addRecipe(new ItemStack(blockLatex), new Object[]{"LL ", "LL ", "   ", 'L', Main.itemLatex});
-	GameRegistry.addRecipe(new ItemStack(blockLatex), new Object[]{" LL", " LL", "   ", 'L', Main.itemLatex});
-	GameRegistry.addRecipe(new ItemStack(blockLatex), new Object[]{"   ", "LL ", "LL ", 'L', Main.itemLatex});
-	GameRegistry.addRecipe(new ItemStack(blockLatex), new Object[]{"   ", " LL", " LL", 'L', Main.itemLatex});
+	GameRegistry.addRecipe(new ItemStack(blockLatex), new Object[]{"LL", "LL", 'L', Main.itemLatex});
 		//Wax Block
-	GameRegistry.addRecipe(new ItemStack(blockWax), new Object[]{"LL ", "LL ", "   ", 'L', Main.itemLatex});
-	GameRegistry.addRecipe(new ItemStack(blockWax), new Object[]{" LL", " LL", "   ", 'L', Main.itemLatex});
-	GameRegistry.addRecipe(new ItemStack(blockWax), new Object[]{"   ", "LL ", "LL ", 'L', Main.itemLatex});
-	GameRegistry.addRecipe(new ItemStack(blockWax), new Object[]{"   ", " LL", " LL", 'L', Main.itemLatex});
-		//Gold Coin
+	GameRegistry.addRecipe(new ItemStack(blockWax), new Object[]{"WWW", "WWW", "WWW", 'W', Main.itemWax});
+	GameRegistry.addShapelessRecipe(new ItemStack(Main.itemWax, 9), new ItemStack(Main.blockWax));
+		//candle
+	GameRegistry.addRecipe(new ItemStack(blockCandle), new Object[]{"S", "W", "W", 'S', Items.string, 'W', Main.itemWax});
+	//Gold Coin
 	GameRegistry.addRecipe(new ItemStack(itemGoldcoin), new Object[]{"GGG", "G G", "GGG", 'G', Items.gold_nugget});
 		//Mortar and pestle
 	if(!Loader.isModLoaded("Botania"))
 	{
-	GameRegistry.addRecipe(new ItemStack(itemMortar), new Object[]{" S ", "W  ", "B  ", 'S', Items.stick, 'W', Blocks.planks, 'B', Items.bowl});
-	GameRegistry.addRecipe(new ItemStack(itemMortar), new Object[]{"  S", " W ", " B ", 'S', Items.stick, 'W', Blocks.planks, 'B', Items.bowl});
+	GameRegistry.addRecipe(new ItemStack(itemMortar), new Object[]{" S", "W ", "B ", 'S', Items.stick, 'W', Blocks.planks, 'B', Items.bowl});
 	}
 			//Silica
 	if(Loader.isModLoaded("Botania"))
