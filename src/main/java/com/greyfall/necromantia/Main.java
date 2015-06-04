@@ -157,7 +157,7 @@ public void init(FMLInitializationEvent event)
 	GameRegistry.addRecipe(new ItemStack(blockLatex), new Object[]{"LL", "LL", 'L', Main.itemLatex});
 		//Wax Block
 	GameRegistry.addRecipe(new ItemStack(blockWax), new Object[]{"WWW", "WWW", "WWW", 'W', Main.itemWax});
-	GameRegistry.addRecipe(new ItemStack(blockCrate), new Object[]{"III", "IEI", "III", 'E', Items.iron_ingot, 'E', Main.blockEnchantedwood});
+	GameRegistry.addRecipe(new ItemStack(blockCrate), new Object[]{"III", "IEI", "III", 'I', Items.iron_ingot, 'E', Main.blockEnchantedwood});
 	GameRegistry.addShapelessRecipe(new ItemStack(Main.itemWax, 9), new ItemStack(Main.blockWax));
 		//candle
 	GameRegistry.addRecipe(new ItemStack(blockCandle), new Object[]{"S", "W", "W", 'S', Items.string, 'W', Main.itemWax});
