@@ -21,12 +21,32 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
+    /*
+    Todo list:
+    Code:
+    Add Cauldron gui + recipies
+    Add Latex/ Pink slime block custom squeeking sounds
+    Add staff
+    Add wild rice / compatbaility with biomes o' plenty rice blocks
+    Add Inventory slot Gui / underarmour layer
+    Add iron tree building Generation Code.
+    Add enchanted wood compatability with thaumcrafts
+    Add skeleton model override or custom teir 1 skeleton entity
+
+    Cleanup code and polish
+
+    Art:
+    Add Armour icons
+
+
+
+     */
+
 @Mod(modid = "necromantia", name = "Copper Mod", version = "Carrot.1.0")
 public class Main {
 
     @Instance("necromantia")
     public static Main modInstance;
-
 
     public static String MODID = "modid";
     public static String VERSION = "version";
