@@ -42,6 +42,8 @@ public static Item itemSiliconerubber;
 public static Item itemGoldcoin;
 public static Item itemWax;
 public static Item itemSilicondioxide;
+public static Item itemRiceseeds;
+public static Item itemRice;
 //tools
 public static Item itemMortar;
 //blocks
@@ -80,6 +82,8 @@ public void preInit(FMLPreInitializationEvent event)
 	itemSiliconerubber = new Siliconerubber().setUnlocalizedName("ItemSiliconerubber").setTextureName("necromantia:siliconerubber").setCreativeTab(tabnecromantia); //item.itemTable
 	itemGoldcoin = new Goldcoin().setUnlocalizedName("ItemGoldcoin").setTextureName("necromantia:goldcoin").setCreativeTab(tabnecromantia); //item.itemTable
 	itemWax = new Wax().setUnlocalizedName("ItemWax").setTextureName("necromantia:wax").setCreativeTab(tabnecromantia); //item.itemTable
+	itemRiceseeds = new Riceseeds().setUnlocalizedName("ItemRiceseeds").setTextureName("necromantia:rice_seeds").setCreativeTab(tabnecromantia); //item.itemTable
+	itemRice = new Rice().setUnlocalizedName("ItemRice").setTextureName("necromantia:rice").setCreativeTab(tabnecromantia); //item.itemTable
 	itemSilicondioxide = new Silicondioxide().setUnlocalizedName("ItemSilicondioxide").setTextureName("necromantia:silica").setCreativeTab(tabnecromantia); //item.itemTable
 	//tools
 	itemMortar = new Mortar().setUnlocalizedName("ItemMortar").setTextureName("necromantia:mortar").setCreativeTab(tabnecromantia); //item.itemTable
@@ -109,6 +113,8 @@ public void preInit(FMLPreInitializationEvent event)
 	GameRegistry.registerItem(itemSiliconerubber, itemSiliconerubber.getUnlocalizedName().substring(5));
 	GameRegistry.registerItem(itemGoldcoin, itemGoldcoin.getUnlocalizedName().substring(5));
 	GameRegistry.registerItem(itemWax, itemWax.getUnlocalizedName().substring(5));
+	GameRegistry.registerItem(itemRiceseeds, itemRiceseeds.getUnlocalizedName().substring(5));
+	GameRegistry.registerItem(itemRice, itemRice.getUnlocalizedName().substring(5));
 	GameRegistry.registerItem(itemSilicondioxide, itemSilicondioxide.getUnlocalizedName().substring(5));
 	//tools
 	GameRegistry.registerItem(itemMortar, itemMortar.getUnlocalizedName().substring(5));
@@ -182,6 +188,7 @@ public void init(FMLInitializationEvent event)
 	//Smelting Recipes
 	GameRegistry.addSmelting(Main.itemSlimelatex, new ItemStack(Main.itemLatex), 0.1f);
 	GameRegistry.addSmelting(Main.blockSlimelatex, new ItemStack(Main.blockLatex), 0.1f);
+	GameRegistry.addSmelting(Items.apple, new ItemStack(Main.itemWax), 0.1f);
 }
 
 @EventHandler
