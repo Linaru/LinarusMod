@@ -14,6 +14,7 @@ public class ClientProxy extends CommonProxy {
 	RenderingRegistry.registerEntityRenderingHandler(EntityPinkslimeMob.class, new EntityRenderPinkslimeMob());
 	}
 
+	@Override
 	public void registerRenderThings() {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCandleEntity.class, new TileEntityCandleRenderer());
 	}

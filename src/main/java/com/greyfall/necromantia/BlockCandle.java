@@ -1,12 +1,13 @@
 package com.greyfall.necromantia;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
-public class BlockCandle extends Block {
+public class BlockCandle extends BlockContainer {
 
 	protected BlockCandle(Material material) {
 		super(material);
@@ -14,10 +15,6 @@ public class BlockCandle extends Block {
 		this.setStepSound(Block.soundTypeWood);
 	}
 
-	//Make sure you set this as your TileEntity class relevant for the block!
-	public TileEntity createNewTileEntity(World world) {
-		return new TileEntityCandleEntity();
-	}
 
 	//You don't want the normal render type, or it wont render properly.
 	@Override
@@ -41,4 +38,8 @@ public class BlockCandle extends Block {
 		this.blockIcon = icon.registerIcon("nectomantia:candle_held");
 	}
 
+	@Override
+	public TileEntity createNewTileEntity(World p_149915_1_, int p_149915_2_) {
+		return new TileEntityCandleEntity();
+	}
 }
