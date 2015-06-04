@@ -18,7 +18,7 @@ public class BlockCandle extends BlockContainer {
 		this.setHardness(0.2F);
 		this.setStepSound(Block.soundTypeWood);
 		this.setBlockBounds(0.28125f,0f,0.28125f,0.71875f,1f,0.71875f);
-		this.setLightLevel(32);
+		this.setLightLevel(1.0F);
 	}
 
 
