@@ -48,9 +48,9 @@ public class CandleModel extends ModelBase
         super.render(entity, f0, f1, f2, f3, f4, f5);
         setRotationAngles(f0, f1, f2, f3, f4, f5);
         Shape1.render(f5);
-        Shape1.render(f5);
-        Shape1.render(f5);
-        Shape1.render(f5);
+        Shape2.render(f5);
+        Shape3.render(f5);
+        Shape4.render(f5);
     }
 
     private void setRotation(ModelRenderer model, float x, float y, float z)
