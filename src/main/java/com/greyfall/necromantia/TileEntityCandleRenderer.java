@@ -16,7 +16,7 @@ public class TileEntityCandleRenderer extends TileEntitySpecialRenderer {
 
     //The model of your block
     private final CandleModel model;
-
+    public static ResourceLocation textureLocation=new ResourceLocation("necromantia:textures/blocks/candle.png");
     public TileEntityCandleRenderer() {
         this.model = new CandleModel();
     }
@@ -32,10 +32,11 @@ public class TileEntityCandleRenderer extends TileEntitySpecialRenderer {
     public void renderTileEntityAt(TileEntity te, double x, double y, double z, float scale) {
         //The PushMatrix tells the renderer to "start" doing something.
         GL11.glPushMatrix();
+        GL11.glScalef(scale,scale,scale);
         //This is setting the initial location.
         GL11.glTranslatef((float) x + 0.5F, (float) y + 1.5F, (float) z + 0.5F);
         //This is the texture of your block. It's pathed to be the same place as your other blocks here.
-        ResourceLocation textures = (new ResourceLocation("necromantia:textures/blocks/candle.png"));
+        ResourceLocation textures = (textureLocation);
         //the ':' is very important
         //binding the textures
         Minecraft.getMinecraft().renderEngine.bindTexture(textures);

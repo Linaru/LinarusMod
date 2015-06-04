@@ -19,7 +19,7 @@ public class BlockCandle extends BlockContainer {
 	//You don't want the normal render type, or it wont render properly.
 	@Override
 	public int getRenderType() {
-		return -1;
+		return Main.candleRenderID;
 	}
 
 	//It's not an opaque cube, so you need this.

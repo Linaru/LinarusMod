@@ -62,7 +62,7 @@ public class Main {
     public static Item siliconeChestplate;
     public static Item siliconeLeggings;
     public static Item siliconeBoots;
-
+    public static int candleRenderID;
     //Armour materials (set stats)
     public static final ItemArmor.ArmorMaterial pinklatexArmourMaterial = EnumHelper.addArmorMaterial("pinklatexArmourMaterial", 50, new int[]{2, 4, 3, 1,}, 30);
     public static final ItemArmor.ArmorMaterial siliconeArmourMaterial = EnumHelper.addArmorMaterial("siliconeMaterial", 1000, new int[]{1, 3, 2, 1,}, 30);
