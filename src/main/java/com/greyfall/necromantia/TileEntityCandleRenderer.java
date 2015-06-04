@@ -9,6 +9,7 @@ import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.entity.Entity;
+import net.minecraft.init.Blocks;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
@@ -20,7 +21,7 @@ public class TileEntityCandleRenderer extends TileEntitySpecialRenderer {
     private final CandleModel model;
     public static ResourceLocation textureLocation=new ResourceLocation("necromantia:textures/blocks/candle.png");
     public TileEntityCandleRenderer() {
-        this.model = new CandleModel();
+        this.model = new CandleModel(false);
     }
 
     private void adjustRotatePivotViaMeta(World world, int x, int y, int z) {
@@ -32,6 +33,17 @@ public class TileEntityCandleRenderer extends TileEntitySpecialRenderer {
 
     @Override
     public void renderTileEntityAt(TileEntity te, double x, double y, double z, float scale) {
+        CandleModel modelRender;
+        if(te.getWorldObj()!=null) {
+            Block block = te.getWorldObj().getBlock(te.xCoord, te.yCoord - 1, te.zCoord);
+
+            if (block == Blocks.fence || block == Blocks.nether_brick_fence || block == Blocks.fence_gate)
+                modelRender = new CandleModel(true);
+            else
+                modelRender = new CandleModel(false);
+        }
+        else
+            modelRender = new CandleModel(false);
         //The PushMatrix tells the renderer to "start" doing something.
         GL11.glPushMatrix();
 
@@ -47,7 +59,7 @@ public class TileEntityCandleRenderer extends TileEntitySpecialRenderer {
         GL11.glPushMatrix();
         GL11.glRotatef(180F, 0.0F, 0.0F, 1.0F);
         //A reference to your Model file. Again, very important.
-        this.model.render((Entity) null, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F, 0.0625F);
+        modelRender.render((Entity) null, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F, 0.0625F);
         //Tell it to stop rendering for both the PushMatrix's
         GL11.glPopMatrix();
         GL11.glPopMatrix();

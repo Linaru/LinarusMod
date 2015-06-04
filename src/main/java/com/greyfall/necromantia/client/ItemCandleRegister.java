@@ -20,7 +20,7 @@ public class ItemCandleRegister implements IItemRenderer {
 
     public ItemCandleRegister()
     {
-        model=new CandleModel();
+        model=new CandleModel(false);
     }
     @Override
     public boolean handleRenderType(ItemStack item, ItemRenderType type) {
