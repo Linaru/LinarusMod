@@ -1,6 +1,8 @@
 package com.greyfall.necromantia;
 
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.OpenGlHelper;
@@ -11,7 +13,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import org.lwjgl.opengl.GL11;
-
+@SideOnly(Side.CLIENT)
 public class TileEntityCandleRenderer extends TileEntitySpecialRenderer {
 
     //The model of your block
@@ -32,7 +34,7 @@ public class TileEntityCandleRenderer extends TileEntitySpecialRenderer {
     public void renderTileEntityAt(TileEntity te, double x, double y, double z, float scale) {
         //The PushMatrix tells the renderer to "start" doing something.
         GL11.glPushMatrix();
-        GL11.glScalef(scale,scale,scale);
+
         //This is setting the initial location.
         GL11.glTranslatef((float) x + 0.5F, (float) y + 1.5F, (float) z + 0.5F);
         //This is the texture of your block. It's pathed to be the same place as your other blocks here.

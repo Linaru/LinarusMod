@@ -1,5 +1,7 @@
 package com.greyfall.necromantia.client;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.EntityRenderer;
 import net.minecraft.client.renderer.RenderBlocks;
@@ -11,6 +13,7 @@ import org.lwjgl.opengl.GL11;
 /**
  * Created by Katrina on 04/06/2015.
  */
+@SideOnly(Side.CLIENT)
 public class BlockRenderer {
     public static float W1 = 0.0625F;
     public static float W2 = 0.125F;

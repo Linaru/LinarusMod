@@ -6,6 +6,8 @@ import codechicken.lib.vec.Cuboid6;
 import codechicken.lib.vec.Translation;
 import com.greyfall.necromantia.client.BlockRenderer;
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.util.IIcon;
@@ -17,6 +19,7 @@ import java.awt.*;
 /**
  * Created by Katrina on 04/06/2015.
  */
+@SideOnly(Side.CLIENT)
 public class BlockCandleRenderer extends BlockRenderer implements ISimpleBlockRenderingHandler {
 
     @Override
