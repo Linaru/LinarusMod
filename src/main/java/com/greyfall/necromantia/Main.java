@@ -40,6 +40,7 @@ public static Item itemSlimelatex;
 public static Item itemLatex;
 public static Item itemSiliconerubber;
 public static Item itemGoldcoin;
+public static Item itemWax;
 public static Item itemSilicondioxide;
 //tools
 public static Item itemMortar;
@@ -78,6 +79,7 @@ public void preInit(FMLPreInitializationEvent event)
 	itemLatex = new Latex().setUnlocalizedName("ItemLatex").setTextureName("necromantia:latex").setCreativeTab(tabnecromantia); //item.itemTable
 	itemSiliconerubber = new Siliconerubber().setUnlocalizedName("ItemSiliconerubber").setTextureName("necromantia:siliconerubber").setCreativeTab(tabnecromantia); //item.itemTable
 	itemGoldcoin = new Goldcoin().setUnlocalizedName("ItemGoldcoin").setTextureName("necromantia:goldcoin").setCreativeTab(tabnecromantia); //item.itemTable
+	itemWax = new Wax().setUnlocalizedName("ItemWax").setTextureName("necromantia:wax").setCreativeTab(tabnecromantia); //item.itemTable
 	itemSilicondioxide = new Silicondioxide().setUnlocalizedName("ItemSilicondioxide").setTextureName("necromantia:silica").setCreativeTab(tabnecromantia); //item.itemTable
 	//tools
 	itemMortar = new Mortar().setUnlocalizedName("ItemMortar").setTextureName("necromantia:mortar").setCreativeTab(tabnecromantia); //item.itemTable
@@ -106,6 +108,7 @@ public void preInit(FMLPreInitializationEvent event)
 	GameRegistry.registerItem(itemLatex, itemLatex.getUnlocalizedName().substring(5));
 	GameRegistry.registerItem(itemSiliconerubber, itemSiliconerubber.getUnlocalizedName().substring(5));
 	GameRegistry.registerItem(itemGoldcoin, itemGoldcoin.getUnlocalizedName().substring(5));
+	GameRegistry.registerItem(itemWax, itemWax.getUnlocalizedName().substring(5));
 	GameRegistry.registerItem(itemSilicondioxide, itemSilicondioxide.getUnlocalizedName().substring(5));
 	//tools
 	GameRegistry.registerItem(itemMortar, itemMortar.getUnlocalizedName().substring(5));
@@ -145,6 +148,11 @@ public void init(FMLInitializationEvent event)
 	GameRegistry.addRecipe(new ItemStack(blockLatex), new Object[]{" LL", " LL", "   ", 'L', Main.itemLatex});
 	GameRegistry.addRecipe(new ItemStack(blockLatex), new Object[]{"   ", "LL ", "LL ", 'L', Main.itemLatex});
 	GameRegistry.addRecipe(new ItemStack(blockLatex), new Object[]{"   ", " LL", " LL", 'L', Main.itemLatex});
+		//Wax Block
+	GameRegistry.addRecipe(new ItemStack(blockWax), new Object[]{"LL ", "LL ", "   ", 'L', Main.itemLatex});
+	GameRegistry.addRecipe(new ItemStack(blockWax), new Object[]{" LL", " LL", "   ", 'L', Main.itemLatex});
+	GameRegistry.addRecipe(new ItemStack(blockWax), new Object[]{"   ", "LL ", "LL ", 'L', Main.itemLatex});
+	GameRegistry.addRecipe(new ItemStack(blockWax), new Object[]{"   ", " LL", " LL", 'L', Main.itemLatex});
 		//Gold Coin
 	GameRegistry.addRecipe(new ItemStack(itemGoldcoin), new Object[]{"GGG", "G G", "GGG", 'G', Items.gold_nugget});
 		//Mortar and pestle
