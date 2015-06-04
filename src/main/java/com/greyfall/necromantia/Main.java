@@ -46,6 +46,7 @@ public static Item itemMortar;
 //blocks
 public static Block blockSlimelatex;
 public static Block blockLatex;
+public static Block blockWax;
 public static Block blockCandle;
 public static Block blockIrontreebrick;
 //Armour
@@ -83,6 +84,7 @@ public void preInit(FMLPreInitializationEvent event)
 	//blocks
 	blockSlimelatex = new BlockSlimelatex(Material.sponge).setBlockName("BlockSlimelatex").setBlockTextureName("necromantia:pinklatexblock").setCreativeTab(tabnecromantia);
 	blockLatex = new BlockLatex(Material.sponge).setBlockName("BlockLatex").setBlockTextureName("necromantia:latexblock").setCreativeTab(tabnecromantia);
+	blockWax = new BlockWax(Material.ground).setBlockName("BlockWax").setCreativeTab(tabnecromantia);
 	blockCandle = new BlockCandle(Material.ground).setBlockName("BlockCandle").setBlockTextureName("necromantia:candle").setCreativeTab(tabnecromantia);
 	blockIrontreebrick = new BlockIrontreebrick(Material.ground).setBlockName("BlockIrontreebrick").setBlockTextureName("necromantia:irontreebrick").setCreativeTab(tabnecromantia);
 	//todo add item that catches nekosune's and puts them in a box for me to take home
@@ -110,6 +112,7 @@ public void preInit(FMLPreInitializationEvent event)
 	//blocks
 	GameRegistry.registerBlock(blockSlimelatex, blockSlimelatex.getUnlocalizedName().substring(5));
 	GameRegistry.registerBlock(blockLatex, blockLatex.getUnlocalizedName().substring(5));
+	GameRegistry.registerBlock(blockWax, blockWax.getUnlocalizedName().substring(5));
 	GameRegistry.registerBlock(blockIrontreebrick, blockIrontreebrick.getUnlocalizedName().substring(5));
 	GameRegistry.registerBlock(blockCandle, blockCandle.getUnlocalizedName().substring(5));
 	//armours
