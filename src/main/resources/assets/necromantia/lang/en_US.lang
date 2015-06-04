@@ -1,6 +1,9 @@
 //Blocks
 tile.BlockSlimelatex.name=Pink Latex Rubber
 tile.BlockLatex.name=Latex Rubber
+tile.BlockWax.name=Wax Block
+tile.BlockCrate.name=Crate
+tile.BlockEnchantedwood.name=Enchanted Wood
 tile.BlockIrontreebrick.name=Iron Tree Brick
 tile.BlockCandle.name=Candle
 //Items
@@ -8,6 +11,9 @@ item.ItemSlimelatex.name=Latex Slime
 item.ItemLatex.name=Latex Rubber
 item.ItemSiliconerubber.name=Silicone Rubber
 item.ItemGoldcoin.name=Gold Coin
+item.ItemWax.name=Wax
+item.ItemRiceseeds.name=Rice seeds
+item.ItemRice.name=Rice
 item.ItemSilicondioxide.name=Silica
 item.ItemMortar.name=Mortar and Pestle
 //Armour

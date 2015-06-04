@@ -1,5 +1,4 @@
 package com.greyfall.necromantia;
 
-public class ItemTable {
-
+public class TileEntityCandle {
 }

@@ -20,22 +20,26 @@ public class EntityPinkslimeMob extends EntitySlime{
 		this.setSize(0.75F, 1F);//Width, Height      
 	}
 
-
-	
 	@Override
 	protected EntitySlime createInstance()
 	    {
 	        return new EntityPinkslimeMob(this.worldObj);
 	    }
 	
-	protected void applyEntityAttributes(){
-		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(32.0F);
-		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.5D);
-	}
 	@Override
 	protected Item getDropItem()
 	{
 		return this.getSlimeSize() == 1 ? Main.itemSlimelatex : Item.getItemById(0);
 	}
+
+	@Override
+	protected void setSlimeSize(int p_70799_1_)
+	{
+		super.setSlimeSize(p_70799_1_);
+		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue((double)(p_70799_1_ * (p_70799_1_ + 5)));
+		this.setHealth(this.getMaxHealth());
+	}
+
+
+
 }

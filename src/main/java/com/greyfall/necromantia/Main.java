@@ -40,12 +40,18 @@ public static Item itemSlimelatex;
 public static Item itemLatex;
 public static Item itemSiliconerubber;
 public static Item itemGoldcoin;
+public static Item itemWax;
 public static Item itemSilicondioxide;
+public static Item itemRiceseeds;
+public static Item itemRice;
 //tools
 public static Item itemMortar;
 //blocks
 public static Block blockSlimelatex;
 public static Block blockLatex;
+public static Block blockWax;
+public static Block blockCrate;
+public static Block blockEnchantedwood;
 public static Block blockCandle;
 public static Block blockIrontreebrick;
 //Armour
@@ -77,12 +83,18 @@ public void preInit(FMLPreInitializationEvent event)
 	itemLatex = new Latex().setUnlocalizedName("ItemLatex").setTextureName("necromantia:latex").setCreativeTab(tabnecromantia); //item.itemTable
 	itemSiliconerubber = new Siliconerubber().setUnlocalizedName("ItemSiliconerubber").setTextureName("necromantia:siliconerubber").setCreativeTab(tabnecromantia); //item.itemTable
 	itemGoldcoin = new Goldcoin().setUnlocalizedName("ItemGoldcoin").setTextureName("necromantia:goldcoin").setCreativeTab(tabnecromantia); //item.itemTable
+	itemWax = new Wax().setUnlocalizedName("ItemWax").setTextureName("necromantia:wax").setCreativeTab(tabnecromantia); //item.itemTable
+	itemRiceseeds = new Riceseeds().setUnlocalizedName("ItemRiceseeds").setTextureName("necromantia:rice_seeds").setCreativeTab(tabnecromantia); //item.itemTable
+	itemRice = new Rice().setUnlocalizedName("ItemRice").setTextureName("necromantia:rice").setCreativeTab(tabnecromantia); //item.itemTable
 	itemSilicondioxide = new Silicondioxide().setUnlocalizedName("ItemSilicondioxide").setTextureName("necromantia:silica").setCreativeTab(tabnecromantia); //item.itemTable
 	//tools
 	itemMortar = new Mortar().setUnlocalizedName("ItemMortar").setTextureName("necromantia:mortar").setCreativeTab(tabnecromantia); //item.itemTable
 	//blocks
 	blockSlimelatex = new BlockSlimelatex(Material.sponge).setBlockName("BlockSlimelatex").setBlockTextureName("necromantia:pinklatexblock").setCreativeTab(tabnecromantia);
 	blockLatex = new BlockLatex(Material.sponge).setBlockName("BlockLatex").setBlockTextureName("necromantia:latexblock").setCreativeTab(tabnecromantia);
+	blockWax = new BlockWax(Material.ground).setBlockName("BlockWax").setCreativeTab(tabnecromantia);
+	blockCrate = new BlockCrate(Material.ground).setBlockName("BlockCrate").setCreativeTab(tabnecromantia);
+	blockEnchantedwood = new BlockEnchantedwood(Material.wood).setBlockName("BlockEnchantedwood").setBlockTextureName("necromantia:enchantedwood").setCreativeTab(tabnecromantia);
 	blockCandle = new BlockCandle(Material.ground).setBlockName("BlockCandle").setBlockTextureName("necromantia:candle").setCreativeTab(tabnecromantia);
 	blockIrontreebrick = new BlockIrontreebrick(Material.ground).setBlockName("BlockIrontreebrick").setBlockTextureName("necromantia:irontreebrick").setCreativeTab(tabnecromantia);
 	//todo add item that catches nekosune's and puts them in a box for me to take home
@@ -104,14 +116,21 @@ public void preInit(FMLPreInitializationEvent event)
 	GameRegistry.registerItem(itemLatex, itemLatex.getUnlocalizedName().substring(5));
 	GameRegistry.registerItem(itemSiliconerubber, itemSiliconerubber.getUnlocalizedName().substring(5));
 	GameRegistry.registerItem(itemGoldcoin, itemGoldcoin.getUnlocalizedName().substring(5));
+	GameRegistry.registerItem(itemWax, itemWax.getUnlocalizedName().substring(5));
+	GameRegistry.registerItem(itemRiceseeds, itemRiceseeds.getUnlocalizedName().substring(5));
+	GameRegistry.registerItem(itemRice, itemRice.getUnlocalizedName().substring(5));
 	GameRegistry.registerItem(itemSilicondioxide, itemSilicondioxide.getUnlocalizedName().substring(5));
 	//tools
 	GameRegistry.registerItem(itemMortar, itemMortar.getUnlocalizedName().substring(5));
 	//blocks
 	GameRegistry.registerBlock(blockSlimelatex, blockSlimelatex.getUnlocalizedName().substring(5));
 	GameRegistry.registerBlock(blockLatex, blockLatex.getUnlocalizedName().substring(5));
+	GameRegistry.registerBlock(blockWax, blockWax.getUnlocalizedName().substring(5));
+	GameRegistry.registerBlock(blockCrate, blockCrate.getUnlocalizedName().substring(5));
+	GameRegistry.registerBlock(blockEnchantedwood, blockEnchantedwood.getUnlocalizedName().substring(5));
 	GameRegistry.registerBlock(blockIrontreebrick, blockIrontreebrick.getUnlocalizedName().substring(5));
 	GameRegistry.registerBlock(blockCandle, blockCandle.getUnlocalizedName().substring(5));
+	GameRegistry.registerTileEntity(TileEntityCandleEntity.class, "tileEntityCandle");
 	//armours
 	GameRegistry.registerItem(pinklatexHelmet, pinklatexHelmet.getUnlocalizedName().substring(5));
 	GameRegistry.registerItem(pinklatexChestplate, pinklatexChestplate.getUnlocalizedName().substring(5));
@@ -129,26 +148,25 @@ public void init(FMLInitializationEvent event)
 {
 	//Proxy, TileEntity, entity, Gui and Packet Registering
 	proxy.init();
-	
+
 	
 	//Crafting Recipes
 		//Pink Latex Block
-	GameRegistry.addRecipe(new ItemStack(blockSlimelatex), new Object[]{"LL ", "LL ", "   ", 'L', Main.itemSlimelatex});
-	GameRegistry.addRecipe(new ItemStack(blockSlimelatex), new Object[]{" LL", " LL", "   ", 'L', Main.itemSlimelatex});
-	GameRegistry.addRecipe(new ItemStack(blockSlimelatex), new Object[]{"   ", "LL ", "LL ", 'L', Main.itemSlimelatex});
-	GameRegistry.addRecipe(new ItemStack(blockSlimelatex), new Object[]{"   ", " LL", " LL", 'L', Main.itemSlimelatex});
+	GameRegistry.addRecipe(new ItemStack(blockSlimelatex), new Object[]{"LL", "LL", 'L', Main.itemSlimelatex});
 		//Latex Block
-	GameRegistry.addRecipe(new ItemStack(blockLatex), new Object[]{"LL ", "LL ", "   ", 'L', Main.itemLatex});
-	GameRegistry.addRecipe(new ItemStack(blockLatex), new Object[]{" LL", " LL", "   ", 'L', Main.itemLatex});
-	GameRegistry.addRecipe(new ItemStack(blockLatex), new Object[]{"   ", "LL ", "LL ", 'L', Main.itemLatex});
-	GameRegistry.addRecipe(new ItemStack(blockLatex), new Object[]{"   ", " LL", " LL", 'L', Main.itemLatex});
-		//Gold Coin
+	GameRegistry.addRecipe(new ItemStack(blockLatex), new Object[]{"LL", "LL", 'L', Main.itemLatex});
+		//Wax Block
+	GameRegistry.addRecipe(new ItemStack(blockWax), new Object[]{"WWW", "WWW", "WWW", 'W', Main.itemWax});
+	GameRegistry.addRecipe(new ItemStack(blockCrate), new Object[]{"III", "IEI", "III", 'I', Items.iron_ingot, 'E', Main.blockEnchantedwood});
+	GameRegistry.addShapelessRecipe(new ItemStack(Main.itemWax, 9), new ItemStack(Main.blockWax));
+		//candle
+	GameRegistry.addRecipe(new ItemStack(blockCandle), new Object[]{"S", "W", "W", 'S', Items.string, 'W', Main.itemWax});
+	//Gold Coin
 	GameRegistry.addRecipe(new ItemStack(itemGoldcoin), new Object[]{"GGG", "G G", "GGG", 'G', Items.gold_nugget});
 		//Mortar and pestle
 	if(!Loader.isModLoaded("Botania"))
 	{
-	GameRegistry.addRecipe(new ItemStack(itemMortar), new Object[]{" S ", "W  ", "B  ", 'S', Items.stick, 'W', Blocks.planks, 'B', Items.bowl});
-	GameRegistry.addRecipe(new ItemStack(itemMortar), new Object[]{"  S", " W ", " B ", 'S', Items.stick, 'W', Blocks.planks, 'B', Items.bowl});
+	GameRegistry.addRecipe(new ItemStack(itemMortar), new Object[]{" S", "W ", "B ", 'S', Items.stick, 'W', Blocks.planks, 'B', Items.bowl});
 	}
 			//Silica
 	if(Loader.isModLoaded("Botania"))
@@ -177,6 +195,7 @@ public void init(FMLInitializationEvent event)
 	//Smelting Recipes
 	GameRegistry.addSmelting(Main.itemSlimelatex, new ItemStack(Main.itemLatex), 0.1f);
 	GameRegistry.addSmelting(Main.blockSlimelatex, new ItemStack(Main.blockLatex), 0.1f);
+	GameRegistry.addSmelting(Items.apple, new ItemStack(Main.itemWax), 0.1f);
 }
 
 @EventHandler
