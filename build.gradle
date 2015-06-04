@@ -59,9 +59,14 @@ repositories {
 
 }
 
-version = "1.0"
-group= "com.yourname.modid" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "modid"
+version = "1.0-${minecraft.version}"
+if (System.getenv("BUILD_NUMBER")!=null)
+    version = "$version-${System.getenv().BUILD_NUMBER}"
+if (project.hasProperty("releaseType"))
+    if (project.releaseType == "ALPHA")
+        version = "alpha-" + version
+group= "com.greyfall.necromantia" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "Necromantia"
 
 minecraft {
     version = "1.7.10-10.13.3.1420-1.7.10"
