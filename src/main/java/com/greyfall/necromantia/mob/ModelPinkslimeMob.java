@@ -30,8 +30,6 @@ public class ModelPinkslimeMob extends ModelBase
       Slime_transparent.setTextureSize(128, 64);
       Slime_transparent.mirror = true;
       setRotation(Slime_transparent, 0F, 0F, 0F);
-    }
-    else {
       Right_Ear = new ModelRenderer(this, 0, 28);
       Right_Ear.addBox(0F, 0F, 0F, 6, 4, 6);
       Right_Ear.setRotationPoint(4F, 10F, 0F);
@@ -45,6 +43,7 @@ public class ModelPinkslimeMob extends ModelBase
       Left_Ear.mirror = true;
       setRotation(Left_Ear, 0F, 0F, 0F);
     }
+
 
   }
   
