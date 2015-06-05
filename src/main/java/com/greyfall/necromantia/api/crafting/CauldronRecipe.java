@@ -220,7 +220,7 @@ public class CauldronRecipe {
     /**
      * Is the input item correct and the right amount of them?
      * @param item item to check
-     * @return <c>true</c> if the item matches and has the right amount
+     * @return true if the item matches and has the right amount
      */
     public boolean isItemRight(ItemStack item)
     {
@@ -236,7 +236,7 @@ public class CauldronRecipe {
     /**
      * Is the fluid correct and got the right amount
      * @param fluid fluidstack to check
-     * @return <c>true</c> if the fluid matches and has at least the right amount
+     * @return true if the fluid matches and has at least the right amount
      */
     public boolean isFluidRight(FluidStack fluid)
     {
@@ -254,7 +254,7 @@ public class CauldronRecipe {
      * Is the recipe correct?
      * @param item item to check
      * @param fluid fluid to check
-     * @return <c>true</c> if the item is correct and the fluid is and of the right amount
+     * @return true if the item is correct and the fluid is and of the right amount
      */
     public boolean isRecepieRight(ItemStack item,FluidStack fluid)
     {
