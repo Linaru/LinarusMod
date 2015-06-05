@@ -30,6 +30,8 @@ import cpw.mods.fml.common.registry.GameRegistry;
     Todo list:
     Code:
     Fix particle effect on slimes
+    Fix Creative Tab names.
+    Fix Lore tool tip on blocks (admin block inparticular)
     Add waila text 'Unbreakable' to admin blocks
     Add Cauldron gui + recipies
     Add Latex/ Pink slime block custom squeeking sounds
@@ -48,8 +50,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 
      */
-
-@Mod(modid = "necromantia", name = "Copper Mod", version = "Carrot.1.0")
+@Mod(modid = "necromantia", name = "Necromantia", version = "Carrot.1.0")
 public class Main {
 
     @Instance("necromantia")

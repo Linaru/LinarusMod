@@ -15,8 +15,8 @@ public class BlockAdminstone  extends Block {
         this.setBlockUnbreakable();
         this.setResistance(3000);
     }
-    public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean show)
-    {
-        list.add("Unbreakable Stone Brick");
+
+    public void addInformation(ItemStack stack, EntityPlayer player, List lines, boolean advancedTooltips) {
+        lines.add("Unbreakable Stone Brick.");
     }
 }
