@@ -111,7 +111,7 @@ public class ModelCauldron extends ModelBase
     Valveback.render(f5);
     footfrontright.render(f5);
     footbackright.render(f5);
-    footbackleft.render(f5);
+    footfrontleft.render(f5);
     footbackleft.render(f5);
     ValveRight.render(f5);
     ValveLeft.render(f5);
