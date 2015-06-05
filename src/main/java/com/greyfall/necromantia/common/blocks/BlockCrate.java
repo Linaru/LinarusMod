@@ -15,7 +15,7 @@ public class BlockCrate extends Block {
     public IIcon Side4;
     public IIcon Side5;
 
-    protected BlockCrate(Material material) {
+    public BlockCrate(Material material) {
         super(material);
         this.setHardness(0.3F);
     }

@@ -15,7 +15,7 @@ import java.util.Random;
 
 public class BlockCandle extends BlockContainer {
 
-	protected BlockCandle(Material material) {
+	public BlockCandle(Material material) {
 		super(material);
 		this.setHardness(0.2F);
 		this.setStepSound(Block.soundTypeWood);

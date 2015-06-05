@@ -62,7 +62,7 @@ public class Main {
     public static CommonProxy proxy;
 
     //items
-    public static Item itemSlimelatex
+    public static Item itemSlimelatex;
     public static Item itemLatex;
     public static Item itemSiliconerubber;
     public static Item itemGoldcoin;

@@ -9,7 +9,7 @@ import java.util.List;
 
 public class BlockAdminstone  extends Block {
 
-    protected BlockAdminstone(Material material) {
+    public BlockAdminstone(Material material) {
         super(material);
         this.setHardness(-1F);
         this.setBlockUnbreakable();

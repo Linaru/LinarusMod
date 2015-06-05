@@ -5,7 +5,7 @@ import net.minecraft.block.material.Material;
 
 public class BlockIrontreebrick extends Block {
 
-	protected BlockIrontreebrick(Material material) {
+	public BlockIrontreebrick(Material material) {
 		super(material);
 		this.setHardness(0.2F);
 		this.setStepSound(Block.soundTypeStone);

@@ -15,7 +15,7 @@ public class BlockWax extends Block {
     public IIcon Side4;
     public IIcon Side5;
 
-    protected BlockWax(Material material) {
+    public BlockWax(Material material) {
         super(material);
         this.setHardness(0.3F);
     }
