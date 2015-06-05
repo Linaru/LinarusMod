@@ -1,4 +1,4 @@
-package com.greyfall.necromantia.client.render.tiles;
+package com.greyfall.necromantia.client.render.models;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
