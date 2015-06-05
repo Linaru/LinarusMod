@@ -32,9 +32,11 @@ import cpw.mods.fml.common.registry.GameRegistry;
     Fix particle effect on slimes
     Fix Creative Tab names.
     Fix Lore tool tip on blocks (admin block inparticular)
+    Give Candles rotation when placed.
     Add waila text 'Unbreakable' to admin blocks
     Add Cauldron gui + recipies
     Add Latex/ Pink slime block custom squeeking sounds
+    Make crate blocks pushable.
     Add staff
     Add wild rice / compatbaility with biomes o' plenty rice blocks
     Add Inventory slot Gui / underarmour layer
@@ -74,6 +76,9 @@ public class Main {
     //tools
     public static Item itemMortar;
     //blocks
+    //Machines
+    public static Block blockCauldron;
+    //standard blocks
     public static Block blockSlimelatex;
     public static Block blockLatex;
     public static Block blockWax;
@@ -118,6 +123,9 @@ public class Main {
         //tools
         itemMortar = new Mortar().setUnlocalizedName("ItemMortar").setTextureName("necromantia:mortar").setCreativeTab(tabnecromantia); //item.itemTable
         //blocks
+        //Machines
+        blockCauldron = new BlockCauldron(Material.ground).setBlockName("BlockCauldron").setBlockTextureName("necromantia:cauldron").setCreativeTab(tabnecromantia);
+        //standard blocks
         blockSlimelatex = new BlockSlimelatex(Material.sponge).setBlockName("BlockSlimelatex").setBlockTextureName("necromantia:pinklatexblock").setCreativeTab(tabnecromantia);
         blockLatex = new BlockLatex(Material.sponge).setBlockName("BlockLatex").setBlockTextureName("necromantia:latexblock").setCreativeTab(tabnecromantia);
         blockWax = new BlockWax(Material.ground).setBlockName("BlockWax").setCreativeTab(tabnecromantia);
@@ -153,6 +161,9 @@ public class Main {
         //tools
         GameRegistry.registerItem(itemMortar, itemMortar.getUnlocalizedName().substring(5));
         //blocks
+        //machines
+        GameRegistry.registerBlock(blockCauldron, blockCauldron.getUnlocalizedName().substring(5));
+        // standard blocks
         GameRegistry.registerBlock(blockSlimelatex, blockSlimelatex.getUnlocalizedName().substring(5));
         GameRegistry.registerBlock(blockLatex, blockLatex.getUnlocalizedName().substring(5));
         GameRegistry.registerBlock(blockWax, blockWax.getUnlocalizedName().substring(5));
@@ -189,6 +200,7 @@ public class Main {
         //Wax Block
         GameRegistry.addRecipe(new ItemStack(blockWax), new Object[]{"WWW", "WWW", "WWW", 'W', Main.itemWax});
         GameRegistry.addRecipe(new ItemStack(blockCrate), new Object[]{"III", "IEI", "III", 'I', Items.iron_ingot, 'E', Main.blockEnchantedwood});
+        GameRegistry.addRecipe(new ItemStack(blockCrate), new Object[]{"III", "IWI", "III", 'I', Items.iron_ingot, 'W', Blocks.planks});
         GameRegistry.addShapelessRecipe(new ItemStack(Main.itemWax, 9), new ItemStack(Main.blockWax));
         //candle
         GameRegistry.addRecipe(new ItemStack(blockCandle), new Object[]{"S", "W", "W", 'S', Items.string, 'W', Main.itemWax});
