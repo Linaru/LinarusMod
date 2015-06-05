@@ -24,6 +24,8 @@ import cpw.mods.fml.common.registry.GameRegistry;
     /*
     Todo list:
     Code:
+    Fix particle effect on slimes
+    Add waila text 'Unbreakable' to admin blocks
     Add Cauldron gui + recipies
     Add Latex/ Pink slime block custom squeeking sounds
     Add staff
