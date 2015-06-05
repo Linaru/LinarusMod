@@ -73,6 +73,8 @@ public class Main {
     public static Block blockEnchantedwood;
     public static Block blockCandle;
     public static Block blockIrontreebrick;
+    //Admin blocks
+    public static Block blockAdminstone;
     //Armour
     public static Item pinklatexHelmet;
     public static Item pinklatexChestplate;
@@ -115,6 +117,8 @@ public class Main {
         blockEnchantedwood = new BlockEnchantedwood(Material.wood).setBlockName("BlockEnchantedwood").setBlockTextureName("necromantia:enchantedwood").setCreativeTab(tabnecromantia);
         blockCandle = new BlockCandle(Material.ground).setBlockName("BlockCandle").setBlockTextureName("necromantia:candle").setCreativeTab(tabnecromantia);
         blockIrontreebrick = new BlockIrontreebrick(Material.ground).setBlockName("BlockIrontreebrick").setBlockTextureName("necromantia:irontreebrick").setCreativeTab(tabnecromantia);
+        //Admin blocks
+        blockAdminstone = new BlockAdminstone(Material.ground).setBlockName("BlockAdminstone").setBlockTextureName("necromantia:irontreebrick").setCreativeTab(tabnecromantiaadmin);
         //todo add item that catches nekosune's and puts them in a box for me to take home
         //armour
         //Pink Latex
@@ -149,6 +153,8 @@ public class Main {
         GameRegistry.registerBlock(blockIrontreebrick, blockIrontreebrick.getUnlocalizedName().substring(5));
         GameRegistry.registerBlock(blockCandle, blockCandle.getUnlocalizedName().substring(5));
         GameRegistry.registerTileEntity(TileEntityCandleEntity.class, "tileEntityCandle");
+        //Admin blocks
+        GameRegistry.registerBlock(blockAdminstone, blockAdminstone.getUnlocalizedName().substring(5));
         //armours
         GameRegistry.registerItem(pinklatexHelmet, pinklatexHelmet.getUnlocalizedName().substring(5));
         GameRegistry.registerItem(pinklatexChestplate, pinklatexChestplate.getUnlocalizedName().substring(5));
@@ -230,5 +236,11 @@ public class Main {
         }
     };
 
+    public static CreativeTabs tabnecromantiaadmin = new CreativeTabs("tabnecromantia") {
+        @Override
+        public Item getTabIconItem() {
+            return new ItemStack(blockAdminstone).getItem();
+        }
+    };
 
 }
