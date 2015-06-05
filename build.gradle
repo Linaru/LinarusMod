@@ -114,3 +114,53 @@ processResources
         exclude 'mcmod.info'
     }
 }
+
+
+task deobfJar(type: Jar) {
+    from sourceSets.main.output
+    classifier = 'dev'
+}
+
+task apiJar(type: Jar) {
+    from fileTree(dir: 'src/main/java').matching { include 'com/greyfall/necromantia/api/**' }
+    classifier = 'api'
+}
+
+
+task sourcesJar(type: Jar) {
+    from sourceSets.main.allJava
+    classifier = 'sources'
+}
+
+
+
+publishing {
+    publications {
+        main(MavenPublication) {
+            groupId 'com.greyfall.necromantia'
+            artifactId 'Necromantia'
+            from components.java
+        }
+        api(MavenPublication) {
+            groupId 'com.greyfall.necromantia'
+            artifactId 'Necromantia'
+            artifact apiJar
+        }
+        dev(MavenPublication) {
+            groupId 'com.greyfall.necromantia'
+            artifactId 'Necromantia'
+            artifact deobfJar
+        }
+        sources(MavenPublication) {
+            groupId 'com.greyfall.necromantia'
+            artifactId 'Necromantia'
+            artifact sourcesJar
+        }
+
+    }
+    repositories {
+        maven {
+            url "/var/www/maven/"
+        }
+    }
+}
