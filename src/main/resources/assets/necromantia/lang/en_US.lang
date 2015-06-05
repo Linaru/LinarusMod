@@ -6,6 +6,8 @@ tile.BlockCrate.name=Crate
 tile.BlockEnchantedwood.name=Enchanted Wood
 tile.BlockIrontreebrick.name=Iron Tree Brick
 tile.BlockCandle.name=Candle
+//adminblock
+tile.BlockAdminstone.name=Iron Tree Brick
 //Items
 item.ItemSlimelatex.name=Latex Slime
 item.ItemLatex.name=Latex Rubber
