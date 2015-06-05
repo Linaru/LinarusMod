@@ -21,7 +21,7 @@ sourceSets {
     main {
         sourceSets { main { output.resourcesDir = output.classesDir } }
         java {
-            srcDirs = []
+            srcDirs = ['src/main/java']
         }
     }
 }
