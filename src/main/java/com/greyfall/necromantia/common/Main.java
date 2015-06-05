@@ -193,6 +193,8 @@ public class Main {
         proxy.registerRenderThings();
 
         //Crafting Recipes
+        //Cauldron
+        GameRegistry.addRecipe(new ItemStack(blockCauldron), new Object[]{"I I", "I I", "III", 'I', Items.iron_ingot});
         //Pink Latex Block
         GameRegistry.addRecipe(new ItemStack(blockSlimelatex), new Object[]{"LL", "LL", 'L', Main.itemSlimelatex});
         //Latex Block

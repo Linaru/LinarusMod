@@ -1,4 +1,7 @@
 //Blocks
+//machines
+tile.BlockCauldron.name=Cauldron
+//standard blocks
 tile.BlockSlimelatex.name=Pink Latex Rubber
 tile.BlockLatex.name=Latex Rubber
 tile.BlockWax.name=Wax Block
