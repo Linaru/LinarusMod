@@ -49,6 +49,10 @@ import cpw.mods.fml.common.registry.GameRegistry;
     Art:
     Add Armour icons
 
+    Recipies
+    add water + apple = cooked apple + wax
+
+
 
 
      */
