@@ -1,8 +1,7 @@
 package com.greyfall.necromantia.client;
 
-import com.greyfall.necromantia.CandleModel;
-import com.greyfall.necromantia.TileEntityCandle;
-import com.greyfall.necromantia.TileEntityCandleEntity;
+import com.greyfall.necromantia.client.render.models.CandleModel;
+import com.greyfall.necromantia.common.tiles.TileEntityCandleEntity;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
