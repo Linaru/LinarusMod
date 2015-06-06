@@ -1,4 +1,4 @@
-# Necromatia
+![# Necromatia](https://github.com/Linaru/LinarusMod/blob/master/src/main/resources/NMLogo.png?raw=true)
 ###### By Linaru Greyfall
 Necromantia is a small Magic and Mob Tweaking mod designed to work well along side a varity of other mods. it adds new recipies Mobs and a crafting system.
 
