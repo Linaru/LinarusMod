@@ -44,7 +44,6 @@ public class GuiCauldron extends GuiContainer {
         if(cauldron.tank.getFluid()!=null && cauldron.tank.getFluid().amount>0)
         {
             float heightPercent = (float) cauldron.tank.getFluidAmount() / (float)cauldron.tank.getCapacity();
-            Main.logger.info(heightPercent);
             IIcon icon = cauldron.tank.getFluid().getFluid().getStillIcon();
             if (icon == null) {
                 icon = ((TextureMap) Minecraft.getMinecraft().getTextureManager().getTexture(TextureMap.locationBlocksTexture)).getAtlasSprite("missingno");

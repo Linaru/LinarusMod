@@ -4,12 +4,15 @@ import codechicken.lib.inventory.InventoryUtils;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemBucket;
+import net.minecraft.item.ItemBucketMilk;
+import net.minecraft.item.ItemGlassBottle;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.*;
@@ -229,13 +232,19 @@ public class TileEntityCauldron extends TileEntity implements ISidedInventory, I
 
     @Override
     public boolean isItemValidForSlot(int p_94041_1_, ItemStack p_94041_2_) {
-        if(p_94041_1_==0 || p_94041_1_==1)
+        switch(p_94041_1_)
         {
-            if(p_94041_2_.getItem() instanceof  IFluidContainerItem || p_94041_2_.getItem() instanceof ItemBucket)
+            case 0:
+            case 1:
+            if(p_94041_2_.getItem() instanceof IFluidContainerItem || p_94041_2_.getItem() instanceof ItemBucket || p_94041_2_.getItem() instanceof ItemGlassBottle || p_94041_2_.getItem() instanceof ItemBucketMilk)
                 return true;
             else
                 return false;
+            case 3:
+                return TileEntityFurnace.isItemFuel(p_94041_2_) && ! (p_94041_2_.getItem() instanceof  ItemBucket);
+
+            default:
+                return true;
         }
-        return true;
     }
 }
