@@ -20,7 +20,7 @@ public class ContainerCauldron extends Container {
         this.addSlotToContainer(new SlotLiquid(cauldron,0,26,17));
         this.addSlotToContainer(new SlotLiquid(cauldron,1,26,53));
         this.addSlotToContainer(new Slot(cauldron,2,62,17));
-        this.addSlotToContainer(new Slot(cauldron,3,62,53));
+        this.addSlotToContainer(new SlotFuel(cauldron,3,62,53));
         this.addSlotToContainer(new Slot(cauldron,4,117,26));
         this.addSlotToContainer(new Slot(cauldron,5,135,26));
         this.addSlotToContainer(new Slot(cauldron,6,117,44));
