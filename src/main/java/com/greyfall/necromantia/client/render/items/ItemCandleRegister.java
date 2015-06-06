@@ -1,4 +1,4 @@
-package com.greyfall.necromantia.client;
+package com.greyfall.necromantia.client.render.items;
 
 import com.greyfall.necromantia.client.render.models.CandleModel;
 import com.greyfall.necromantia.common.tiles.TileEntityCandleEntity;

@@ -7,6 +7,7 @@ import com.greyfall.necromantia.common.items.*;
 import com.greyfall.necromantia.common.mobs.EntityMain;
 
 import com.greyfall.necromantia.common.tiles.TileEntityCandleEntity;
+import com.greyfall.necromantia.common.tiles.TileEntityCauldron;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -26,28 +27,28 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-    /*
-    Todo list:
-    Code:
-    Fix particle effect on slimes
-    Fix Creative Tab names.
-    Fix Lore tool tip on blocks (admin block inparticular)
-    Give Candles rotation when placed.
-    Add waila text 'Unbreakable' to admin blocks
-    Add Cauldron gui + recipies
-    Add Latex/ Pink slime block custom squeeking sounds
-    Make crate blocks pushable.
-    Add staff
-    Add wild rice / compatbaility with biomes o' plenty rice blocks
-    Add Inventory slot Gui / underarmour layer
-    Add iron tree building Generation Code.
-    Add enchanted wood compatability with thaumcrafts
-    Add skeleton model override or custom teir 1 skeleton entity
+/*
+Todo list:
+Code:
+Fix particle effect on slimes
+Fix Creative Tab names.
+Fix Lore tool tip on blocks (admin block inparticular)
+Give Candles rotation when placed.
+Add waila text 'Unbreakable' to admin blocks
+Add Cauldron gui + recipies
+Add Latex/ Pink slime block custom squeeking sounds
+Make crate blocks pushable.
+Add staff
+Add wild rice / compatbaility with biomes o' plenty rice blocks
+Add Inventory slot Gui / underarmour layer
+Add iron tree building Generation Code.
+Add enchanted wood compatability with thaumcrafts
+Add skeleton model override or custom teir 1 skeleton entity
 
-    Cleanup code and polish
+Cleanup code and polish
 
-    Art:
-    Add Armour icons
+Art:
+Add Armour icons
 
     Recipies
     add water + apple = cooked apple + wax
@@ -55,7 +56,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 
 
-     */
+ */
 @Mod(modid = "necromantia", name = "Necromantia", version = "Carrot.1.0")
 public class Main {
 
@@ -102,6 +103,7 @@ public class Main {
     public static Item siliconeLeggings;
     public static Item siliconeBoots;
     public static int candleRenderID;
+    public static int cauldronRenderID;
     //Armour materials (set stats)
     public static final ItemArmor.ArmorMaterial pinklatexArmourMaterial = EnumHelper.addArmorMaterial("pinklatexArmourMaterial", 50, new int[]{2, 4, 3, 1,}, 30);
     public static final ItemArmor.ArmorMaterial siliconeArmourMaterial = EnumHelper.addArmorMaterial("siliconeMaterial", 1000, new int[]{1, 3, 2, 1,}, 30);
@@ -188,6 +190,10 @@ public class Main {
         GameRegistry.registerItem(siliconeLeggings, siliconeLeggings.getUnlocalizedName().substring(5));
         GameRegistry.registerItem(siliconeBoots, siliconeBoots.getUnlocalizedName().substring(5));
 
+
+        //register Tile Entities
+        GameRegistry.registerTileEntity(TileEntityCandleEntity.class,"candle");
+        GameRegistry.registerTileEntity(TileEntityCauldron.class,"cauldron");
     }
 
     @EventHandler
