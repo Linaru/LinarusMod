@@ -44,6 +44,14 @@ Add Inventory slot Gui / underarmour layer
 Add iron tree building Generation Code.
 Add enchanted wood compatability with thaumcrafts
 Add skeleton model override or custom teir 1 skeleton entity
+Add slabs and stairs for new blocks, fences for new wood
+
+Add Crystal ores
+Add collection block
+Add tank
+Add transport system Brass?
+
+Liquid + potion = duplicates?
 
 Cleanup code and polish
 
