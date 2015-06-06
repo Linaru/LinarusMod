@@ -3,7 +3,9 @@ package com.greyfall.necromantia.common.containers;
 import com.greyfall.necromantia.common.tiles.TileEntityCauldron;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
+import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
+import net.minecraftforge.fluids.FluidStack;
 
 /**
  * Created by Katrina on 05/06/2015.
@@ -11,6 +13,7 @@ import net.minecraft.inventory.Slot;
 public class ContainerCauldron extends Container {
 
     public TileEntityCauldron cauldron;
+    public int fluidAmount=-1;
     public ContainerCauldron(TileEntityCauldron cauldron,EntityPlayer player)
     {
         this.cauldron=cauldron;
@@ -45,6 +48,30 @@ public class ContainerCauldron extends Container {
     }
 
 
+    @Override
+    public void detectAndSendChanges() {
+        super.detectAndSendChanges();
 
 
+        for (int i = 0; i < crafters.size(); i++) {
+            ICrafting icrafting = (ICrafting) crafters.get(i);
+            //if(fluidAmount!=cauldron.tank.getFluidAmount())
+            //    icrafting.sendProgressBarUpdate(this,1,cauldron.tank.getFluidAmount());
+
+        }
+        fluidAmount=cauldron.tank.getFluidAmount();
+    }
+
+
+    @Override
+    public void updateProgressBar(int i, int j) {
+        super.updateProgressBar(i, j);
+
+        switch (i)
+        {
+            case 1:
+                //cauldron.tank.getFluid().amount=j;
+                break;
+        }
+    }
 }

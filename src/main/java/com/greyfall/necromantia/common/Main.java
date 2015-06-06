@@ -28,6 +28,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
+import org.apache.logging.log4j.Logger;
 
 /*
 Todo list:
@@ -141,13 +142,13 @@ public class Main {
     //Armour materials (set stats)
     public static final ItemArmor.ArmorMaterial pinklatexArmourMaterial = EnumHelper.addArmorMaterial("pinklatexArmourMaterial", 50, new int[]{2, 4, 3, 1,}, 30);
     public static final ItemArmor.ArmorMaterial siliconeArmourMaterial = EnumHelper.addArmorMaterial("siliconeMaterial", 1000, new int[]{1, 3, 2, 1,}, 30);
-
+    public static Logger logger;
 
 //==================================================================Seperator==================================================================//
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-
+        logger=event.getModLog();
         EntityMain.mainRegistry(); //? not sure what is wrong here Entity tutorial did not explain this step.
 
         //Item and Block initialisation
