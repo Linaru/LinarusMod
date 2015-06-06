@@ -1,3 +1,5 @@
+
+
 a#forkme_banner {
   display: none;
 }
@@ -113,6 +115,7 @@ footer span.octocat {
 
 body {
   font: normal normal 30px/1.5 Georgia, Palatino,” Palatino Linotype”, Times, “Times New Roman”, serif;
+  background-color: #b0c4de;
 }
 
 ul li {
@@ -152,3 +155,6 @@ hr {
   height: 42px;
   background: transparent url('../images/hr-2x.jpg') center center repeat-x;
 }
+
+
+ 
