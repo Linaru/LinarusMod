@@ -1,7 +1,9 @@
 package com.greyfall.necromantia.common.tiles;
 
 import codechicken.lib.inventory.InventoryUtils;
+import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemBucket;
 import net.minecraft.item.ItemBucketMilk;
@@ -34,8 +36,10 @@ public class TileEntityCauldron extends TileEntity implements ISidedInventory, I
 
     private void readExtraNBT(NBTTagCompound tagCompound) {
         InventoryUtils.readItemStacksFromTag(inventory, tagCompound.getTagList("inventory", Constants.NBT.TAG_COMPOUND));
-        if(tagCompound.hasKey("fluid"))
+        if(tagCompound.hasKey("fluid",Constants.NBT.TAG_COMPOUND))
             tank.setFluid(FluidStack.loadFluidStackFromNBT(tagCompound.getCompoundTag("fluid")));
+        if(tagCompound.hasKey("fluid",Constants.NBT.TAG_STRING) && tagCompound.getString("fluid").equalsIgnoreCase("null"))
+            tank.setFluid(null);
     }
 
     @Override
@@ -51,6 +55,8 @@ public class TileEntityCauldron extends TileEntity implements ISidedInventory, I
             tank.getFluid().writeToNBT(cmp);
             tagCompound.setTag("fluid", cmp);
         }
+        else
+            tagCompound.setString("fluid","null");
     }
 
     @Override
@@ -230,13 +236,65 @@ public class TileEntityCauldron extends TileEntity implements ISidedInventory, I
 
     }
 
+
+    @Override
+    public void updateEntity() {
+        super.updateEntity();
+        if(inventory[0]!=null)
+        {
+            if(FluidContainerRegistry.isFilledContainer(inventory[0]))
+            {
+                ItemStack empty= FluidContainerRegistry.drainFluidContainer(inventory[0]);
+                if(empty==null || inventory[1]==null || (inventory[1]!=null && empty.isItemEqual(inventory[1]) && inventory[1].stackSize+empty.stackSize <= inventory[1].getMaxStackSize()))
+                {
+                    int amount=FluidContainerRegistry.getContainerCapacity(inventory[0]);
+                    if(tank.getCapacity()-tank.getFluidAmount() >=amount) {
+
+                        if (tank.getFluid() == null || tank.getFluid().getFluid() == FluidContainerRegistry.getFluidForFilledItem(inventory[0]).getFluid()) {
+                            tank.fill(FluidContainerRegistry.getFluidForFilledItem(inventory[0]), true);
+                            if (inventory[1] != null)
+                                inventory[1].stackSize += empty.stackSize;
+                            else
+                                inventory[1] = empty.copy();
+                            inventory[0].stackSize--;
+                            if(inventory[0].stackSize<=0)
+                                inventory[0]=null;
+                            markDirty();
+                        }
+                    }
+                }
+            }
+            else
+            {
+
+                ItemStack filled=FluidContainerRegistry.fillFluidContainer(tank.getFluid(),inventory[0]);
+
+                if(filled!=null)
+                {
+                    if(inventory[1]== null || inventory[1].stackSize+filled.stackSize <= inventory[1].getMaxStackSize())
+                    {
+                        if(inventory[1]==null)
+                            inventory[1]=filled.copy();
+                        else
+                            inventory[1].stackSize+=filled.stackSize;
+                        inventory[0].stackSize--;
+                        if(inventory[0].stackSize<=0)
+                            inventory[0]=null;
+                        tank.drain(FluidContainerRegistry.getFluidForFilledItem(filled).amount,true);
+                        markDirty();
+                    }
+                }
+            }
+        }
+    }
+
     @Override
     public boolean isItemValidForSlot(int p_94041_1_, ItemStack p_94041_2_) {
         switch(p_94041_1_)
         {
             case 0:
             case 1:
-            if(p_94041_2_.getItem() instanceof IFluidContainerItem || p_94041_2_.getItem() instanceof ItemBucket || p_94041_2_.getItem() instanceof ItemGlassBottle || p_94041_2_.getItem() instanceof ItemBucketMilk)
+            if(FluidContainerRegistry.isContainer(p_94041_2_))
                 return true;
             else
                 return false;

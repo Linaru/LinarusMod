@@ -5,6 +5,9 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
+import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntityFurnace;
+import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 /**
@@ -47,6 +50,57 @@ public class ContainerCauldron extends Container {
         return true;
     }
 
+
+    @Override
+    public ItemStack transferStackInSlot(EntityPlayer p_82846_1_, int p_82846_2_) {
+        ItemStack itemstack = null;
+        Slot slot = (Slot)this.inventorySlots.get(p_82846_2_);
+
+        if(slot!=null && slot.getHasStack()) {
+            ItemStack itemstack1 = slot.getStack();
+            itemstack = itemstack1.copy();
+            switch (p_82846_2_) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                    if(!this.mergeItemStack(itemstack1,3,39,false))
+                        return null;
+                    slot.onSlotChange(itemstack1,itemstack);
+
+                default:
+                    if(FluidContainerRegistry.isContainer(itemstack1))
+                    {
+                        if(!this.mergeItemStack(itemstack1,0,1,false))
+                            return null;
+                    }
+                    else
+                        if(TileEntityFurnace.isItemFuel(itemstack1))
+                        {
+                            if(!mergeItemStack(itemstack1,3,4,false))
+                                return null;
+                        }
+                    else
+                        if(!this.mergeItemStack(itemstack1,4,5,false))
+                            return null;
+
+
+
+            }
+            if(itemstack1.stackSize<=0)
+                slot.putStack(null);
+            else
+                slot.onSlotChanged();
+            if(itemstack1.stackSize==itemstack.stackSize)
+                return null;
+            slot.onPickupFromSlot(p_82846_1_,itemstack1);
+        }
+        return itemstack;
+    }
 
     @Override
     public void detectAndSendChanges() {

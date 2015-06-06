@@ -6,6 +6,8 @@ import net.minecraft.item.ItemBucket;
 import net.minecraft.item.ItemBucketMilk;
 import net.minecraft.item.ItemGlassBottle;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidContainerRegistry;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.IFluidContainerItem;
 
 /**
@@ -20,9 +22,6 @@ public class SlotLiquid extends Slot {
 
     @Override
     public boolean isItemValid(ItemStack p_75214_1_) {
-        if(p_75214_1_.getItem() instanceof IFluidContainerItem || p_75214_1_.getItem() instanceof ItemBucket || p_75214_1_.getItem() instanceof ItemGlassBottle || p_75214_1_.getItem() instanceof ItemBucketMilk)
-            return true;
-        else
-            return false;
+        return FluidContainerRegistry.isContainer(p_75214_1_);
     }
 }
