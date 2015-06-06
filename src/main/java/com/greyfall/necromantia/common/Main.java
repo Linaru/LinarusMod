@@ -46,6 +46,14 @@ Add Inventory slot Gui / underarmour layer
 Add iron tree building Generation Code.
 Add enchanted wood compatability with thaumcrafts
 Add skeleton model override or custom teir 1 skeleton entity
+Add slabs and stairs for new blocks, fences for new wood
+
+Add Crystal ores
+Add collection block
+Add tank
+Add transport system Brass?
+
+Liquid + potion = duplicates?
 
 Cleanup code and polish
 
@@ -54,6 +62,30 @@ Add Armour icons
 
     Recipies
     add water + apple = cooked apple + wax
+
+ Magic concept:
+    artificium
+    spell maker
+
+   concept spell list :
+   primals
+   ignis + ignis = Fire ball
+   aqua + aqua + water spray
+   aer + aer = push
+   tera + tera = Golem
+   ordo = ordo = Resurection
+   perditio + perditio = nova
+   combinations
+   ignis + perditio = Ice blast
+   aer + Ignus = Light orb spell
+   aer + ordo = blink
+   Ordo + perditio = Summon skeleton
+   ignis + ordo = chain Lightning
+    aer + aqua = toggle thundrstorm ?
+    aer + perditio = void
+    aqua + perditio = Poision gas
+    aqua + terra = Healing spell
+    ordo + terra = beam
 
 
 
