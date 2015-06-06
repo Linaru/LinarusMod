@@ -54,7 +54,7 @@ public class TileEntityCauldronRenderer extends TileEntitySpecialRenderer {
         //Tell it to stop rendering for both the PushMatrix's
         GL11.glPopMatrix();
         GL11.glPopMatrix();
-        if(cauldron.tank.getFluid().amount>0)
+        if(cauldron.tank.getFluid()!=null && cauldron.tank.getFluid().amount>0)
         {
             CCRenderState.reset();
             CCRenderState.pullLightmap();

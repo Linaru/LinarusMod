@@ -6,6 +6,9 @@ import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemBucket;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.common.util.ForgeDirection;
@@ -27,7 +30,9 @@ public class TileEntityCauldron extends TileEntity implements ISidedInventory, I
     }
 
     private void readExtraNBT(NBTTagCompound tagCompound) {
-        InventoryUtils.readItemStacksFromTag(inventory,tagCompound.getTagList("inventory", Constants.NBT.TAG_COMPOUND));
+        InventoryUtils.readItemStacksFromTag(inventory, tagCompound.getTagList("inventory", Constants.NBT.TAG_COMPOUND));
+        if(tagCompound.hasKey("fluid"))
+            tank.setFluid(FluidStack.loadFluidStackFromNBT(tagCompound.getCompoundTag("fluid")));
     }
 
     @Override
@@ -38,15 +43,42 @@ public class TileEntityCauldron extends TileEntity implements ISidedInventory, I
 
     private void writeExtraNBT(NBTTagCompound tagCompound) {
         tagCompound.setTag("inventory", InventoryUtils.writeItemStacksToTag(inventory));
+        NBTTagCompound cmp=new NBTTagCompound();
+        if(tank.getFluid()!=null) {
+            tank.getFluid().writeToNBT(cmp);
+            tagCompound.setTag("fluid", cmp);
+        }
+    }
+
+    @Override
+    public void markDirty() {
+        super.markDirty();
+        this.worldObj.markBlockForUpdate(xCoord,yCoord,zCoord);
+    }
+
+    @Override
+    public Packet getDescriptionPacket() {
+        NBTTagCompound cmp=new NBTTagCompound();
+        writeExtraNBT(cmp);
+        return new S35PacketUpdateTileEntity(xCoord,yCoord,zCoord,-999,cmp);
+    }
+
+    @Override
+    public void onDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt) {
+        super.onDataPacket(net, pkt);
+        readExtraNBT(pkt.func_148857_g());
     }
 
     public TileEntityCauldron() {
-        tank.fill(new FluidStack(FluidRegistry.LAVA,1000),true);
+//        tank.fill(new FluidStack(FluidRegistry.LAVA,1000),true);
     }
 
     @Override
     public int fill(ForgeDirection from, FluidStack resource, boolean doFill) {
-        return tank.fill(resource,doFill);
+
+        int amount=tank.fill(resource,doFill);
+        this.markDirty();
+        return amount;
     }
 
     @Override
@@ -55,12 +87,16 @@ public class TileEntityCauldron extends TileEntity implements ISidedInventory, I
         {
             return null;
         }
-        return tank.drain(resource.amount, doDrain);
+        FluidStack amount=tank.drain(resource.amount, doDrain);
+        this.markDirty();
+        return amount;
     }
 
     @Override
     public FluidStack drain(ForgeDirection from, int maxDrain, boolean doDrain) {
-        return tank.drain(maxDrain, doDrain);
+        FluidStack amount=tank.drain(maxDrain, doDrain);
+        this.markDirty();
+        return amount;
     }
 
     @Override

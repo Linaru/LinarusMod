@@ -1,11 +1,13 @@
 package com.greyfall.necromantia.common;
 
+import com.greyfall.necromantia.api.crafting.CauldronRecipe;
 import com.greyfall.necromantia.common.blocks.*;
 import com.greyfall.necromantia.common.core.CommonProxy;
 import com.greyfall.necromantia.common.interop.BotaniaInterop;
 import com.greyfall.necromantia.common.items.*;
 import com.greyfall.necromantia.common.mobs.EntityMain;
 
+import com.greyfall.necromantia.common.recipes.CauldronRecipes;
 import com.greyfall.necromantia.common.tiles.TileEntityCandleEntity;
 import com.greyfall.necromantia.common.tiles.TileEntityCauldron;
 import net.minecraft.block.Block;
@@ -201,6 +203,7 @@ public class Main {
         //Proxy, TileEntity, entity, Gui and Packet Registering
         proxy.init();
         proxy.registerRenderThings();
+        CauldronRecipes.initRecipes();
 
         //Crafting Recipes
         //Cauldron
