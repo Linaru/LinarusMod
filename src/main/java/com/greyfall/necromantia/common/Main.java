@@ -1,6 +1,7 @@
 package com.greyfall.necromantia.common;
 
 import com.greyfall.necromantia.common.blocks.*;
+import com.greyfall.necromantia.common.blocks.BlockHardstone;
 import com.greyfall.necromantia.common.blocks.wood.BlockLeavesironwood;
 import com.greyfall.necromantia.common.blocks.wood.BlockLogironwood;
 import com.greyfall.necromantia.common.blocks.wood.BlockLogironwoodore;
@@ -19,6 +20,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
 import cpw.mods.fml.common.Loader;
@@ -150,6 +152,7 @@ public class Main {
     public static Block blockLeavesironwood;
     public static Block blockWildrice;
     public static Block blockRune;
+    public static Block blockHardstone;
     //Admin blocks
     public static Block blockAdminstone;
     //Armour
@@ -184,7 +187,7 @@ public class Main {
         itemWax = new Wax().setUnlocalizedName("ItemWax").setTextureName("necromantia:wax").setCreativeTab(tabnecromantia); //item.itemTable
         itemRiceseeds = new Riceseeds().setUnlocalizedName("ItemRiceseeds").setTextureName("necromantia:rice_seeds").setCreativeTab(tabnecromantia); //item.itemTable
         itemRice = new Rice().setUnlocalizedName("ItemRice").setTextureName("necromantia:rice").setCreativeTab(tabnecromantia); //item.itemTable
-        itemRiceball = new Riceball().setUnlocalizedName("Riceball").setTextureName("necromantia:riceball").setCreativeTab(tabnecromantia); //item.itemTable
+        itemRiceball = new ItemFood(6, 1.0F, false).setUnlocalizedName("Riceball").setTextureName("necromantia:riceball").setCreativeTab(tabnecromantia); //item.itemTable
         itemCookedapple = new Cookedapple().setUnlocalizedName("Cookedapple").setTextureName("necromantia:apple_cooked").setCreativeTab(tabnecromantia); //item.itemTable
         itemBoiledleather = new Boiledleather().setUnlocalizedName("Boiledleather").setTextureName("necromantia:leather_boiled").setCreativeTab(tabnecromantia); //item.itemTable
         itemSilicondioxide = new Silicondioxide().setUnlocalizedName("ItemSilicondioxide").setTextureName("necromantia:silica").setCreativeTab(tabnecromantia); //item.itemTable
@@ -206,6 +209,8 @@ public class Main {
         blockLeavesironwood = new BlockLeavesironwood(Material.leaves).setBlockName("BlockLeavesironwood").setBlockTextureName("necromantia:leaves_ironwood_opaque").setCreativeTab(tabnecromantia);
         blockWildrice = new BlockWildrice(Material.grass).setBlockName("BlockWildrice").setBlockTextureName("necromantia:ricecrop_3").setCreativeTab(tabnecromantia);
         blockRune = new BlockRune(Material.ground).setBlockName("BlockRune").setBlockTextureName("necromantia:runes/y_base").setCreativeTab(tabnecromantia);
+        blockHardstone = new BlockHardstone(Material.rock).setBlockName("BlockHardstone").setBlockTextureName("necromantia:stone_hard").setCreativeTab(tabnecromantia);
+
         //Admin blocks
         blockAdminstone = new BlockAdminstone(Material.ground).setBlockName("BlockAdminstone").setBlockTextureName("necromantia:irontreebrick").setCreativeTab(tabnecromantiaadmin);
         //todo add item that catches nekosune's and puts them in a box for me to take home
@@ -251,6 +256,7 @@ public class Main {
         GameRegistry.registerBlock(blockLeavesironwood, blockLeavesironwood.getUnlocalizedName().substring(5));
         GameRegistry.registerBlock(blockWildrice, blockWildrice.getUnlocalizedName().substring(5));
         GameRegistry.registerBlock(blockRune, blockRune.getUnlocalizedName().substring(5));
+        GameRegistry.registerBlock(blockHardstone, blockHardstone.getUnlocalizedName().substring(5));
         GameRegistry.registerBlock(blockCandle, blockCandle.getUnlocalizedName().substring(5));
         GameRegistry.registerTileEntity(TileEntityCandleEntity.class, "tileEntityCandle");
         //Admin blocks

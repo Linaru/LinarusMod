@@ -13,6 +13,7 @@ tile.BlockLogironwoodore.name=Ironwood Log
 tile.BlockLeavesironwood.name=Ironwood leaves
 tile.BlockWildrice.name=Rice
 tile.BlockRune.name=Rune Stone
+tile.BlockHardstone.name=Hardened Stone
 tile.BlockCandle.name=Candle
 //adminblock
 tile.BlockAdminstone.name=Iron Tree Brick
