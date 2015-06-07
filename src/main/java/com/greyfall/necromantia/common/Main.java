@@ -1,7 +1,9 @@
 package com.greyfall.necromantia.common;
 
-import com.greyfall.necromantia.api.crafting.CauldronRecipe;
 import com.greyfall.necromantia.common.blocks.*;
+import com.greyfall.necromantia.common.blocks.wood.BlockLeavesironwood;
+import com.greyfall.necromantia.common.blocks.wood.BlockLogironwood;
+import com.greyfall.necromantia.common.blocks.wood.BlockLogironwoodore;
 import com.greyfall.necromantia.common.core.CommonProxy;
 import com.greyfall.necromantia.common.interop.BotaniaInterop;
 import com.greyfall.necromantia.common.items.*;
@@ -92,6 +94,20 @@ Add Armour icons
 
 
  */
+/*
+
+Teir System guide:
+this little guide is to help keep track of the teir system.
+the plan is to divide up mobs tools and technology into 5 teirs so as tog et a better understanding of balance.
+players with a majority of teir 4 equipment will oten see teir 4 mobs spawn in the areas around them.
+
+Teir 1 : Vanilla minecraft
+Teir 2
+Teir 3
+Teir 4
+Teir 5
+
+*/
 @Mod(modid = "necromantia", name = "Necromantia", version = "Carrot.1.0")
 public class Main {
 
@@ -113,6 +129,9 @@ public class Main {
     public static Item itemSilicondioxide;
     public static Item itemRiceseeds;
     public static Item itemRice;
+    public static Item itemRiceball;
+    public static Item itemCookedapple;
+    public static Item itemBoiledleather;
     //tools
     public static Item itemMortar;
     //blocks
@@ -126,6 +145,11 @@ public class Main {
     public static Block blockEnchantedwood;
     public static Block blockCandle;
     public static Block blockIrontreebrick;
+    public static Block blockLogironwood;
+    public static Block blockLogironwoodore;
+    public static Block blockLeavesironwood;
+    public static Block blockWildrice;
+    public static Block blockRune;
     //Admin blocks
     public static Block blockAdminstone;
     //Armour
@@ -160,6 +184,9 @@ public class Main {
         itemWax = new Wax().setUnlocalizedName("ItemWax").setTextureName("necromantia:wax").setCreativeTab(tabnecromantia); //item.itemTable
         itemRiceseeds = new Riceseeds().setUnlocalizedName("ItemRiceseeds").setTextureName("necromantia:rice_seeds").setCreativeTab(tabnecromantia); //item.itemTable
         itemRice = new Rice().setUnlocalizedName("ItemRice").setTextureName("necromantia:rice").setCreativeTab(tabnecromantia); //item.itemTable
+        itemRiceball = new Riceball().setUnlocalizedName("Riceball").setTextureName("necromantia:riceball").setCreativeTab(tabnecromantia); //item.itemTable
+        itemCookedapple = new Cookedapple().setUnlocalizedName("Cookedapple").setTextureName("necromantia:apple_cooked").setCreativeTab(tabnecromantia); //item.itemTable
+        itemBoiledleather = new Boiledleather().setUnlocalizedName("Boiledleather").setTextureName("necromantia:leather_boiled").setCreativeTab(tabnecromantia); //item.itemTable
         itemSilicondioxide = new Silicondioxide().setUnlocalizedName("ItemSilicondioxide").setTextureName("necromantia:silica").setCreativeTab(tabnecromantia); //item.itemTable
         //tools
         itemMortar = new Mortar().setUnlocalizedName("ItemMortar").setTextureName("necromantia:mortar").setCreativeTab(tabnecromantia); //item.itemTable
@@ -174,6 +201,11 @@ public class Main {
         blockEnchantedwood = new BlockEnchantedwood(Material.wood).setBlockName("BlockEnchantedwood").setBlockTextureName("necromantia:enchantedwood").setCreativeTab(tabnecromantia);
         blockCandle = new BlockCandle(Material.ground).setBlockName("BlockCandle").setBlockTextureName("necromantia:candle").setCreativeTab(tabnecromantia);
         blockIrontreebrick = new BlockIrontreebrick(Material.ground).setBlockName("BlockIrontreebrick").setBlockTextureName("necromantia:irontreebrick").setCreativeTab(tabnecromantia);
+        blockLogironwood = new BlockLogironwood(Material.wood).setBlockName("BlockLogironwood").setBlockTextureName("necromantia:log_ironwood").setCreativeTab(tabnecromantia);
+        blockLogironwoodore = new BlockLogironwoodore(Material.wood).setBlockName("BlockLogironwoodore").setBlockTextureName("necromantia:log_ironwood_ore").setCreativeTab(tabnecromantia);
+        blockLeavesironwood = new BlockLeavesironwood(Material.leaves).setBlockName("BlockLeavesironwood").setBlockTextureName("necromantia:leaves_ironwood_opaque").setCreativeTab(tabnecromantia);
+        blockWildrice = new BlockWildrice(Material.grass).setBlockName("BlockWildrice").setBlockTextureName("necromantia:ricecrop_3").setCreativeTab(tabnecromantia);
+        blockRune = new BlockRune(Material.ground).setBlockName("BlockRune").setBlockTextureName("necromantia:runes/y_base").setCreativeTab(tabnecromantia);
         //Admin blocks
         blockAdminstone = new BlockAdminstone(Material.ground).setBlockName("BlockAdminstone").setBlockTextureName("necromantia:irontreebrick").setCreativeTab(tabnecromantiaadmin);
         //todo add item that catches nekosune's and puts them in a box for me to take home
@@ -198,6 +230,9 @@ public class Main {
         GameRegistry.registerItem(itemWax, itemWax.getUnlocalizedName().substring(5));
         GameRegistry.registerItem(itemRiceseeds, itemRiceseeds.getUnlocalizedName().substring(5));
         GameRegistry.registerItem(itemRice, itemRice.getUnlocalizedName().substring(5));
+        GameRegistry.registerItem(itemRiceball, itemRiceball.getUnlocalizedName().substring(5));
+        GameRegistry.registerItem(itemCookedapple, itemCookedapple.getUnlocalizedName().substring(5));
+        GameRegistry.registerItem(itemBoiledleather, itemBoiledleather.getUnlocalizedName().substring(5));
         GameRegistry.registerItem(itemSilicondioxide, itemSilicondioxide.getUnlocalizedName().substring(5));
         //tools
         GameRegistry.registerItem(itemMortar, itemMortar.getUnlocalizedName().substring(5));
@@ -211,6 +246,11 @@ public class Main {
         GameRegistry.registerBlock(blockCrate, blockCrate.getUnlocalizedName().substring(5));
         GameRegistry.registerBlock(blockEnchantedwood, blockEnchantedwood.getUnlocalizedName().substring(5));
         GameRegistry.registerBlock(blockIrontreebrick, blockIrontreebrick.getUnlocalizedName().substring(5));
+        GameRegistry.registerBlock(blockLogironwood, blockLogironwood.getUnlocalizedName().substring(5));
+        GameRegistry.registerBlock(blockLogironwoodore, blockLogironwoodore.getUnlocalizedName().substring(5));
+        GameRegistry.registerBlock(blockLeavesironwood, blockLeavesironwood.getUnlocalizedName().substring(5));
+        GameRegistry.registerBlock(blockWildrice, blockWildrice.getUnlocalizedName().substring(5));
+        GameRegistry.registerBlock(blockRune, blockRune.getUnlocalizedName().substring(5));
         GameRegistry.registerBlock(blockCandle, blockCandle.getUnlocalizedName().substring(5));
         GameRegistry.registerTileEntity(TileEntityCandleEntity.class, "tileEntityCandle");
         //Admin blocks
@@ -245,6 +285,8 @@ public class Main {
         GameRegistry.addRecipe(new ItemStack(blockSlimelatex), new Object[]{"LL", "LL", 'L', Main.itemSlimelatex});
         //Latex Block
         GameRegistry.addRecipe(new ItemStack(blockLatex), new Object[]{"LL", "LL", 'L', Main.itemLatex});
+        //Ironwood
+        GameRegistry.addShapelessRecipe(new ItemStack(Main.blockEnchantedwood, 4), new ItemStack(blockLogironwood));
         //Wax Block
         GameRegistry.addRecipe(new ItemStack(blockWax), new Object[]{"WWW", "WWW", "WWW", 'W', Main.itemWax});
         GameRegistry.addRecipe(new ItemStack(blockCrate), new Object[]{"III", "IEI", "III", 'I', Items.iron_ingot, 'E', Main.blockEnchantedwood});
@@ -279,6 +321,7 @@ public class Main {
         GameRegistry.addRecipe(new ItemStack(siliconeChestplate), new Object[]{"S S", "LSL", "SSS", 'S', Main.itemSiliconerubber, 'L', Main.itemLatex});
         GameRegistry.addRecipe(new ItemStack(siliconeLeggings), new Object[]{"LSL", "S S", "L L", 'S', Main.itemSiliconerubber, 'L', Main.itemLatex});
         GameRegistry.addRecipe(new ItemStack(siliconeBoots), new Object[]{"L L", "L L", 'L', Main.itemLatex});
+
         //Smelting Recipes
         GameRegistry.addSmelting(Main.itemSlimelatex, new ItemStack(Main.itemLatex), 0.1f);
         GameRegistry.addSmelting(Main.blockSlimelatex, new ItemStack(Main.blockLatex), 0.1f);
