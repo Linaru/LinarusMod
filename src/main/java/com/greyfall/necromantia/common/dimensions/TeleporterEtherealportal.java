@@ -28,15 +28,15 @@ public class TeleporterEtherealportal  extends Teleporter{
 
     }
 
-    public void placeInPortal(Entity entity, double par2, double par4, double par6, float par8)
-    {
+    public void placeInPortal(Entity entity, double par2, double par4, double par6, float par8){
+
         if(this.worldServerInstance.provider.dimensionId != 1){
-            if(!this.placeInExistingPortal(entity, par2, par4, par6, par8))
-            {
+            if(!this.placeInExistingPortal(entity, par2, par4, par6, par8)){
                 this.makePortal(entity);
                 this.placeInExistingPortal(entity, par2, par4, par6, par8);
             }
         }
+
         else{
             int i = MathHelper.floor_double(entity.posX);
             int j = MathHelper.floor_double(entity.posY) - 1;
@@ -44,11 +44,9 @@ public class TeleporterEtherealportal  extends Teleporter{
             byte b0 = 1;
             byte b1 = 0;
 
-            for (int l = -2; 1 <= 2; ++l)
-            {
-                for(int i1 = -2; i1 <= 2; ++i1)
-                {
-                    for(int j1 = -1; i1 <= 3; ++j1){
+            for(int l = -2; l <= 2; ++l){
+                for(int i1 = -2; i1 <= 2; ++i1){
+                    for(int j1 = -1; j < 3; ++j1){
                         int k1 = i + i1 * b0 + l * b1;
                         int l1 = j + j1;
                         int i2 = k + i1 * b1 - l * b0;
