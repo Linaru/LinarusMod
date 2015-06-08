@@ -240,8 +240,6 @@ public class TeleporterEtherealportal  extends Teleporter{
         {
             return false;
         }
-
-        return false;
     }
 
 }
