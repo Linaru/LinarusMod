@@ -129,7 +129,7 @@ public class TeleporterEtherealportal  extends Teleporter{
             }
 
             double d11 = (double)i + 0.5D;
-            Double D6 = (double)j + 0.5D;
+            double d6 = (double)j + 0.5D;
             d7 = (double)k + 0.5D;
             int i4 = -1;
 
