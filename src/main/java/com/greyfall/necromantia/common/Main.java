@@ -6,6 +6,7 @@ import com.greyfall.necromantia.common.blocks.wood.BlockLeavesironwood;
 import com.greyfall.necromantia.common.blocks.wood.BlockLogironwood;
 import com.greyfall.necromantia.common.blocks.wood.BlockLogironwoodore;
 import com.greyfall.necromantia.common.core.CommonProxy;
+import com.greyfall.necromantia.common.dimensions.BlockEtherealportal;
 import com.greyfall.necromantia.common.interop.BotaniaInterop;
 import com.greyfall.necromantia.common.items.*;
 import com.greyfall.necromantia.common.mobs.EntityMain;
@@ -153,6 +154,7 @@ public class Main {
     public static Block blockWildrice;
     public static Block blockRune;
     public static Block blockHardstone;
+    public static Block blockEtherealportal;
     //Admin blocks
     public static Block blockAdminstone;
     //Armour
@@ -210,6 +212,8 @@ public class Main {
         blockWildrice = new BlockWildrice(Material.grass).setBlockName("BlockWildrice").setBlockTextureName("necromantia:ricecrop_3").setCreativeTab(tabnecromantia);
         blockRune = new BlockRune(Material.ground).setBlockName("BlockRune").setBlockTextureName("necromantia:runes/y_base").setCreativeTab(tabnecromantia);
         blockHardstone = new BlockHardstone(Material.rock).setBlockName("BlockHardstone").setBlockTextureName("necromantia:stone_hard").setCreativeTab(tabnecromantia);
+        blockEtherealportal = new BlockEtherealportal().setBlockName("BlockblockEtherealportal").setBlockTextureName("necromantia:etherealportal").setCreativeTab(tabnecromantia);
+
 
         //Admin blocks
         blockAdminstone = new BlockAdminstone(Material.ground).setBlockName("BlockAdminstone").setBlockTextureName("necromantia:irontreebrick").setCreativeTab(tabnecromantiaadmin);
@@ -257,6 +261,7 @@ public class Main {
         GameRegistry.registerBlock(blockWildrice, blockWildrice.getUnlocalizedName().substring(5));
         GameRegistry.registerBlock(blockRune, blockRune.getUnlocalizedName().substring(5));
         GameRegistry.registerBlock(blockHardstone, blockHardstone.getUnlocalizedName().substring(5));
+        GameRegistry.registerBlock(blockEtherealportal, blockEtherealportal.getUnlocalizedName().substring(5));
         GameRegistry.registerBlock(blockCandle, blockCandle.getUnlocalizedName().substring(5));
         GameRegistry.registerTileEntity(TileEntityCandleEntity.class, "tileEntityCandle");
         //Admin blocks
