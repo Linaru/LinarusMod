@@ -9,4 +9,5 @@ public class BiomegenEtherealsanctuary extends BiomeGenBase {
         super(id);
     }
 
+
 }
