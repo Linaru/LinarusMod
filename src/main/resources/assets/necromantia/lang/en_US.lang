@@ -63,3 +63,8 @@ necromantia.item.boiledLeather.info2=but also far more brittle.
 necromantia.waila.cauldron.fluidName=Fluid: %s
 necromantia.waila.cauldron.fluidAmount=Amount: %d
 necromantia.waila.cauldron.noFluid=Empty
+
+
+
+// NEI
+necromantia.nei.cauldron=Cauldron
