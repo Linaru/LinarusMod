@@ -49,21 +49,25 @@ Give Candles rotation when placed.
 Add waila text 'Unbreakable' to admin blocks
 Add Cauldron gui + recipies
 Add Latex/ Pink slime block custom squeeking sounds
-Make crate blocks pushable.
+Make crate blocks pushable with shift click. pushed onto pressure plates triggers them.. weighs same as player? more wight with contents in slot?
+make rune blocks glow when stood on? add rune block crafting.  output redstone signal when stood on?
 Add staff
-Add wild rice / compatbaility with biomes o' plenty rice blocks
+Add wild rice / compatbaility with biomes o' plenty rice block
+add iron wood tree... possibly forest biome?
 Add Inventory slot Gui / underarmour layer
 Add iron tree building Generation Code.
 Add enchanted wood compatability with thaumcrafts
 Add skeleton model override or custom teir 1 skeleton entity
 Add slabs and stairs for new blocks, fences for new wood
 
+Fix up dimension code so it dosent crash or cause future issues.
+
 Add Crystal ores
 Add collection block
 Add tank
 Add transport system Brass?
 
-Liquid + potion = duplicates?
+
 
 Cleanup code and polish
 
@@ -202,7 +206,7 @@ public class Main {
         itemRiceseeds = new Riceseeds().setUnlocalizedName("ItemRiceseeds").setTextureName("necromantia:rice_seeds").setCreativeTab(tabnecromantia); //item.itemTable
         itemRice = new Rice().setUnlocalizedName("ItemRice").setTextureName("necromantia:rice").setCreativeTab(tabnecromantia); //item.itemTable
         itemRiceball = new ItemFood(6, 1.0F, false).setUnlocalizedName("Riceball").setTextureName("necromantia:riceball").setCreativeTab(tabnecromantia); //item.itemTable
-        itemCookedapple = new Cookedapple().setUnlocalizedName("Cookedapple").setTextureName("necromantia:apple_cooked").setCreativeTab(tabnecromantia); //item.itemTable
+        itemCookedapple = new ItemFood(8, 1.0F, false).setUnlocalizedName("Cookedapple").setTextureName("necromantia:apple_cooked").setCreativeTab(tabnecromantia); //item.itemTable
         itemBoiledleather = new Boiledleather().setUnlocalizedName("Boiledleather").setTextureName("necromantia:leather_boiled").setCreativeTab(tabnecromantia); //item.itemTable
         itemSilicondioxide = new Silicondioxide().setUnlocalizedName("ItemSilicondioxide").setTextureName("necromantia:silica").setCreativeTab(tabnecromantia); //item.itemTable
         //books
@@ -362,7 +366,6 @@ public class Main {
         //Smelting Recipes
         GameRegistry.addSmelting(Main.itemSlimelatex, new ItemStack(Main.itemLatex), 0.1f);
         GameRegistry.addSmelting(Main.blockSlimelatex, new ItemStack(Main.blockLatex), 0.1f);
-        GameRegistry.addSmelting(Items.apple, new ItemStack(Main.itemWax), 0.1f);
     }
 
     @EventHandler
