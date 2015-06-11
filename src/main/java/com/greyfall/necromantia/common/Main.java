@@ -5,6 +5,7 @@ import com.greyfall.necromantia.common.blocks.BlockHardstone;
 import com.greyfall.necromantia.common.blocks.wood.BlockLeavesironwood;
 import com.greyfall.necromantia.common.blocks.wood.BlockLogironwood;
 import com.greyfall.necromantia.common.blocks.wood.BlockLogironwoodore;
+import com.greyfall.necromantia.common.books.BookEncyclopediaminecraftia1;
 import com.greyfall.necromantia.common.core.CommonProxy;
 import com.greyfall.necromantia.common.dimensions.BlockEtherealportal;
 import com.greyfall.necromantia.common.interop.BotaniaInterop;
@@ -135,11 +136,15 @@ public class Main {
     public static Item itemRiceball;
     public static Item itemCookedapple;
     public static Item itemBoiledleather;
+    //books
+    public static Item bookEncyclopediaminecraftia1;
     //tools
     public static Item itemMortar;
     //blocks
     //Machines
     public static Block blockCauldron;
+    //Containers
+    public static Block blockCuboard;
     //standard blocks
     public static Block blockSlimelatex;
     public static Block blockLatex;
@@ -193,11 +198,16 @@ public class Main {
         itemCookedapple = new Cookedapple().setUnlocalizedName("Cookedapple").setTextureName("necromantia:apple_cooked").setCreativeTab(tabnecromantia); //item.itemTable
         itemBoiledleather = new Boiledleather().setUnlocalizedName("Boiledleather").setTextureName("necromantia:leather_boiled").setCreativeTab(tabnecromantia); //item.itemTable
         itemSilicondioxide = new Silicondioxide().setUnlocalizedName("ItemSilicondioxide").setTextureName("necromantia:silica").setCreativeTab(tabnecromantia); //item.itemTable
+        //books
+        bookEncyclopediaminecraftia1 = new BookEncyclopediaminecraftia1().setUnlocalizedName("BookEncyclopediaminecraftia").setTextureName("necromantia:encyclopedia").setCreativeTab(tabnecromantia); //item.itemTable
+
         //tools
         itemMortar = new Mortar().setUnlocalizedName("ItemMortar").setTextureName("necromantia:mortar").setCreativeTab(tabnecromantia); //item.itemTable
         //blocks
         //Machines
         blockCauldron = new BlockCauldron(Material.ground).setBlockName("BlockCauldron").setBlockTextureName("necromantia:cauldron").setCreativeTab(tabnecromantia);
+        //containers
+        blockCuboard = new BlockCuboard(Material.ground).setBlockName("BlockCuboard").setCreativeTab(tabnecromantia);
         //standard blocks
         blockSlimelatex = new BlockSlimelatex(Material.sponge).setBlockName("BlockSlimelatex").setBlockTextureName("necromantia:pinklatexblock").setCreativeTab(tabnecromantia);
         blockLatex = new BlockLatex(Material.sponge).setBlockName("BlockLatex").setBlockTextureName("necromantia:latexblock").setCreativeTab(tabnecromantia);
@@ -243,11 +253,15 @@ public class Main {
         GameRegistry.registerItem(itemCookedapple, itemCookedapple.getUnlocalizedName().substring(5));
         GameRegistry.registerItem(itemBoiledleather, itemBoiledleather.getUnlocalizedName().substring(5));
         GameRegistry.registerItem(itemSilicondioxide, itemSilicondioxide.getUnlocalizedName().substring(5));
+        //Books
+        GameRegistry.registerItem(bookEncyclopediaminecraftia1, bookEncyclopediaminecraftia1.getUnlocalizedName().substring(5));
         //tools
         GameRegistry.registerItem(itemMortar, itemMortar.getUnlocalizedName().substring(5));
         //blocks
         //machines
         GameRegistry.registerBlock(blockCauldron, blockCauldron.getUnlocalizedName().substring(5));
+        // Containers
+        GameRegistry.registerBlock(blockCuboard, blockCuboard.getUnlocalizedName().substring(5));
         // standard blocks
         GameRegistry.registerBlock(blockSlimelatex, blockSlimelatex.getUnlocalizedName().substring(5));
         GameRegistry.registerBlock(blockLatex, blockLatex.getUnlocalizedName().substring(5));

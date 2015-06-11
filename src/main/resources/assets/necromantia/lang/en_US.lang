@@ -1,6 +1,8 @@
 //Blocks
 //machines
 tile.BlockCauldron.name=Cauldron
+//containers
+tile.BlockCuboard.name=Worktop
 //standard blocks
 tile.BlockSlimelatex.name=Pink Latex Rubber
 tile.BlockLatex.name=Latex Rubber
@@ -30,6 +32,9 @@ item.Cookedapple.name=Cooked Apple
 item.Boiledleather.name=Boiled Leather
 item.ItemSilicondioxide.name=Silica
 item.ItemMortar.name=Mortar and Pestle
+//books bookEncyclopediaminecraftia1
+item.BookEncyclopediaminecraftia1.name=Encyclopedia Minecraftia: Volume 1
+
 //Armour
     //Pink latex
 item.ItemPinklatexHelmet.name=Pink Latex Hood
