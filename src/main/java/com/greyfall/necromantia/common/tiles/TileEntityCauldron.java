@@ -68,7 +68,11 @@ public class TileEntityCauldron extends TileEntity implements ISidedInventory, I
     @SideOnly(Side.CLIENT)
     public int getCookProgressScaled(int scale)
     {
-        return this.cauldronCookTime*scale/getRecipe().getBurnTime();
+        CauldronRecipe recipe=getRecipe();
+        if(recipe!=null)
+            return this.cauldronCookTime*scale/recipe.getBurnTime();
+        else
+            return this.cauldronCookTime*scale/200;
     }
 
     @SideOnly(Side.CLIENT)

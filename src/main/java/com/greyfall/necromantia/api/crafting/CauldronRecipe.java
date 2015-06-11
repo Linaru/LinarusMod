@@ -229,6 +229,9 @@ public class CauldronRecipe{
             return false;
         if(oreDictItem!=null)
         {
+            int[] items=OreDictionary.getOreIDs(item);
+            if(items.length==0)
+                return false;
             String InputOre= OreDictionary.getOreName(OreDictionary.getOreIDs(item)[0]);
             return InputOre.equalsIgnoreCase(oreDictItem) && item.stackSize>=itemAmount;
         }

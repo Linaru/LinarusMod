@@ -73,29 +73,14 @@ public class CauldronRecipeHandler extends TemplateRecipeHandler{
 
         public CachedCauldronRecipe(ItemStack targetedResult,ItemStack ingredient,FluidStack ingredientFluid,ItemStack[] outputs,int burnTime)
         {
-            this.burnTime=burnTime;
-            input=new ArrayList<PositionedStack>(2);
-
-            input.add(new PositionedStack(ingredient,57,6));
-            input.add(new PositionedStack(aFuels,57,42));
-            output=new PositionedStack(outputs[0],112,15);
-            otherOutputs=new ArrayList<PositionedStack>();
-            if(outputs.length>1)
-                otherOutputs.add(new PositionedStack(outputs[1],130,15));
-            if(outputs.length>2)
-                otherOutputs.add(new PositionedStack(outputs[2],112,33));
-            if(outputs.length>3)
-                otherOutputs.add(new PositionedStack(outputs[3],130,33));
-
-            fluid=new ArrayList<FluidStack>();
-            fluid.add(ingredientFluid);
+            this(targetedResult,Arrays.asList(new ItemStack[]{ingredient}),ingredientFluid,outputs,burnTime);
 
         }
         public CachedCauldronRecipe(ArrayList<ItemStack> ingredient,FluidStack ingredientFluid,ItemStack[] outputs,int burnTime)
         {
             this(null,ingredient,ingredientFluid,outputs,burnTime);
         }
-        public CachedCauldronRecipe(ItemStack targetedResult,ArrayList<ItemStack> ingredient,FluidStack ingredientFluid,ItemStack[] outputs,int burnTime)
+        public CachedCauldronRecipe(ItemStack targetedResult,List<ItemStack> ingredient,FluidStack ingredientFluid,ItemStack[] outputs,int burnTime)
         {
             this.burnTime=burnTime;
             input=new ArrayList<PositionedStack>(2);
