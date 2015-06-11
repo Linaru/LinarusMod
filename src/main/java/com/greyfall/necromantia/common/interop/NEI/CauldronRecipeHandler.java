@@ -19,6 +19,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.IIcon;
 import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.oredict.OreDictionary;
 import org.lwjgl.opengl.GL11;
 
 import java.awt.*;
@@ -90,6 +91,30 @@ public class CauldronRecipeHandler extends TemplateRecipeHandler{
             fluid.add(ingredientFluid);
 
         }
+        public CachedCauldronRecipe(ArrayList<ItemStack> ingredient,FluidStack ingredientFluid,ItemStack[] outputs,int burnTime)
+        {
+            this(null,ingredient,ingredientFluid,outputs,burnTime);
+        }
+        public CachedCauldronRecipe(ItemStack targetedResult,ArrayList<ItemStack> ingredient,FluidStack ingredientFluid,ItemStack[] outputs,int burnTime)
+        {
+            this.burnTime=burnTime;
+            input=new ArrayList<PositionedStack>(2);
+
+            input.add(new PositionedStack(ingredient,57,6));
+            input.add(new PositionedStack(aFuels,57,42));
+            output=new PositionedStack(outputs[0],112,15);
+            otherOutputs=new ArrayList<PositionedStack>();
+            if(outputs.length>1)
+                otherOutputs.add(new PositionedStack(outputs[1],130,15));
+            if(outputs.length>2)
+                otherOutputs.add(new PositionedStack(outputs[2],112,33));
+            if(outputs.length>3)
+                otherOutputs.add(new PositionedStack(outputs[3],130,33));
+
+            fluid=new ArrayList<FluidStack>();
+            fluid.add(ingredientFluid);
+
+        }
     }
 
 
@@ -117,7 +142,13 @@ public class CauldronRecipeHandler extends TemplateRecipeHandler{
             }
             if(found) {
                 for (CauldronRecipe rep : recipe.getValue()) {
-                    CachedCauldronRecipe res = new CachedCauldronRecipe(result, rep.getInputItem(), rep.getInputFluid(), (ItemStack[]) recipe.getKey().toArray(), rep.getBurnTime());
+                    CachedCauldronRecipe res;
+                    if(rep.getOreDictItem()!=null)
+                    {
+                        res = new CachedCauldronRecipe(result, OreDictionary.getOres(rep.getOreDictItem()), rep.getInputFluid(), (ItemStack[]) recipe.getKey().toArray(), rep.getBurnTime());
+                    }
+                    else
+                        res = new CachedCauldronRecipe(result, rep.getInputItem(), rep.getInputFluid(), (ItemStack[]) recipe.getKey().toArray(), rep.getBurnTime());
                     toAdd.add(res);
                 }
             }
@@ -136,7 +167,13 @@ public class CauldronRecipeHandler extends TemplateRecipeHandler{
             {
                     for(CauldronRecipe rep:recipe.getValue())
                     {
-                        CachedCauldronRecipe res=new CachedCauldronRecipe(rep.getInputItem(),rep.getInputFluid(),(ItemStack[])recipe.getKey().toArray(),rep.getBurnTime());
+                        CachedCauldronRecipe res;
+                        if(rep.getOreDictItem()!=null)
+                        {
+                            res = new CachedCauldronRecipe( OreDictionary.getOres(rep.getOreDictItem()), rep.getInputFluid(), (ItemStack[]) recipe.getKey().toArray(), rep.getBurnTime());
+                        }
+                        else
+                            res=new CachedCauldronRecipe(rep.getInputItem(),rep.getInputFluid(),(ItemStack[])recipe.getKey().toArray(),rep.getBurnTime());
                         toAdd.add(res);
                     }
             }
@@ -156,7 +193,13 @@ public class CauldronRecipeHandler extends TemplateRecipeHandler{
         {
                 for(CauldronRecipe rep:recipe.getValue())
                 {
-                    CachedCauldronRecipe res=new CachedCauldronRecipe(rep.getInputItem(),rep.getInputFluid(),(ItemStack[])recipe.getKey().toArray(),rep.getBurnTime());
+                    CachedCauldronRecipe res;
+                    if(rep.getOreDictItem()!=null)
+                    {
+                        res = new CachedCauldronRecipe( OreDictionary.getOres(rep.getOreDictItem()), rep.getInputFluid(), (ItemStack[]) recipe.getKey().toArray(), rep.getBurnTime());
+                    }
+                    else
+                        res=new CachedCauldronRecipe(rep.getInputItem(),rep.getInputFluid(),(ItemStack[])recipe.getKey().toArray(),rep.getBurnTime());
                     if(res.contains(res.input,ingredient))
                     {
                         res.setIngredientPermutation(res.input,ingredient);

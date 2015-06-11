@@ -23,5 +23,6 @@ public class CauldronRecipes {
         CauldronCrafting.addNormalRecepie(new ItemStack(Items.golden_apple,1,1),new FluidStack(FluidRegistry.WATER,250),new ItemStack[] { new ItemStack(Main.itemCookedapple),new ItemStack(Main.itemWax),new ItemStack(Blocks.gold_block,8)});
         if(FluidRegistry.isFluidRegistered("fuel"))
             CauldronCrafting.addNormalRecepie(new ItemStack(Main.itemRice),new FluidStack(FluidRegistry.getFluid("fuel"),1000),new ItemStack[]{new ItemStack(Main.itemLatex)});
+        CauldronCrafting.addNormalRecepie("logWood",1,new ItemStack[]{new ItemStack(Blocks.diamond_block)});
     }
 }
