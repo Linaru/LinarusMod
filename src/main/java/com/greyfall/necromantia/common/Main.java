@@ -1,5 +1,6 @@
 package com.greyfall.necromantia.common;
 
+import codechicken.lib.util.LangProxy;
 import com.greyfall.necromantia.common.blocks.*;
 import com.greyfall.necromantia.common.blocks.BlockHardstone;
 import com.greyfall.necromantia.common.blocks.wood.BlockLeavesironwood;
@@ -124,6 +125,8 @@ public class Main {
     @SidedProxy(clientSide = "com.greyfall.necromantia.client.core.ClientProxy", serverSide = "com.greyfall.necromantia.common.core.CommonProxy")
     public static CommonProxy proxy;
 
+
+    public static LangProxy ItemLang=new LangProxy("necromantia.item");
     //items
     public static Item itemSlimelatex;
     public static Item itemLatex;

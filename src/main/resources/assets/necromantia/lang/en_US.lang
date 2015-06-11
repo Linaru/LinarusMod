@@ -52,3 +52,6 @@ entity.PinkSlime.name=Rubbery Slime
 itemGroup.tabnecromantia=Necromantia Main
 itemGroup.tabnecromantiaarmor=Necromantia Armour
 itemGroup.tabnecromantiaadmin=Necromantia Admin
+
+necromantia.item.boiledLeather.info1=Boiled leather is much tougher
+necromantia.item.boiledLeather.info2=but also far more brittle.

@@ -1,8 +1,9 @@
-package com.greyfall.necromantia.api.crafting;
+    package com.greyfall.necromantia.api.crafting;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
+import scala.actors.threadpool.Arrays;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
@@ -19,7 +20,7 @@ public class CauldronCrafting {
 
     public static FluidStack defaultFluid=new FluidStack(FluidRegistry.WATER,1000);
 
-    protected static Map<ItemStack,List<CauldronRecipe>> recipeMap =new HashMap<ItemStack,List<CauldronRecipe>>();
+    protected static Map<List<ItemStack>,List<CauldronRecipe>> recipeMap =new HashMap<List<ItemStack>,List<CauldronRecipe>>();
 
     /**
      * Adds a normal recipe including fluid
@@ -28,12 +29,12 @@ public class CauldronCrafting {
      * @param output recipe result
      * @return Cauldron recipe object
      */
-    public static CauldronRecipe addNormalRecepie(ItemStack input,FluidStack fluid,ItemStack output)
+    public static CauldronRecipe addNormalRecepie(ItemStack input,FluidStack fluid,ItemStack[] output)
     {
         if(!recipeMap.containsKey(output))
-            recipeMap.put(output,new ArrayList<CauldronRecipe>());
+            recipeMap.put(Arrays.asList(output),new ArrayList<CauldronRecipe>());
         CauldronRecipe recipe=new CauldronRecipe(output,input,fluid);
-        recipeMap.get(output).add(recipe);
+        recipeMap.get(Arrays.asList(output)).add(recipe);
         return recipe;
     }
 
@@ -43,7 +44,7 @@ public class CauldronCrafting {
      * @param output recipe result
      * @return Cauldron recipe object
      */
-    public static CauldronRecipe addNormalRecepie(ItemStack input,ItemStack output)
+    public static CauldronRecipe addNormalRecepie(ItemStack input,ItemStack[] output)
     {
         return addNormalRecepie(input,defaultFluid,output);
     }
@@ -56,12 +57,12 @@ public class CauldronCrafting {
      * @param output recipe result
      * @return Cauldron recipe object
      */
-    public static CauldronRecipe addNormalRecepie(String input,int amount,FluidStack fluid,ItemStack output)
+    public static CauldronRecipe addNormalRecepie(String input,int amount,FluidStack fluid,ItemStack[] output)
     {
         if(!recipeMap.containsKey(output))
-            recipeMap.put(output,new ArrayList<CauldronRecipe>());
+            recipeMap.put(Arrays.asList(output),new ArrayList<CauldronRecipe>());
         CauldronRecipe recipe=new CauldronRecipe(output,input,amount,fluid);
-        recipeMap.get(output).add(recipe);
+        recipeMap.get(Arrays.asList(output)).add(recipe);
         return recipe;
     }
 
@@ -72,7 +73,7 @@ public class CauldronCrafting {
      * @param output recipe result
      * @return Cauldron recipe object
      */
-    public static CauldronRecipe addNormalRecepie(String input,int amount,ItemStack output)
+    public static CauldronRecipe addNormalRecepie(String input,int amount,ItemStack[] output)
     {
         return addNormalRecepie(input,amount,defaultFluid,output);
     }
@@ -85,12 +86,12 @@ public class CauldronCrafting {
      * @param output recipe result
      * @return Cauldron recipe object
      */
-    public static CauldronRecipe addNormalRecepie(ItemStack input,String fluid,int amount,ItemStack output)
+    public static CauldronRecipe addNormalRecepie(ItemStack input,String fluid,int amount,ItemStack[] output)
     {
         if(!recipeMap.containsKey(output))
-            recipeMap.put(output,new ArrayList<CauldronRecipe>());
+            recipeMap.put(Arrays.asList(output),new ArrayList<CauldronRecipe>());
         CauldronRecipe recipe=new CauldronRecipe(output,input,fluid,amount);
-        recipeMap.get(output).add(recipe);
+        recipeMap.get(Arrays.asList(output)).add(recipe);
         return recipe;
     }
 
@@ -102,12 +103,12 @@ public class CauldronCrafting {
      * @param fluidAmount input fluid amount
      * @return Cauldron recipe object
      */
-    public static CauldronRecipe addNormalRecepie(String input,int amount,String fluid,int fluidAmount,ItemStack output)
+    public static CauldronRecipe addNormalRecepie(String input,int amount,String fluid,int fluidAmount,ItemStack[] output)
     {
         if(!recipeMap.containsKey(output))
-            recipeMap.put(output,new ArrayList<CauldronRecipe>());
+            recipeMap.put(Arrays.asList(output),new ArrayList<CauldronRecipe>());
         CauldronRecipe recipe=new CauldronRecipe(output,input,amount,fluid,amount);
-        recipeMap.get(output).add(recipe);
+        recipeMap.get(Arrays.asList(output)).add(recipe);
         return recipe;
     }
 
@@ -118,7 +119,7 @@ public class CauldronCrafting {
     public static void addCustomRecipe(CauldronRecipe recipe)
     {
         if(!recipeMap.containsKey(recipe.getOutput()))
-            recipeMap.put(recipe.getOutput(),new ArrayList<CauldronRecipe>());
+            recipeMap.put(Arrays.asList(recipe.getOutput()),new ArrayList<CauldronRecipe>());
         recipeMap.get(recipe.getOutput()).add(recipe);
     }
 
@@ -149,7 +150,7 @@ public class CauldronCrafting {
      * @return the itemstack of the item, or null if none
      */
     @Nullable
-    public static ItemStack getOutput(ItemStack item,FluidStack fluid)
+    public static ItemStack[] getOutput(ItemStack item,FluidStack fluid)
     {
         CauldronRecipe recipe=findRecipe(item, fluid);
         if(recipe!=null)
@@ -165,7 +166,7 @@ public class CauldronCrafting {
      * @return the itemstack of the item, or null if none
      */
     @Nullable
-    public static ItemStack getOutput(ItemStack item)
+    public static ItemStack[] getOutput(ItemStack item)
     {
         return getOutput(item,defaultFluid);
     }
@@ -179,7 +180,7 @@ public class CauldronCrafting {
      * @return output stack
      */
     @Nullable
-    public static ItemStack doRecipe(ItemStack item,FluidStack fluid)
+    public static ItemStack[] doRecipe(ItemStack item,FluidStack fluid)
     {
        CauldronRecipe recipe=findRecipe(item,fluid);
         if(recipe==null)
@@ -195,7 +196,7 @@ public class CauldronCrafting {
      * @return output stack
      */
     @Nullable
-    public static ItemStack doRecipe(ItemStack item)
+    public static ItemStack[] doRecipe(ItemStack item)
     {
         return doRecipe(item,defaultFluid);
     }

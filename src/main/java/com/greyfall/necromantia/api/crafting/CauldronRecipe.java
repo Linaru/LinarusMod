@@ -13,14 +13,14 @@ import net.minecraftforge.oredict.OreDictionary;
 
 public class CauldronRecipe {
 
-    private ItemStack output;
+    private ItemStack[] output;
     private ItemStack inputItem;
     private FluidStack inputFluid;
     private String oreDictItem;
     private int itemAmount;
     private int fluidAmount;
     private String oreDictFluid;
-    private int burnTime;
+    private int burnTime=200;
 
 
     /**
@@ -92,7 +92,7 @@ public class CauldronRecipe {
      * Gets the recipe's output
      * @return Itemstack containing the output
      */
-    public ItemStack getOutput() {
+    public ItemStack[] getOutput() {
         return output;
     }
 
@@ -101,7 +101,7 @@ public class CauldronRecipe {
      * Sets the recipe's output
      * @param output output for the recipe
      */
-    public void setOutput(ItemStack output) {
+    public void setOutput(ItemStack[] output) {
         this.output = output;
     }
 
@@ -161,7 +161,7 @@ public class CauldronRecipe {
      * @param inputItem input item of the recipe
      * @param inputFluid input fluid of the recipe
      */
-    public CauldronRecipe(ItemStack output, ItemStack inputItem, FluidStack inputFluid) {
+    public CauldronRecipe(ItemStack[] output, ItemStack inputItem, FluidStack inputFluid) {
         this.output = output;
         this.inputItem = inputItem;
         this.inputFluid = inputFluid;
@@ -177,7 +177,7 @@ public class CauldronRecipe {
      * @param inputFluid input fluid
      * @param fluidAmount input fluid amount
      */
-    public CauldronRecipe(ItemStack output,String inputItem, int inputAmount,String inputFluid,int fluidAmount)
+    public CauldronRecipe(ItemStack[] output,String inputItem, int inputAmount,String inputFluid,int fluidAmount)
     {
         this.output=output;
         this.oreDictItem=inputItem;
@@ -193,7 +193,7 @@ public class CauldronRecipe {
      * @param inputAmount input amount
      * @param inputFluid input fluid of the recipe
      */
-    public CauldronRecipe(ItemStack output,String inputItem,int inputAmount,FluidStack inputFluid)
+    public CauldronRecipe(ItemStack[] output,String inputItem,int inputAmount,FluidStack inputFluid)
     {
         this.output=output;
         this.oreDictItem=inputItem;
@@ -209,7 +209,7 @@ public class CauldronRecipe {
      * @param inputFluid input fluid
      * @param fluidAmount input fluid amount
      */
-    public CauldronRecipe(ItemStack output,ItemStack inputItem,String inputFluid,int fluidAmount)
+    public CauldronRecipe(ItemStack[] output,ItemStack inputItem,String inputFluid,int fluidAmount)
     {
         this.output=output;
         this.inputItem=inputItem;
@@ -224,6 +224,8 @@ public class CauldronRecipe {
      */
     public boolean isItemRight(ItemStack item)
     {
+        if(item==null || item.getItem()==null)
+            return false;
         if(oreDictItem!=null)
         {
             String InputOre= OreDictionary.getOreName(OreDictionary.getOreIDs(item)[0]);
@@ -240,6 +242,8 @@ public class CauldronRecipe {
      */
     public boolean isFluidRight(FluidStack fluid)
     {
+        if(fluid==null || fluid.getFluid()==null)
+            return false;
         if(oreDictFluid!=null)
         {
             String fluidName=FluidRegistry.getFluidName(fluid.getFluid());
@@ -269,7 +273,7 @@ public class CauldronRecipe {
      * @param fluid fluidstack to use
      * @return output stack
      */
-    public ItemStack doRecipe(ItemStack item,FluidStack fluid)
+    public ItemStack[] doRecipe(ItemStack item,FluidStack fluid)
     {
         if(!isRecepieRight(item, fluid))
             return null;

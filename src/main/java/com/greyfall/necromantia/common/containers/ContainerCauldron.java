@@ -16,7 +16,9 @@ import net.minecraftforge.fluids.FluidStack;
 public class ContainerCauldron extends Container {
 
     public TileEntityCauldron cauldron;
-    public int fluidAmount=-1;
+    private int lastCookTime;
+    private int lastBurnTime;
+    private int lastItemBurnTime;
     public ContainerCauldron(TileEntityCauldron cauldron,EntityPlayer player)
     {
         this.cauldron=cauldron;
@@ -102,6 +104,16 @@ public class ContainerCauldron extends Container {
         return itemstack;
     }
 
+
+    @Override
+    public void addCraftingToCrafters(ICrafting p_75132_1_) {
+        super.addCraftingToCrafters(p_75132_1_);
+
+        p_75132_1_.sendProgressBarUpdate(this, 0, this.cauldron.cauldronCookTime);
+        p_75132_1_.sendProgressBarUpdate(this, 1, this.cauldron.cauldronBurnTime);
+        p_75132_1_.sendProgressBarUpdate(this, 2, this.cauldron.currentItemBurnTime);
+    }
+
     @Override
     public void detectAndSendChanges() {
         super.detectAndSendChanges();
@@ -111,9 +123,19 @@ public class ContainerCauldron extends Container {
             ICrafting icrafting = (ICrafting) crafters.get(i);
             //if(fluidAmount!=cauldron.tank.getFluidAmount())
             //    icrafting.sendProgressBarUpdate(this,1,cauldron.tank.getFluidAmount());
+            if(this.lastCookTime!=this.cauldron.cauldronCookTime)
+                icrafting.sendProgressBarUpdate(this,0,this.cauldron.cauldronCookTime);
 
+            if(this.lastBurnTime!=this.cauldron.cauldronBurnTime)
+                icrafting.sendProgressBarUpdate(this,1,this.cauldron.cauldronBurnTime);
+
+            if(this.lastItemBurnTime!=this.cauldron.currentItemBurnTime)
+                icrafting.sendProgressBarUpdate(this,2,this.cauldron.currentItemBurnTime);
         }
-        fluidAmount=cauldron.tank.getFluidAmount();
+        lastCookTime=cauldron.cauldronCookTime;
+        lastBurnTime=cauldron.cauldronBurnTime;
+        lastItemBurnTime=cauldron.currentItemBurnTime;
+
     }
 
 
@@ -123,8 +145,14 @@ public class ContainerCauldron extends Container {
 
         switch (i)
         {
+            case 0:
+                this.cauldron.cauldronCookTime=j;
+                break;
             case 1:
-                //cauldron.tank.getFluid().amount=j;
+                this.cauldron.cauldronBurnTime=j;
+                break;
+            case 2:
+                this.cauldron.currentItemBurnTime=j;
                 break;
         }
     }

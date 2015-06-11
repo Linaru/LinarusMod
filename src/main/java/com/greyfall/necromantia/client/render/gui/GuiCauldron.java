@@ -33,6 +33,14 @@ public class GuiCauldron extends GuiContainer {
         int k = (this.width - this.xSize) / 2;
         int l = (this.height - this.ySize) / 2;
         this.drawTexturedModalRect(k, l, 0, 0, this.xSize, this.ySize);
+
+        if(this.cauldron.isBurning())
+        {
+            int height=cauldron.getBurnTimeRemainingScaled(13);
+            this.drawTexturedModalRect(k+63,l+37+12-height,176,12-height,14,height+1);
+            height=cauldron.getCookProgressScaled(28);
+            this.drawTexturedModalRect(k+88,l+26+27-height,190,27-height,12,height+1);
+        }
     }
 
     @Override

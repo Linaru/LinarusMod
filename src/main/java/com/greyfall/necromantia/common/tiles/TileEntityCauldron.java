@@ -1,6 +1,11 @@
 package com.greyfall.necromantia.common.tiles;
 
 import codechicken.lib.inventory.InventoryUtils;
+import com.greyfall.necromantia.api.crafting.CauldronCrafting;
+import com.greyfall.necromantia.api.crafting.CauldronRecipe;
+import com.greyfall.necromantia.common.core.helpers.ItemStackHelper;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
@@ -19,6 +24,10 @@ import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.*;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Created by Katrina on 05/06/2015.
  */
@@ -26,12 +35,17 @@ public class TileEntityCauldron extends TileEntity implements ISidedInventory, I
 
     ItemStack[] inventory=new ItemStack[8];
     public FluidTank tank = new FluidTank(FluidContainerRegistry.BUCKET_VOLUME);
-
+    public int cauldronBurnTime;
+    public int currentItemBurnTime;
+    public int cauldronCookTime;
 
     @Override
     public void readFromNBT(NBTTagCompound p_145839_1_) {
         super.readFromNBT(p_145839_1_);
         readExtraNBT(p_145839_1_);
+        this.cauldronBurnTime=p_145839_1_.getInteger("cauldronBurnTime");
+        this.cauldronCookTime=p_145839_1_.getInteger("cauldronCookTime");
+        this.currentItemBurnTime=TileEntityFurnace.getItemBurnTime(getStackInSlot(3));
     }
 
     private void readExtraNBT(NBTTagCompound tagCompound) {
@@ -46,7 +60,27 @@ public class TileEntityCauldron extends TileEntity implements ISidedInventory, I
     public void writeToNBT(NBTTagCompound p_145841_1_) {
         super.writeToNBT(p_145841_1_);
         writeExtraNBT(p_145841_1_);
+        p_145841_1_.setInteger("cauldronBurnTime",cauldronBurnTime);
+        p_145841_1_.setInteger("cauldronCookTime",cauldronCookTime);
     }
+
+
+    @SideOnly(Side.CLIENT)
+    public int getCookProgressScaled(int scale)
+    {
+        return this.cauldronCookTime*scale/200;
+    }
+
+    @SideOnly(Side.CLIENT)
+    public int getBurnTimeRemainingScaled(int scale)
+    {
+        if(this.currentItemBurnTime==0)
+            this.currentItemBurnTime=200;
+        return this.cauldronBurnTime*scale/this.currentItemBurnTime;
+    }
+
+    public boolean isBurning(){return this.cauldronBurnTime>0;}
+
 
     private void writeExtraNBT(NBTTagCompound tagCompound) {
         tagCompound.setTag("inventory", InventoryUtils.writeItemStacksToTag(inventory));
@@ -286,7 +320,146 @@ public class TileEntityCauldron extends TileEntity implements ISidedInventory, I
                 }
             }
         }
+
+
+
+        boolean flag = this.cauldronBurnTime > 0;
+        boolean flag1 = false;
+
+        if(isBurning())
+            cauldronBurnTime--;
+        if(!worldObj.isRemote)
+        {
+            if(this.cauldronBurnTime!=0 || getStackInSlot(2) !=null && getStackInSlot(3)!=null && tank.getFluid()!=null)
+            {
+                if(cauldronBurnTime==0 && this.canSmelt())
+                {
+                    this.currentItemBurnTime=cauldronBurnTime=TileEntityFurnace.getItemBurnTime(getStackInSlot(3));
+                    if(this.cauldronBurnTime>0)
+                    {
+                        flag1=true;
+                        if(getStackInSlot(3)!=null)
+                        {
+                            --getStackInSlot(3).stackSize;
+                            if(this.getStackInSlot(3).stackSize<=0)
+                                inventory[3]=inventory[3].getItem().getContainerItem(inventory[3]);
+                        }
+                    }
+                }
+
+                if(this.isBurning() && this.canSmelt())
+                {
+                    ++this.cauldronCookTime;
+                    if(this.cauldronCookTime==getRecipe().getBurnTime())
+                    {
+                        this.cauldronCookTime=0;
+                        this.smeltItem();
+                        flag1=true;
+                    }
+
+                }
+                else
+                {
+                    this.cauldronCookTime=0;
+                }
+            }
+
+            if(flag!=this.isBurning())
+                flag1=true;
+
+        }
+
+        if(flag1)
+            this.markDirty();
+
     }
+
+    public CauldronRecipe getRecipe()
+    {
+        return CauldronCrafting.findRecipe(inventory[2],tank.getFluid());
+    }
+
+    private  boolean canSmelt()
+    {
+        if(this.inventory[2]==null)
+            return false;
+        else
+        {
+            ItemStack[] output=CauldronCrafting.getOutput(this.inventory[2],tank.getFluid());
+            if(output==null)
+                return false;
+            return hasAvailableOutputSlots(output);
+        }
+    }
+    public void smeltItem()
+    {
+        if(this.canSmelt())
+        {
+            ItemStack[] output=CauldronCrafting.doRecipe(inventory[2],tank.getFluid());
+            for(ItemStack item:output)
+            {
+
+                for(int i=4;i<8;i++)
+                {
+                    if(inventory[i]==null)
+                    {
+                        inventory[i]=item.copy();
+                        break;
+                    }
+                    else
+                    {
+                        if(inventory[i].isItemEqual(item))
+                        {
+                            int result=inventory[i].stackSize+item.stackSize;
+                            if(result<=getInventoryStackLimit() && result <=inventory[i].getMaxStackSize())
+                            {
+                                inventory[i].stackSize=result;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            if(inventory[2].stackSize<=0)
+                inventory[2]=null;
+
+            if(tank.getFluid().amount<=0)
+                tank.setFluid(null);
+        }
+    }
+    private boolean hasAvailableOutputSlots(ItemStack[] output) {
+        ItemStack[] items= ItemStackHelper.copyItemsStackArray(inventory);
+        for(ItemStack item:output)
+        {
+            boolean found=false;
+            for(int i=4;i<8;i++)
+            {
+                if(items[i]==null)
+                {
+                    items[i]=item;
+                    found=true;
+                    break;
+                }
+                else
+                {
+                    if(items[i].isItemEqual(item))
+                    {
+                        int result=items[i].stackSize+item.stackSize;
+                        if(result<=getInventoryStackLimit() && result <=items[i].getMaxStackSize())
+                        {
+                            items[i].stackSize=result;
+                            found=true;
+                            break;
+                        }
+                    }
+                }
+            }
+            if(!found)
+                return false;
+        }
+        return true;
+    }
+
 
     @Override
     public boolean isItemValidForSlot(int p_94041_1_, ItemStack p_94041_2_) {
