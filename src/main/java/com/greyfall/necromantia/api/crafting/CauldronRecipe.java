@@ -1,6 +1,7 @@
 package com.greyfall.necromantia.api.crafting;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
@@ -11,7 +12,7 @@ import net.minecraftforge.oredict.OreDictionary;
  * Created by Katrina on 05/06/2015.
  */
 
-public class CauldronRecipe {
+public class CauldronRecipe{
 
     private ItemStack[] output;
     private ItemStack inputItem;

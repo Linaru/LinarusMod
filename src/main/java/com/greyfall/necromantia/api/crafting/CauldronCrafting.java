@@ -20,7 +20,7 @@ public class CauldronCrafting {
 
     public static FluidStack defaultFluid=new FluidStack(FluidRegistry.WATER,1000);
 
-    protected static Map<List<ItemStack>,List<CauldronRecipe>> recipeMap =new HashMap<List<ItemStack>,List<CauldronRecipe>>();
+    public static Map<List<ItemStack>,List<CauldronRecipe>> recipeMap =new HashMap<List<ItemStack>,List<CauldronRecipe>>();
 
     /**
      * Adds a normal recipe including fluid

@@ -10,6 +10,7 @@ import com.greyfall.necromantia.common.books.BookEncyclopediaminecraftia1;
 import com.greyfall.necromantia.common.core.CommonProxy;
 import com.greyfall.necromantia.common.dimensions.BlockEtherealportal;
 import com.greyfall.necromantia.common.interop.BotaniaInterop;
+import com.greyfall.necromantia.common.interop.NEI.NEI;
 import com.greyfall.necromantia.common.items.*;
 import com.greyfall.necromantia.common.mobs.EntityMain;
 
@@ -364,6 +365,11 @@ public class Main {
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
+
+        if(Loader.isModLoaded("NotEnoughItems")) {
+            NEI.addHandlers();
+
+        }
     }
 
     //Creative tabs
