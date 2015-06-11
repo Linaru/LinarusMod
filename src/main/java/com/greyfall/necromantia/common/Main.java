@@ -16,6 +16,7 @@ import com.greyfall.necromantia.common.mobs.EntityMain;
 import com.greyfall.necromantia.common.recipes.CauldronRecipes;
 import com.greyfall.necromantia.common.tiles.TileEntityCandleEntity;
 import com.greyfall.necromantia.common.tiles.TileEntityCauldron;
+import cpw.mods.fml.common.event.FMLInterModComms;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -333,6 +334,11 @@ public class Main {
             BotaniaInterop.registerBotaniaRecepies();
         } else {
             GameRegistry.addShapelessRecipe(new ItemStack(Main.itemSilicondioxide, 5), new ItemStack(Items.quartz), new ItemStack(Main.itemMortar));
+        }
+
+        if(Loader.isModLoaded("Waila"))
+        {
+            FMLInterModComms.sendMessage("Waila","register","com.greyfall.necromantia.common.interop.waila.Waila.callbackRegister");
         }
         //Siliconerubber
         GameRegistry.addShapelessRecipe(new ItemStack(itemSiliconerubber), new ItemStack(Main.itemSilicondioxide), new ItemStack(Items.coal));

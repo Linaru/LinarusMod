@@ -53,5 +53,13 @@ itemGroup.tabnecromantia=Necromantia Main
 itemGroup.tabnecromantiaarmor=Necromantia Armour
 itemGroup.tabnecromantiaadmin=Necromantia Admin
 
+
+// ITEM Descs
 necromantia.item.boiledLeather.info1=Boiled leather is much tougher
 necromantia.item.boiledLeather.info2=but also far more brittle.
+
+
+// WAILA
+necromantia.waila.cauldron.fluidName=Fluid: %s
+necromantia.waila.cauldron.fluidAmount=Amount: %d
+necromantia.waila.cauldron.noFluid=Empty
