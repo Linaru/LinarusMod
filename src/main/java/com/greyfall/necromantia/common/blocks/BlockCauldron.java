@@ -20,6 +20,7 @@ public class BlockCauldron extends BlockContainer {
         super(material);
         this.setHardness(0.5F);
         this.setStepSound(Block.soundTypeMetal);
+        this.setBlockTextureName("necromantia:textures/blocks/cauldron.png");
     }
 
     public void addInformation(ItemStack stack, EntityPlayer player, List lines, boolean advancedTooltips) {
