@@ -1,10 +1,8 @@
 package com.greyfall.necromantia.common.interop.NEI;
 
 import codechicken.lib.gui.GuiDraw;
-import codechicken.lib.render.RenderUtils;
 import codechicken.nei.ItemList;
 import codechicken.nei.PositionedStack;
-import codechicken.nei.recipe.FurnaceRecipeHandler;
 import codechicken.nei.recipe.TemplateRecipeHandler;
 import com.greyfall.necromantia.api.crafting.CauldronCrafting;
 import com.greyfall.necromantia.api.crafting.CauldronRecipe;
@@ -22,7 +20,6 @@ import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.IIcon;
 import net.minecraftforge.fluids.FluidStack;
 import org.lwjgl.opengl.GL11;
-import scala.collection.mutable.ArrayStack;
 
 import java.awt.*;
 import java.util.*;
@@ -112,13 +109,15 @@ public class CauldronRecipeHandler extends TemplateRecipeHandler{
     public void loadCraftingRecipes(ItemStack result) {
         Map<List<ItemStack>, List<CauldronRecipe>> recipes = CauldronCrafting.recipeMap;
         List<CachedCauldronRecipe> toAdd=new ArrayList<CachedCauldronRecipe>();
-        for(Map.Entry<List<ItemStack>, List<CauldronRecipe>> recipe:recipes.entrySet())
-        {
-            if(recipe.getKey().contains(result))
-            {
-                for(CauldronRecipe rep:recipe.getValue())
-                {
-                    CachedCauldronRecipe res=new CachedCauldronRecipe(result,rep.getInputItem(),rep.getInputFluid(),(ItemStack[])recipe.getKey().toArray(),rep.getBurnTime());
+        for(Map.Entry<List<ItemStack>, List<CauldronRecipe>> recipe:recipes.entrySet()) {
+            boolean found = false;
+            for (ItemStack stk : recipe.getKey()) {
+                if (ItemStack.areItemStacksEqual(stk, result))
+                    found = true;
+            }
+            if(found) {
+                for (CauldronRecipe rep : recipe.getValue()) {
+                    CachedCauldronRecipe res = new CachedCauldronRecipe(result, rep.getInputItem(), rep.getInputFluid(), (ItemStack[]) recipe.getKey().toArray(), rep.getBurnTime());
                     toAdd.add(res);
                 }
             }
@@ -143,6 +142,10 @@ public class CauldronRecipeHandler extends TemplateRecipeHandler{
             }
             //Collections.sort(toAdd,comparator);
             arecipes.addAll(toAdd);
+        }
+        else
+        {
+            super.loadCraftingRecipes(outputId,results);
         }
     }
 
@@ -256,7 +259,7 @@ public class CauldronRecipeHandler extends TemplateRecipeHandler{
 
     @Override
     public String getRecipeName() {
-        return NEI.NEILang.translate("cauldron");
+        return NEINecromantiaConfig.NEILang.translate("cauldron");
     }
 
 
