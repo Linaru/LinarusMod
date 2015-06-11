@@ -183,6 +183,8 @@ public class Main {
     public static final ItemArmor.ArmorMaterial siliconeArmourMaterial = EnumHelper.addArmorMaterial("siliconeMaterial", 1000, new int[]{1, 3, 2, 1,}, 30);
     public static Logger logger;
 
+    public static LangProxy lang=new LangProxy("necromantia");
+
 //==================================================================Seperator==================================================================//
 
     @EventHandler

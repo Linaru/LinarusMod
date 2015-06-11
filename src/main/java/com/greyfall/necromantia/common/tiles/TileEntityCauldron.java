@@ -163,7 +163,17 @@ public class TileEntityCauldron extends TileEntity implements ISidedInventory, I
 
     @Override
     public int[] getAccessibleSlotsFromSide(int p_94128_1_) {
-        return new int[0]; // todo: add slots for each side
+
+        ForgeDirection dir=ForgeDirection.getOrientation(p_94128_1_);
+        switch (dir)
+        {
+            case DOWN:
+                return new int[]{4,5,6,7};
+            case UP:
+                return new int[]{2};
+            default:
+                return new int[]{3};
+        }
     }
 
     @Override
