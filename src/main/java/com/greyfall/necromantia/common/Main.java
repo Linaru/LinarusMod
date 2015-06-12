@@ -216,7 +216,7 @@ public class Main {
         itemMortar = new Mortar().setUnlocalizedName("ItemMortar").setTextureName("necromantia:mortar").setCreativeTab(tabnecromantia); //item.itemTable
         //blocks
         //Machines
-        blockCauldron = new BlockCauldron(Material.ground).setBlockName("BlockCauldron").setBlockTextureName("necromantia:cauldron").setCreativeTab(tabnecromantia);
+        blockCauldron = new BlockCauldron(Material.ground).setBlockName("BlockCauldron").setCreativeTab(tabnecromantia);
         //containers
         blockCuboard = new BlockCuboard(Material.ground).setBlockName("BlockCuboard").setCreativeTab(tabnecromantia);
         //standard blocks

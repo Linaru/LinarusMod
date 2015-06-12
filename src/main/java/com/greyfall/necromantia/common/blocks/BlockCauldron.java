@@ -3,9 +3,12 @@ package com.greyfall.necromantia.common.blocks;
 import com.greyfall.necromantia.common.Main;
 import com.greyfall.necromantia.common.core.GuiHandler;
 import com.greyfall.necromantia.common.tiles.TileEntityCauldron;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -20,7 +23,7 @@ public class BlockCauldron extends BlockContainer {
         super(material);
         this.setHardness(0.5F);
         this.setStepSound(Block.soundTypeMetal);
-        this.setBlockTextureName("necromantia:textures/blocks/cauldron.png");
+        this.setBlockTextureName("minecraft:cauldron_side");
     }
 
     public void addInformation(ItemStack stack, EntityPlayer player, List lines, boolean advancedTooltips) {
@@ -37,7 +40,6 @@ public class BlockCauldron extends BlockContainer {
     public int getRenderType() {
         return Main.candleRenderID;
     }
-
 
     @Override
     public boolean isOpaqueCube() {
