@@ -20,9 +20,12 @@ import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityFurnace;
+import net.minecraft.world.World;
 import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.*;
+import thaumcraft.api.ItemApi;
+import thaumcraft.api.wands.IWandable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -31,7 +34,7 @@ import java.util.List;
 /**
  * Created by Katrina on 05/06/2015.
  */
-public class TileEntityCauldron extends TileEntity implements ISidedInventory, IFluidHandler{
+public class TileEntityCauldron extends TileEntity implements ISidedInventory, IFluidHandler,IWandable{
 
     ItemStack[] inventory=new ItemStack[8];
     public FluidTank tank = new FluidTank(FluidContainerRegistry.BUCKET_VOLUME);
@@ -491,5 +494,30 @@ public class TileEntityCauldron extends TileEntity implements ISidedInventory, I
             default:
                 return true;
         }
+    }
+
+    @Override
+    public int onWandRightClick(World world, ItemStack wandstack, EntityPlayer player, int x, int y, int z, int side, int md) {
+        if(player.isSneaking())
+        {
+            world.setBlock(x,y,z, Block.getBlockFromItem(ItemApi.getBlock("blockMetalDevice",0).getItem()));
+        }
+        return 0;
+    }
+
+    @Override
+    public ItemStack onWandRightClick(World world, ItemStack wandstack, EntityPlayer player) {
+
+        return wandstack;
+    }
+
+    @Override
+    public void onUsingWandTick(ItemStack wandstack, EntityPlayer player, int count) {
+
+    }
+
+    @Override
+    public void onWandStoppedUsing(ItemStack wandstack, World world, EntityPlayer player, int count) {
+
     }
 }

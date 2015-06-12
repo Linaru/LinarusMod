@@ -242,7 +242,6 @@ public class Main {
         //register Tile Entities
         GameRegistry.registerTileEntity(TileEntityCandleEntity.class,"candle");
         GameRegistry.registerTileEntity(TileEntityCauldron.class,"cauldron");
-        BlockReplaceHelper.replaceBlock(Blocks.cauldron,BlockCauldron.class);
     }
 
     @EventHandler

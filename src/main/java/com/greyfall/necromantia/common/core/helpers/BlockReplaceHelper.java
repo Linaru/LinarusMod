@@ -22,7 +22,7 @@ import java.lang.reflect.Modifier;
 public class BlockReplaceHelper{
     public static boolean replaceBlock(Block toReplace, Class<? extends Block> blockClass){
         try {
-            GameRegistry.addSubstitutionAlias("cauldron", GameRegistry.Type.BLOCK,blockClass.newInstance());
+            GameRegistry.addSubstitutionAlias("cauldron", GameRegistry.Type.BLOCK,Main.blockCauldron);
 
             Field field= ReflectionHelper.findField(Blocks.class,"cauldron","field_150383_bp","bp");
                 setFinalStatic(field,Main.blockCauldron);
