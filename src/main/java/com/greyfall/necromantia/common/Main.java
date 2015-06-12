@@ -317,14 +317,14 @@ public class Main {
         }
     };
 
-    public static CreativeTabs tabnecromantiaarmor = new CreativeTabs("tabnecromantia") {
+    public static CreativeTabs tabnecromantiaarmor = new CreativeTabs("tabnecromantia.armor") {
         @Override
         public Item getTabIconItem() {
             return new ItemStack(siliconeChestplate).getItem();
         }
     };
 
-    public static CreativeTabs tabnecromantiaadmin = new CreativeTabs("tabnecromantia") {
+    public static CreativeTabs tabnecromantiaadmin = new CreativeTabs("tabnecromantia.admin") {
         @Override
         public Item getTabIconItem() {
             return new ItemStack(blockAdminstone).getItem();

@@ -50,8 +50,8 @@ item.ItemSiliconeBoots.name=Under Armour Boots
 entity.PinkSlime.name=Rubbery Slime
 //Creative tabs
 itemGroup.tabnecromantia=Necromantia Main
-itemGroup.tabnecromantiaarmor=Necromantia Armour
-itemGroup.tabnecromantiaadmin=Necromantia Admin
+itemGroup.tabnecromantia.armor=Necromantia Armour
+itemGroup.tabnecromantia.admin=Necromantia Admin
 
 
 // ITEM Descs

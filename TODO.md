@@ -1,8 +1,8 @@
 #Todo list:
 
 ##Code:
-* ~~Fix particle effect on slimes~~
-* Fix Creative Tab names.
+* Fix particle effect on slimes - Fix without a crash
+* ~~Fix Creative Tab names.~~
 * Fix Lore tool tip on blocks (admin block inparticular)
 * Give Candles rotation when placed.
 * Add waila text 'Unbreakable' to admin blocks
