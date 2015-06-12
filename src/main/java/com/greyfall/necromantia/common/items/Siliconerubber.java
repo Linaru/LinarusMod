@@ -11,7 +11,7 @@ public class Siliconerubber extends Item {
 	
 public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean show)
 {
-	list.add(Main.ItemLang.translate("siliconeRubber"));
+	list.add(Main.itemLang.translate("siliconeRubber"));
 }
 
 }

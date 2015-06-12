@@ -11,7 +11,7 @@ public class Riceball extends Item {
 
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean show)
     {
-        list.add(Main.ItemLang.translate("riceBall"));
+        list.add(Main.itemLang.translate("riceBall"));
     }
 
 }

@@ -11,8 +11,8 @@ public class Boiledleather extends Item {
 
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean show)
     {
-        list.add(Main.ItemLang.translate("boiledLeather.info1"));
-        list.add(Main.ItemLang.translate("boiledLeather.info2"));
+        list.add(Main.itemLang.translate("boiledLeather.info1"));
+        list.add(Main.itemLang.translate("boiledLeather.info2"));
     }
 
 }

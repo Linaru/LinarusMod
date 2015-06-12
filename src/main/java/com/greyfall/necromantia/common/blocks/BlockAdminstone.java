@@ -1,5 +1,6 @@
 package com.greyfall.necromantia.common.blocks;
 
+import com.greyfall.necromantia.common.Main;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
@@ -17,6 +18,6 @@ public class BlockAdminstone  extends Block {
     }
 
     public void addInformation(ItemStack stack, EntityPlayer player, List lines, boolean advancedTooltips) {
-        lines.add("Unbreakable Stone Brick.");
+        lines.add(Main.blockLang.translate("adminStone"));
     }
 }

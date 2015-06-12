@@ -25,8 +25,8 @@ public class Mortar extends Item {
 	
 public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean show)
 {
-	list.add(Main.ItemLang.translate("mortar.info1"));
-	list.add(Main.ItemLang.translate("mortar.info2"));
+	list.add(Main.itemLang.translate("mortar.info1"));
+	list.add(Main.itemLang.translate("mortar.info2"));
 }
 
 }

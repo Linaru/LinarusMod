@@ -11,7 +11,7 @@ public class Latex extends Item {
 
 public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean show)
 {
-	list.add(Main.ItemLang.translate("latex"));
+	list.add(Main.itemLang.translate("latex"));
 
 }
 

@@ -11,7 +11,7 @@ public class Wax extends Item {
 
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean show)
     {
-        list.add(Main.ItemLang.translate("wax"));
+        list.add(Main.itemLang.translate("wax"));
     }
 
 }

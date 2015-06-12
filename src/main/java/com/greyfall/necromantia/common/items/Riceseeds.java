@@ -11,7 +11,7 @@ public class Riceseeds extends Item{
 
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean show)
     {
-        list.add(Main.ItemLang.translate("riceSeeds"));
+        list.add(Main.itemLang.translate("riceSeeds"));
     }
 
 }

@@ -132,7 +132,9 @@ public class Main {
     public static CommonProxy proxy;
 
 
-    public static LangProxy ItemLang=new LangProxy("necromantia.item");
+    public static LangProxy itemLang =new LangProxy("necromantia.item");
+    public static LangProxy blockLang=new LangProxy("necromantia.block");
+    public static LangProxy lang=new LangProxy("necromantia");
     //items
     public static Item itemSlimelatex;
     public static Item itemLatex;
@@ -187,7 +189,7 @@ public class Main {
     public static final ItemArmor.ArmorMaterial siliconeArmourMaterial = EnumHelper.addArmorMaterial("siliconeMaterial", 1000, new int[]{1, 3, 2, 1,}, 30);
     public static Logger logger;
 
-    public static LangProxy lang=new LangProxy("necromantia");
+
 
 //==================================================================Seperator==================================================================//
 
