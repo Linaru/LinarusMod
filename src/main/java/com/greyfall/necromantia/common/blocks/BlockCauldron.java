@@ -26,6 +26,9 @@ public class BlockCauldron extends BlockContainer {
         this.setBlockTextureName("minecraft:cauldron_side");
     }
 
+
+
+
     public void addInformation(ItemStack stack, EntityPlayer player, List lines, boolean advancedTooltips) {
         lines.add(Main.blockLang.translate("cauldron"));
     }

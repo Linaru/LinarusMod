@@ -207,8 +207,8 @@ public class Main {
         itemWax = new Wax().setUnlocalizedName("ItemWax").setTextureName("necromantia:wax").setCreativeTab(tabnecromantia); //item.itemTable
         itemRiceseeds = new Riceseeds().setUnlocalizedName("ItemRiceseeds").setTextureName("necromantia:rice_seeds").setCreativeTab(tabnecromantia); //item.itemTable
         itemRice = new Rice().setUnlocalizedName("ItemRice").setTextureName("necromantia:rice").setCreativeTab(tabnecromantia); //item.itemTable
-        itemRiceball = new ItemFood(6, 1.0F, false).setUnlocalizedName("Riceball").setTextureName("necromantia:riceball").setCreativeTab(tabnecromantia); //item.itemTable
-        itemCookedapple = new ItemFood(8, 1.0F, false).setUnlocalizedName("Cookedapple").setTextureName("necromantia:apple_cooked").setCreativeTab(tabnecromantia); //item.itemTable
+        itemRiceball = new Riceball(6, 1.0F, false).setUnlocalizedName("Riceball").setTextureName("necromantia:riceball").setCreativeTab(tabnecromantia); //item.itemTable
+        itemCookedapple = new Cookedapple(8, 1.0F, false).setUnlocalizedName("Cookedapple").setTextureName("necromantia:apple_cooked").setCreativeTab(tabnecromantia); //item.itemTable
         itemBoiledleather = new Boiledleather().setUnlocalizedName("Boiledleather").setTextureName("necromantia:leather_boiled").setCreativeTab(tabnecromantia); //item.itemTable
         itemSilicondioxide = new Silicondioxide().setUnlocalizedName("ItemSilicondioxide").setTextureName("necromantia:silica").setCreativeTab(tabnecromantia); //item.itemTable
         //books

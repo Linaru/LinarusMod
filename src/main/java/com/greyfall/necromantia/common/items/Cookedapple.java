@@ -5,10 +5,17 @@ import java.util.List;
 import com.greyfall.necromantia.common.Main;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 
-public class Cookedapple extends Item {
+public class Cookedapple extends ItemFood {
 
+
+    public Cookedapple(int p_i45339_1_, float p_i45339_2_, boolean p_i45339_3_) {
+        super(p_i45339_1_, p_i45339_2_, p_i45339_3_);
+    }
+
+    @Override
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean show)
     {
         list.add(Main.itemLang.translate("cookedApple"));
