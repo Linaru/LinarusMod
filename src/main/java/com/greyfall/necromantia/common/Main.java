@@ -8,6 +8,7 @@ import com.greyfall.necromantia.common.blocks.wood.BlockLogironwood;
 import com.greyfall.necromantia.common.blocks.wood.BlockLogironwoodore;
 import com.greyfall.necromantia.common.books.BookEncyclopediaminecraftia1;
 import com.greyfall.necromantia.common.core.CommonProxy;
+import com.greyfall.necromantia.common.core.helpers.BlockReplaceHelper;
 import com.greyfall.necromantia.common.dimensions.BlockEtherealportal;
 import com.greyfall.necromantia.common.interop.BotaniaInterop;
 import com.greyfall.necromantia.common.interop.NEI.NEINecromantiaConfig;
@@ -152,7 +153,7 @@ public class Main {
         itemMortar = new Mortar().setUnlocalizedName("ItemMortar").setTextureName("necromantia:mortar").setCreativeTab(tabnecromantia); //item.itemTable
         //blocks
         //Machines
-        blockCauldron = new BlockCauldron(Material.ground).setBlockName("BlockCauldron").setCreativeTab(tabnecromantia);
+        blockCauldron = new BlockCauldron().setBlockName("BlockCauldron").setCreativeTab(tabnecromantia);
         //containers
         blockCuboard = new BlockCuboard(Material.ground).setBlockName("BlockCuboard").setCreativeTab(tabnecromantia);
         //standard blocks
@@ -241,6 +242,7 @@ public class Main {
         //register Tile Entities
         GameRegistry.registerTileEntity(TileEntityCandleEntity.class,"candle");
         GameRegistry.registerTileEntity(TileEntityCauldron.class,"cauldron");
+        BlockReplaceHelper.replaceBlock(Blocks.cauldron,BlockCauldron.class);
     }
 
     @EventHandler
