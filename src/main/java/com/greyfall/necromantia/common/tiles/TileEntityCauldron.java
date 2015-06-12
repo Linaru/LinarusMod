@@ -4,6 +4,7 @@ import codechicken.lib.inventory.InventoryUtils;
 import com.greyfall.necromantia.api.crafting.CauldronCrafting;
 import com.greyfall.necromantia.api.crafting.CauldronRecipe;
 import com.greyfall.necromantia.common.core.helpers.ItemStackHelper;
+import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -34,6 +35,7 @@ import java.util.List;
 /**
  * Created by Katrina on 05/06/2015.
  */
+@Optional.Interface(modid = "Thaumcraft",iface = "thaumcraft.api.wands.IWandable")
 public class TileEntityCauldron extends TileEntity implements ISidedInventory, IFluidHandler,IWandable{
 
     ItemStack[] inventory=new ItemStack[8];
@@ -497,6 +499,7 @@ public class TileEntityCauldron extends TileEntity implements ISidedInventory, I
     }
 
     @Override
+    @Optional.Method(modid = "Thaumcraft")
     public int onWandRightClick(World world, ItemStack wandstack, EntityPlayer player, int x, int y, int z, int side, int md) {
         if(player.isSneaking())
         {
@@ -506,17 +509,20 @@ public class TileEntityCauldron extends TileEntity implements ISidedInventory, I
     }
 
     @Override
+    @Optional.Method(modid = "Thaumcraft")
     public ItemStack onWandRightClick(World world, ItemStack wandstack, EntityPlayer player) {
 
         return wandstack;
     }
 
     @Override
+    @Optional.Method(modid = "Thaumcraft")
     public void onUsingWandTick(ItemStack wandstack, EntityPlayer player, int count) {
 
     }
 
     @Override
+    @Optional.Method(modid = "Thaumcraft")
     public void onWandStoppedUsing(ItemStack wandstack, World world, EntityPlayer player, int count) {
 
     }
