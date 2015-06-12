@@ -55,9 +55,20 @@ itemGroup.tabnecromantiaadmin=Necromantia Admin
 
 
 // ITEM Descs
-necromantia.item.boiledLeather.info1=Boiled leather is much tougher
+necromantia.item.boiledLeather.info1=Boiled leather is much tougher,
 necromantia.item.boiledLeather.info2=but also far more brittle.
-
+necromantia.item.cookedApple=Mmm..  Still warm.
+necromantia.item.goldCoin=A commonly used currency.
+necromantia.item.latex=a resistant rubber used in crafting.
+necromantia.item.mortar.info1=A tool used for grinding ingredients
+necromantia.item.mortar.info2=into a fine paste or powder.
+necromantia.item.rice=Grains of rice.
+necromantia.item.riceBall=A yummy snack made from cooked rice.
+necromantia.item.riceSeeds=Seeds that grow rice.
+necromantia.item.siliconDioxide=Powdered silicon dioxide.
+necromantia.item.siliconeRubber=A resistant rubber used in crafting.
+necromantia.item.slimeLatex=A slimy rubber with similarities to latex.
+necromantia.item.wax=A byproduct of the Honey Bee.
 
 // WAILA
 necromantia.waila.cauldron.fluidName=Fluid: %s

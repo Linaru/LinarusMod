@@ -1,5 +1,6 @@
 package com.greyfall.necromantia.common.items;
 
+import com.greyfall.necromantia.common.Main;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -10,7 +11,7 @@ public class Riceseeds extends Item{
 
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean show)
     {
-        list.add("Seeds that grow Rice");
+        list.add(Main.ItemLang.translate("riceSeeds"));
     }
 
 }
