@@ -3,18 +3,14 @@
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
-import scala.actors.threadpool.Arrays;
 
 import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-/**
- * Crafting manager for cauldron crafting
- * Created by Katrina on 05/06/2015.
- */
+    /**
+     * Crafting manager for cauldron crafting
+     * Created by Katrina on 05/06/2015.
+     */
 public class CauldronCrafting {
 
 
