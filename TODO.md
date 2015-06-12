@@ -6,7 +6,7 @@
 * Fix Lore tool tip on blocks (admin block inparticular)
 * Give Candles rotation when placed.
 * Add waila text 'Unbreakable' to admin blocks
-* Add Cauldron gui + recipies
+* ~~Add Cauldron gui + recipies~~
 * Add Latex/ Pink slime block custom squeeking sounds
 * Make crate blocks pushable with shift click. pushed onto pressure plates triggers them.. weighs same as player? more wight with contents in slot?
 * make rune blocks glow when stood on? add rune block crafting.  output redstone signal when stood on?
