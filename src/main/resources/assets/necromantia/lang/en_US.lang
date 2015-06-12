@@ -73,7 +73,7 @@ necromantia.item.wax=A byproduct of the Honey Bee.
 
 // Block Descs
 necromantia.block.adminStone=Unbreakable Stone Brick.
-
+necromantia.block.cauldron=Used for the process of Boiling ingredients.
 
 // WAILA
 necromantia.waila.cauldron.fluidName=Fluid: %s

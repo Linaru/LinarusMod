@@ -27,7 +27,7 @@ public class BlockCauldron extends BlockContainer {
     }
 
     public void addInformation(ItemStack stack, EntityPlayer player, List lines, boolean advancedTooltips) {
-        lines.add("Used for the process of Boiling ingredients.");
+        lines.add(Main.blockLang.translate("cauldron"));
     }
 
     @Override
