@@ -18,10 +18,10 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class BlockCauldron extends net.minecraft.block.BlockCauldron implements ITileEntityProvider {
+public class BlockCauldron extends BlockContainer {
 
     public BlockCauldron() {
-        super();
+        super(Material.ground);
         this.setHardness(0.5F);
         this.setStepSound(Block.soundTypeMetal);
         this.setBlockTextureName("minecraft:cauldron_side");
@@ -71,23 +71,5 @@ public class BlockCauldron extends net.minecraft.block.BlockCauldron implements 
             return true;
         p_149727_5_.openGui(Main.modInstance, GuiHandler.CAULDRON_ID,p_149727_1_,p_149727_2_,p_149727_3_,p_149727_4_);
         return true;
-    }
-
-    public void onBlockAdded(World p_149726_1_, int p_149726_2_, int p_149726_3_, int p_149726_4_)
-    {
-        super.onBlockAdded(p_149726_1_, p_149726_2_, p_149726_3_, p_149726_4_);
-    }
-
-    public void breakBlock(World p_149749_1_, int p_149749_2_, int p_149749_3_, int p_149749_4_, Block p_149749_5_, int p_149749_6_)
-    {
-        super.breakBlock(p_149749_1_, p_149749_2_, p_149749_3_, p_149749_4_, p_149749_5_, p_149749_6_);
-        p_149749_1_.removeTileEntity(p_149749_2_, p_149749_3_, p_149749_4_);
-    }
-
-    public boolean onBlockEventReceived(World p_149696_1_, int p_149696_2_, int p_149696_3_, int p_149696_4_, int p_149696_5_, int p_149696_6_)
-    {
-        super.onBlockEventReceived(p_149696_1_, p_149696_2_, p_149696_3_, p_149696_4_, p_149696_5_, p_149696_6_);
-        TileEntity tileentity = p_149696_1_.getTileEntity(p_149696_2_, p_149696_3_, p_149696_4_);
-        return tileentity != null ? tileentity.receiveClientEvent(p_149696_5_, p_149696_6_) : false;
     }
 }
