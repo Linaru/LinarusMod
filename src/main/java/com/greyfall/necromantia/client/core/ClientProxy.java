@@ -1,6 +1,7 @@
 package com.greyfall.necromantia.client.core;
 
 import com.greyfall.necromantia.client.render.items.ItemCauldronRegister;
+import com.greyfall.necromantia.client.render.particles.EntityFXPinkSlime;
 import com.greyfall.necromantia.client.render.tiles.TileEntityCauldronRenderer;
 import com.greyfall.necromantia.common.core.CommonProxy;
 import com.greyfall.necromantia.common.tiles.TileEntityCandleEntity;
@@ -13,7 +14,9 @@ import com.greyfall.necromantia.client.render.mobs.EntityRenderPinkslimeMob;
 import com.greyfall.necromantia.common.tiles.TileEntityCauldron;
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
+import net.minecraft.client.Minecraft;
 import net.minecraft.item.Item;
+import net.minecraft.world.World;
 import net.minecraftforge.client.MinecraftForgeClient;
 
 public class ClientProxy extends CommonProxy {
@@ -40,4 +43,10 @@ public class ClientProxy extends CommonProxy {
 	}
 
 
+	@Override
+	public void spawnPinkSlimeParticle(World world, double x, double y, double z, double velX, double velY, double velZ) {
+		EntityFXPinkSlime slimeFX=new EntityFXPinkSlime(world,x,y,z,velX,velY,velZ);
+
+		Minecraft.getMinecraft().effectRenderer.addEffect(slimeFX);
+	}
 }

@@ -1,7 +1,7 @@
 #Todo list:
 
 ##Code:
-* Fix particle effect on slimes
+* ~~Fix particle effect on slimes~~
 * Fix Creative Tab names.
 * Fix Lore tool tip on blocks (admin block inparticular)
 * Give Candles rotation when placed.
