@@ -3,6 +3,8 @@ package com.greyfall.necromantia.client.render.gui;
 import com.greyfall.necromantia.common.Main;
 import com.greyfall.necromantia.common.containers.ContainerCauldron;
 import com.greyfall.necromantia.common.tiles.TileEntityCauldron;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.Tessellator;
@@ -15,6 +17,7 @@ import org.lwjgl.opengl.GL11;
 /**
  * Created by Katrina on 05/06/2015.
  */
+@SideOnly(Side.CLIENT)
 public class GuiCauldron extends GuiContainer {
 
 

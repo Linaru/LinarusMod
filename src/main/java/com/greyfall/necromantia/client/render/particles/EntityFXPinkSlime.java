@@ -1,6 +1,8 @@
 package com.greyfall.necromantia.client.render.particles;
 
 import com.greyfall.necromantia.common.Main;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.EntityFX;
 import net.minecraft.client.renderer.Tessellator;
@@ -11,6 +13,7 @@ import net.minecraft.world.World;
 /**
  * Created by Katrina on 12/06/2015.
  */
+@SideOnly(Side.CLIENT)
 public class EntityFXPinkSlime extends EntityFX {
 
 
