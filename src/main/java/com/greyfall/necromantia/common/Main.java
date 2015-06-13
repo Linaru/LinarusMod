@@ -36,7 +36,7 @@ import org.apache.logging.log4j.Logger;
 
 Teir System guide:
 this little guide is to help keep track of the teir system.
-the plan is to divide up mobs tools and technology into 5 teirs so as tog et a better understanding of balance.
+the plan is to divide up mobs tools and technology into 5 teirs so as to get a better understanding of balance.
 players with a majority of teir 4 equipment will oten see teir 4 mobs spawn in the areas around them.
 
 Teir 1 : Vanilla minecraft
