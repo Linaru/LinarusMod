@@ -99,6 +99,8 @@ public class Main {
     public static Block blockEnchantedwood;
     public static Block blockCandle;
     public static Block blockIrontreebrick;
+    public static Block blockIrontreebrickhalfslab;
+    public static Block blockIrontreebrickdoubleslab;
     public static Block blockLogironwood;
     public static Block blockLogironwoodore;
     public static Block blockLeavesironwood;
@@ -164,6 +166,8 @@ public class Main {
         blockEnchantedwood = new BlockEnchantedwood(Material.wood).setBlockName("BlockEnchantedwood").setBlockTextureName("necromantia:enchantedwood").setCreativeTab(tabnecromantia);
         blockCandle = new BlockCandle(Material.ground).setBlockName("BlockCandle").setBlockTextureName("necromantia:candle").setCreativeTab(tabnecromantia);
         blockIrontreebrick = new BlockIrontreebrick(Material.ground).setBlockName("BlockIrontreebrick").setBlockTextureName("necromantia:irontreebrick").setCreativeTab(tabnecromantia);
+        blockIrontreebrickhalfslab = new BlockIrontreebrickhalfslab(Material.ground).setBlockName("BlockIrontreebrickhalfslab").setBlockTextureName("necromantia:irontreebrickslab").setCreativeTab(tabnecromantia);
+        blockIrontreebrickdoubleslab = new BlockIrontreebrickdoubleslab(Material.ground).setBlockName("BlockIrontreebrickdoubleslab").setBlockTextureName("necromantia:irontreebrickslab").setCreativeTab(tabnecromantia);
         blockLogironwood = new BlockLogironwood(Material.wood).setBlockName("BlockLogironwood").setBlockTextureName("necromantia:log_ironwood").setCreativeTab(tabnecromantia);
         blockLogironwoodore = new BlockLogironwoodore(Material.wood).setBlockName("BlockLogironwoodore").setBlockTextureName("necromantia:log_ironwood_ore").setCreativeTab(tabnecromantia);
         blockLeavesironwood = new BlockLeavesironwood(Material.leaves).setBlockName("BlockLeavesironwood").setBlockTextureName("necromantia:leaves_ironwood_opaque").setCreativeTab(tabnecromantia);
@@ -217,6 +221,8 @@ public class Main {
         GameRegistry.registerBlock(blockCrate, blockCrate.getUnlocalizedName().substring(5));
         GameRegistry.registerBlock(blockEnchantedwood, blockEnchantedwood.getUnlocalizedName().substring(5));
         GameRegistry.registerBlock(blockIrontreebrick, blockIrontreebrick.getUnlocalizedName().substring(5));
+        GameRegistry.registerBlock(blockIrontreebrickhalfslab, blockIrontreebrickhalfslab.getUnlocalizedName().substring(5));
+        GameRegistry.registerBlock(blockIrontreebrickdoubleslab, blockIrontreebrickdoubleslab.getUnlocalizedName().substring(5));
         GameRegistry.registerBlock(blockLogironwood, blockLogironwood.getUnlocalizedName().substring(5));
         GameRegistry.registerBlock(blockLogironwoodore, blockLogironwoodore.getUnlocalizedName().substring(5));
         GameRegistry.registerBlock(blockLeavesironwood, blockLeavesironwood.getUnlocalizedName().substring(5));
