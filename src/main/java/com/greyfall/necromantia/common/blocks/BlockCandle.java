@@ -1,11 +1,12 @@
 package com.greyfall.necromantia.common.blocks;
 
-import com.greyfall.necromantia.common.tiles.TileEntityCandleEntity;
+import com.greyfall.necromantia.client.libs.LibTextures;
+import com.greyfall.necromantia.common.libs.BlockNames;
+import com.greyfall.necromantia.common.tiles.TileEntityCandle;
 import com.greyfall.necromantia.common.Main;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.tileentity.TileEntity;
@@ -13,14 +14,17 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class BlockCandle extends BlockContainer {
+public class BlockCandle extends ModBlockContainer {
 
-	public BlockCandle(Material material) {
-		super(material);
+	public BlockCandle() {
+		super(Material.ground);
 		this.setHardness(0.2F);
 		this.setStepSound(Block.soundTypeWood);
 		this.setBlockBounds(0.28125f,0f,0.28125f,0.71875f,1f,0.71875f);
 		this.setLightLevel(1.0F);
+		this.setBlockName(BlockNames.CANDLE);
+		this.setBlockTextureName(LibTextures.CANDLE);
+
 	}
 
 
@@ -48,7 +52,7 @@ public class BlockCandle extends BlockContainer {
 
 	@Override
 	public TileEntity createNewTileEntity(World p_149915_1_, int p_149915_2_) {
-		return new TileEntityCandleEntity();
+		return new TileEntityCandle();
 	}
 
 	@SideOnly(Side.CLIENT)

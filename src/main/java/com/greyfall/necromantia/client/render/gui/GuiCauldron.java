@@ -1,5 +1,6 @@
 package com.greyfall.necromantia.client.render.gui;
 
+import com.greyfall.necromantia.client.libs.LibTextures;
 import com.greyfall.necromantia.common.Main;
 import com.greyfall.necromantia.common.containers.ContainerCauldron;
 import com.greyfall.necromantia.common.tiles.TileEntityCauldron;
@@ -22,7 +23,7 @@ public class GuiCauldron extends GuiContainer {
 
 
     public TileEntityCauldron cauldron;
-    public static ResourceLocation TEXTURE=new ResourceLocation("necromantia:textures/gui/cauldron.png");
+    public static ResourceLocation TEXTURE=new ResourceLocation(LibTextures.GUI_CAULDRON);
     public GuiCauldron(TileEntityCauldron cauldron, EntityPlayer player) {
         super(new ContainerCauldron(cauldron, player));
         this.cauldron = cauldron;

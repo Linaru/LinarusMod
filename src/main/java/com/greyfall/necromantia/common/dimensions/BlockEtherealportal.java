@@ -1,6 +1,7 @@
 package com.greyfall.necromantia.common.dimensions;
 
 import com.greyfall.necromantia.common.Main;
+import com.greyfall.necromantia.common.blocks.ModBlocks;
 import com.greyfall.necromantia.common.dimensions.dimensionRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPortal;
@@ -41,7 +42,7 @@ public class BlockEtherealportal extends BlockPortal {
         byte b0 = 0;
         byte b1 = 1;
 
-        if(world.getBlock(x = 1, y, z) == Main.blockRune || world.getBlock(x = + 1, y, z) == Main.blockRune)
+        if(world.getBlock(x = 1, y, z) == ModBlocks.rune || world.getBlock(x = + 1, y, z) == ModBlocks.rune)
         {
             b0 = 1;
             b1 = 0;
@@ -53,7 +54,7 @@ public class BlockEtherealportal extends BlockPortal {
         {
             ;
         }
-        if(world.getBlock(x, i1, z) != Main.blockRune){
+        if(world.getBlock(x, i1, z) != ModBlocks.rune){
             world.setBlockToAir(x, y, z);
         }else{
             int j1;
@@ -62,7 +63,7 @@ public class BlockEtherealportal extends BlockPortal {
             {
 
             }
-            if(j1 == 3 && world.getBlock(x, i1 + j1, z) == Main.blockRune)
+            if(j1 == 3 && world.getBlock(x, i1 + j1, z) == ModBlocks.rune)
             {
                 boolean flag = world.getBlock(x - 1, y, z) == this || world.getBlock(x + 1,y, z) == this;
                 boolean flag1 = world.getBlock(x, y, z - 1) == this || world.getBlock(x + 1,y, z + 1) == this;
@@ -71,7 +72,7 @@ public class BlockEtherealportal extends BlockPortal {
                 {
                     world.setBlockToAir(x, y, z);
                 }else{
-                    if((world.getBlock(x+b0, y, z+b1) != Main.blockRune || world.getBlock(x-b0, y, z-b1) != this) && (world.getBlock(x-b0, y, z-b1) != Main.blockRune || world.getBlock(x+b0, y, z+b1) != this ))
+                    if((world.getBlock(x+b0, y, z+b1) != ModBlocks.rune || world.getBlock(x-b0, y, z-b1) != this) && (world.getBlock(x-b0, y, z-b1) !=ModBlocks.rune || world.getBlock(x+b0, y, z+b1) != this ))
                     {
                         world.setBlockToAir(x, y, z);
                     }
@@ -117,12 +118,12 @@ public class BlockEtherealportal extends BlockPortal {
     {
         byte b0 = 0;
         byte b1 = 0;
-        if(world.getBlock(x - 1, y, z) == Main.blockRune || world.getBlock(x + 1, y, z) == Main.blockRune)
+        if(world.getBlock(x - 1, y, z) == ModBlocks.rune || world.getBlock(x + 1, y, z) == ModBlocks.rune)
         {
             b0 = 1;
         }
 
-        if(world.getBlock(x, y, z -1) == Main.blockRune || world.getBlock(x, y, z + 1) == Main.blockRune)
+        if(world.getBlock(x, y, z -1) == ModBlocks.rune || world.getBlock(x, y, z + 1) == ModBlocks.rune)
         {
             b1 = 1;
         }
@@ -148,7 +149,7 @@ public class BlockEtherealportal extends BlockPortal {
                     {
                         Block j1 = world.getBlock(x +b0 * 1, y + i1, z + b1 * 1);
                                 if(flag){
-                                    if(j1 != Main.blockRune)
+                                    if(j1 != ModBlocks.rune)
                                     {
                                         return false;
                                     }
@@ -164,7 +165,7 @@ public class BlockEtherealportal extends BlockPortal {
             {
                 for (i1 = 0; i1 < 3; ++i1)
                 {
-                    world.setBlock(x + b0 * l, y + i1, z +b1 *l, Main.blockEtherealportal, 0 , 2);
+                    //world.setBlock(x + b0 * l, y + i1, z +b1 *l, Main.blockEtherealportal, 0 , 2);
                 }
             }
             return true;

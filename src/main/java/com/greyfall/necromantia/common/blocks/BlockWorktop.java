@@ -7,22 +7,26 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.util.IIcon;
 
-public class BlockWax extends ModBlock {
+public class BlockWorktop extends ModBlock {
 
     //Multitexture variables
+    public IIcon BottomIcon;
     public IIcon TopIcon;
+    public IIcon FrontIcon;
     public IIcon SideIcon;
 
-    public BlockWax() {
+    public BlockWorktop() {
         super(Material.ground);
         this.setHardness(0.3F);
-        this.setBlockName(BlockNames.WAX);
+        this.setBlockName(BlockNames.WORKTOP);
     }
 
     public void registerBlockIcons(IIconRegister icon)
     {
-        TopIcon = icon.registerIcon(LibTextures.WAX_TOP);
-        SideIcon = icon.registerIcon(LibTextures.WAX_SIDE);
+        BottomIcon = icon.registerIcon(LibTextures.WORKTOP_BOTTOM);
+        TopIcon = icon.registerIcon(LibTextures.WORKTOP_TOP);
+        FrontIcon = icon.registerIcon(LibTextures.WORKTOP_FRONT);
+        SideIcon = icon.registerIcon(LibTextures.WORKTOP_SIDE);
     }
 
     public IIcon getIcon(int side, int meta)
@@ -30,8 +34,11 @@ public class BlockWax extends ModBlock {
         switch (side)
         {
             case 0:
+                return BottomIcon;
             case 1:
                 return TopIcon;
+            case 2:
+                return FrontIcon;
             default:
                 return SideIcon;
         }

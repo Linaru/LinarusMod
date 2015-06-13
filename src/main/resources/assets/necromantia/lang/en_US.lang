@@ -1,24 +1,24 @@
 //Blocks
 //machines
-tile.BlockCauldron.name=Cauldron
+tile.cauldron.name=Cauldron
 //containers
-tile.BlockCuboard.name=Worktop
+tile.worktop.name=Worktop
 //standard blocks
-tile.BlockSlimelatex.name=Pink Latex Rubber
-tile.BlockLatex.name=Latex Rubber
-tile.BlockWax.name=Wax Block
-tile.BlockCrate.name=Crate
-tile.BlockEnchantedwood.name=Enchanted Wood
-tile.BlockIrontreebrick.name=Iron Tree Brick
-tile.BlockLogironwood.name=Ironwood Log
-tile.BlockLogironwoodore.name=Ironwood Log
-tile.BlockLeavesironwood.name=Ironwood leaves
-tile.BlockWildrice.name=Rice
-tile.BlockRune.name=Rune Stone
-tile.BlockHardstone.name=Hardened Stone
-tile.BlockCandle.name=Candle
+tile.slimeLatex.name=Pink Latex Rubber
+tile.latex.name=Latex Rubber
+tile.wax.name=Wax Block
+tile.crate.name=Crate
+tile.enchantedWood.name=Enchanted Wood
+tile.irontreeBrick.name=Iron Tree Brick
+tile.ironwoodLog.name=Ironwood Log
+tile.logIronwoodOre.name=Ironwood Log
+tile.leavesIronwood.name=Ironwood leaves
+tile.wildRice.name=Rice
+tile.rune.name=Rune Stone
+tile.hardstone.name=Hardened Stone
+tile.candle.name=Candle
 //adminblock
-tile.BlockAdminstone.name=Iron Tree Brick
+tile.adminstone.name=Iron Tree Brick
 //Items
 item.ItemSlimelatex.name=Latex Slime
 item.ItemLatex.name=Latex Rubber

@@ -1,6 +1,7 @@
 package com.greyfall.necromantia.client.render.tiles;
 
 
+import com.greyfall.necromantia.client.libs.LibTextures;
 import com.greyfall.necromantia.client.render.models.CandleModel;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -20,7 +21,7 @@ public class TileEntityCandleRenderer extends TileEntitySpecialRenderer {
 
     //The model of your block
     private final CandleModel model;
-    public static ResourceLocation textureLocation=new ResourceLocation("necromantia:textures/blocks/candle.png");
+    public static ResourceLocation textureLocation=new ResourceLocation(LibTextures.CANDLE_MODEL);
     public TileEntityCandleRenderer() {
         this.model = new CandleModel(false);
     }

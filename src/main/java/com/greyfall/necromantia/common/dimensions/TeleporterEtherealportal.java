@@ -1,6 +1,7 @@
 package com.greyfall.necromantia.common.dimensions;
 
 import com.greyfall.necromantia.common.Main;
+import com.greyfall.necromantia.common.blocks.ModBlocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.LongHashMap;
@@ -51,7 +52,7 @@ public class TeleporterEtherealportal  extends Teleporter{
                         int l1 = j + j1;
                         int i2 = k + i1 * b1 - l * b0;
                         boolean flag = j1 < 0;
-                        this.worldServerInstance.setBlock(k1, l1, i2, flag ? Main.blockRune : Blocks.air);
+                        this.worldServerInstance.setBlock(k1, l1, i2, flag ? ModBlocks.rune: Blocks.air);
                     }
                 }
             }
@@ -95,23 +96,23 @@ public class TeleporterEtherealportal  extends Teleporter{
 
                     for(int i2 = this.worldServerInstance.getActualHeight() -1; i2 >=0; --i2)
                     {
-                        if (this.worldServerInstance.getBlock(l3, i2, l1) == Main.blockEtherealportal)
-                        {
-                            while (this.worldServerInstance.getBlock(l3, i2 - 1, l1) == Main.blockEtherealportal)
-                            {
-                                --i2;
-                            }
-                            d7 = (double) i2 + 0.5D - entity.posY;
-                            double d8 = d4 * d4 + d7 * d7 + d5 * d5;
-
-                            if (d3 < 0.0D || d8 < d3)
-                            {
-                                d3 = d8;
-                                i = l3;
-                                j = i2;
-                                k = l1;
-                            }
-                        }
+                        //if (this.worldServerInstance.getBlock(l3, i2, l1) == Main.blockEtherealportal)
+                        //{
+                        //    while (this.worldServerInstance.getBlock(l3, i2 - 1, l1) == Main.blockEtherealportal)
+                       //     {
+                       //         --i2;
+                       //     }
+                       //     d7 = (double) i2 + 0.5D - entity.posY;
+                       //     double d8 = d4 * d4 + d7 * d7 + d5 * d5;
+///
+  //                          if (d3 < 0.0D || d8 < d3)
+    //                        {
+      //                          d3 = d8;
+        //                        i = l3;
+          //                      j = i2;
+            //                    k = l1;
+              //              }
+                //        }
                     }
                 }
             }
@@ -131,22 +132,22 @@ public class TeleporterEtherealportal  extends Teleporter{
             d7 = (double)k + 0.5D;
             int i4 = -1;
 
-            if(this.worldServerInstance.getBlock(i - 1, j, k) == Main.blockEtherealportal)
-            {
-                i4 = 2;
-            }
-            if(this.worldServerInstance.getBlock(i + 1, j, k) == Main.blockEtherealportal)
-            {
-                i4 = 0;
-            }
-            if(this.worldServerInstance.getBlock(i, j, k - 1) == Main.blockEtherealportal)
-            {
-                i4 = 3;
-            }
-            if(this.worldServerInstance.getBlock(i, j, k + 1) == Main.blockEtherealportal)
-            {
-                i4 = 1;
-            }
+//            if(this.worldServerInstance.getBlock(i - 1, j, k) == Main.blockEtherealportal)
+//            {
+//                i4 = 2;
+//            }
+//            if(this.worldServerInstance.getBlock(i + 1, j, k) == Main.blockEtherealportal)
+//            {
+//                i4 = 0;
+//            }
+//            if(this.worldServerInstance.getBlock(i, j, k - 1) == Main.blockEtherealportal)
+//            {
+//                i4 = 3;
+//            }
+//            if(this.worldServerInstance.getBlock(i, j, k + 1) == Main.blockEtherealportal)
+//            {
+//                i4 = 1;
+//            }
 
             int j2 = entity.getTeleportDirection();
 

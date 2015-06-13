@@ -3,8 +3,9 @@ package com.greyfall.necromantia.client.core;
 import com.greyfall.necromantia.client.render.items.ItemCauldronRegister;
 import com.greyfall.necromantia.client.render.particles.EntityFXPinkSlime;
 import com.greyfall.necromantia.client.render.tiles.TileEntityCauldronRenderer;
+import com.greyfall.necromantia.common.blocks.ModBlocks;
 import com.greyfall.necromantia.common.core.CommonProxy;
-import com.greyfall.necromantia.common.tiles.TileEntityCandleEntity;
+import com.greyfall.necromantia.common.tiles.TileEntityCandle;
 import com.greyfall.necromantia.client.render.items.ItemCandleRegister;
 import com.greyfall.necromantia.client.render.tiles.TileEntityCandleRenderer;
 import com.greyfall.necromantia.common.Main;
@@ -35,11 +36,11 @@ public class ClientProxy extends CommonProxy {
 
 	@Override
 	public void registerRenderThings() {
-		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCandleEntity.class, new TileEntityCandleRenderer());
-		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(Main.blockCandle), new ItemCandleRegister());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCandle.class, new TileEntityCandleRenderer());
+		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(ModBlocks.candle), new ItemCandleRegister());
 
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCauldron.class, new TileEntityCauldronRenderer());
-		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(Main.blockCauldron),new ItemCauldronRegister());
+		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(ModBlocks.cauldron),new ItemCauldronRegister());
 	}
 
 

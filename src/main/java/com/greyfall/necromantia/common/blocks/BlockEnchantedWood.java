@@ -6,14 +6,13 @@ import com.greyfall.necromantia.common.libs.BlockNames;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
-public class BlockLatex extends ModBlock {
+public class BlockEnchantedWood extends ModBlock {
 
-	public BlockLatex() {
-		super(Material.sponge);
-		this.setHardness(0.2F);
-		this.setStepSound(new CustomStepSound("Latex",1.0F,1.0F));
-		this.setBlockName(BlockNames.LATEX);
-        setBlockTextureName(LibTextures.LATEX);
-	}
+    public BlockEnchantedWood() {
+        super(Material.wood);
+        this.setHardness(0.6F);
+        this.setBlockName(BlockNames.ENCHANTED_WOOD);
+        this.setBlockTextureName(LibTextures.ENCHANTED_WOOD);
+    }
 
 }

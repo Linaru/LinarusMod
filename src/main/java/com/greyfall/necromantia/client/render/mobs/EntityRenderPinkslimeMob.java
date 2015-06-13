@@ -1,5 +1,6 @@
 package com.greyfall.necromantia.client.render.mobs;
  
+import com.greyfall.necromantia.client.libs.LibTextures;
 import com.greyfall.necromantia.client.render.models.ModelPinkslimeMob;
 import com.greyfall.necromantia.common.mobs.EntityPinkslimeMob;
 import org.lwjgl.opengl.GL11;
@@ -15,7 +16,7 @@ import net.minecraft.util.ResourceLocation;
 @SideOnly(Side.CLIENT)
 public class EntityRenderPinkslimeMob extends RenderLiving {
        
-    private static final ResourceLocation slimeTextures = new ResourceLocation("necromantia:textures/entity/pinkslime.png");
+    private static final ResourceLocation slimeTextures = new ResourceLocation(LibTextures.MOB_PINKSLIME);
     private static final String __OBFID = "CL_00001024";
     private ModelBase scaleAmount;
  

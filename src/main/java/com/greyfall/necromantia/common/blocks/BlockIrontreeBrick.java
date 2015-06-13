@@ -6,14 +6,14 @@ import com.greyfall.necromantia.common.libs.BlockNames;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
-public class BlockLatex extends ModBlock {
+public class BlockIrontreeBrick extends ModBlock {
 
-	public BlockLatex() {
-		super(Material.sponge);
+	public BlockIrontreeBrick() {
+		super(Material.ground);
 		this.setHardness(0.2F);
-		this.setStepSound(new CustomStepSound("Latex",1.0F,1.0F));
-		this.setBlockName(BlockNames.LATEX);
-        setBlockTextureName(LibTextures.LATEX);
+		this.setStepSound(Block.soundTypeStone);
+		this.setBlockName(BlockNames.IRONTREE_BRICK);
+		this.setBlockTextureName(LibTextures.IRONTREE_BRICk);
 	}
 
 }

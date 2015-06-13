@@ -5,6 +5,7 @@ import codechicken.lib.render.CCRenderState;
 import codechicken.lib.render.RenderUtils;
 import codechicken.lib.vec.Cuboid6;
 import codechicken.lib.vec.Vector3;
+import com.greyfall.necromantia.client.libs.LibTextures;
 import com.greyfall.necromantia.client.render.models.ModelCauldron;
 import com.greyfall.necromantia.common.tiles.TileEntityCauldron;
 import cpw.mods.fml.relauncher.Side;
@@ -18,15 +19,12 @@ import net.minecraft.util.IIcon;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * Created by Katrina on 05/06/2015.
  */
 @SideOnly(Side.CLIENT)
 public class TileEntityCauldronRenderer extends TileEntitySpecialRenderer {
-    public static ResourceLocation textureLocation=new ResourceLocation("necromantia:textures/blocks/cauldron.png");
+    public static ResourceLocation textureLocation=new ResourceLocation(LibTextures.CAULDRON_MODEL);
     static final float LIGHT_Y_NEG = 0.5F;
     static final float LIGHT_Y_POS = 1.0F;
     static final float LIGHT_XZ_NEG = 0.8F;

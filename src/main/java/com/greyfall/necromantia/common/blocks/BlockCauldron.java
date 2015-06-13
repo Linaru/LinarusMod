@@ -2,6 +2,7 @@ package com.greyfall.necromantia.common.blocks;
 
 import com.greyfall.necromantia.common.Main;
 import com.greyfall.necromantia.common.core.GuiHandler;
+import com.greyfall.necromantia.common.libs.BlockNames;
 import com.greyfall.necromantia.common.tiles.TileEntityCauldron;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -18,7 +19,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class BlockCauldron extends BlockContainer {
+public class BlockCauldron extends ModBlockContainer {
 
     public BlockCauldron() {
         super(Material.ground);
@@ -26,6 +27,7 @@ public class BlockCauldron extends BlockContainer {
         this.setStepSound(Block.soundTypeMetal);
         this.setBlockTextureName("minecraft:cauldron_side");
         this.isBlockContainer=true;
+        this.setBlockName(BlockNames.CAULDRON);
     }
 
 

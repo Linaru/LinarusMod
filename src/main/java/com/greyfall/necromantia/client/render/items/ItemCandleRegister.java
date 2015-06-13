@@ -1,7 +1,7 @@
 package com.greyfall.necromantia.client.render.items;
 
 import com.greyfall.necromantia.client.render.models.CandleModel;
-import com.greyfall.necromantia.common.tiles.TileEntityCandleEntity;
+import com.greyfall.necromantia.common.tiles.TileEntityCandle;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
@@ -35,7 +35,7 @@ public class ItemCandleRegister implements IItemRenderer {
     public void renderItem(ItemRenderType type, ItemStack item, Object... data) {
         GL11.glPushMatrix();
         GL11.glScalef(2, 2, 2);
-        TileEntityRendererDispatcher.instance.renderTileEntityAt(new TileEntityCandleEntity(), 0.0d, 0.0d, 0.0d, 0);
+        TileEntityRendererDispatcher.instance.renderTileEntityAt(new TileEntityCandle(), 0.0d, 0.0d, 0.0d, 0);
         GL11.glPopMatrix();
     }
 }

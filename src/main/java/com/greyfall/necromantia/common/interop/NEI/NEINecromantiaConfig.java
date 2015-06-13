@@ -4,6 +4,7 @@ import codechicken.lib.util.LangProxy;
 import codechicken.nei.api.API;
 import codechicken.nei.api.IConfigureNEI;
 import com.greyfall.necromantia.common.Main;
+import com.greyfall.necromantia.common.libs.LibMisc;
 
 /**
  * Created by Katrina on 11/06/2015.
@@ -28,6 +29,6 @@ public static LangProxy NEILang=new LangProxy("necromantia.nei");
 
     @Override
     public String getVersion() {
-        return Main.VERSION;
+        return LibMisc.MOD_VERSION;
     }
 }
