@@ -7,9 +7,9 @@ public class BlockNames {
 
     public static final String CAULDRON="cauldron";
     public static final String WORKTOP ="worktop";
-    public static final String SLIME_LATEX="slimeLatex";
-    public static final String LATEX="latex";
-    public static final String WAX="wax";
+    public static final String SLIME_LATEX="slimeLatexBlock";
+    public static final String LATEX="latexBlock";
+    public static final String WAX="waxBlock";
     public static final String CRATE="crate";
     public static final String ENCHANTED_WOOD="enchantedWood";
     public static final String CANDLE="candle";

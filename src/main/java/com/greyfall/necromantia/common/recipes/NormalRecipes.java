@@ -4,6 +4,8 @@ import com.greyfall.necromantia.common.Main;
 import com.greyfall.necromantia.common.blocks.ModBlock;
 import com.greyfall.necromantia.common.blocks.ModBlocks;
 import com.greyfall.necromantia.common.interop.BotaniaInterop;
+import com.greyfall.necromantia.common.items.ModItem;
+import com.greyfall.necromantia.common.items.ModItems;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.event.FMLInterModComms;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -12,6 +14,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
+import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 /**
  * Created by Katrina on 13/06/2015.
@@ -24,49 +27,40 @@ public class NormalRecipes {
     {
         GameRegistry.addRecipe(new ItemStack(ModBlocks.cauldron), new Object[]{"I I", "I I", "III", 'I', Items.iron_ingot});
         //Pink Latex Block
-        GameRegistry.addRecipe(new ItemStack(ModBlocks.slimeLatex), new Object[]{"LL", "LL", 'L', Main.itemSlimelatex});
+        GameRegistry.addRecipe(new ItemStack(ModBlocks.slimeLatex), new Object[]{"LL", "LL", 'L', ModItems.slimeLatex});
         //Latex Block
-        GameRegistry.addRecipe(new ItemStack(ModBlocks.latex), new Object[]{"LL", "LL", 'L', Main.itemLatex});
+        GameRegistry.addRecipe(new ItemStack(ModBlocks.latex), new Object[]{"LL", "LL", 'L', ModItems.latex});
         //Ironwood
         GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.enchantedWood, 4), new ItemStack(ModBlocks.logIronwood));
         //Wax Block
-        GameRegistry.addRecipe(new ItemStack(ModBlocks.wax), new Object[]{"WWW", "WWW", "WWW", 'W', Main.itemWax});
+        GameRegistry.addRecipe(new ItemStack(ModBlocks.wax), new Object[]{"WWW", "WWW", "WWW", 'W', ModItems.wax});
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.crate), new Object[]{"III", "IWI", "III", Character.valueOf('I'), Items.iron_ingot, Character.valueOf('W'),"plankWood"}));
-        GameRegistry.addShapelessRecipe(new ItemStack(Main.itemWax, 9), new ItemStack(ModBlocks.wax));
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.wax, 9), new ItemStack(ModBlocks.wax));
         //candle
-        GameRegistry.addRecipe(new ItemStack(ModBlocks.candle), new Object[]{"S", "W", "W", 'S', Items.string, 'W', Main.itemWax});
+        GameRegistry.addRecipe(new ItemStack(ModBlocks.candle), new Object[]{"S", "W", "W", 'S', Items.string, 'W', ModItems.wax});
         //Gold Coin
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Main.itemGoldcoin), new Object[]{"GGG", "G G", "GGG", Character.valueOf('G'), "nuggetGold"}));
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.goldCoin), new Object[]{"GGG", "G G", "GGG", Character.valueOf('G'), "nuggetGold"}));
         //Mortar and pestle
-        if (!Loader.isModLoaded("Botania")) {
-            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Main.itemMortar), new Object[]{" S", "W ", "B ", Character.valueOf('S'), "stickWood", Character.valueOf('W'), "plankWood", Character.valueOf('B'), Items.bowl}));
-        }
+            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.mortar), new Object[]{" S", "W ", "B ", Character.valueOf('S'), "stickWood", Character.valueOf('W'), "plankWood", Character.valueOf('B'), Items.bowl}));
         //Silica
-        if (Loader.isModLoaded("Botania")) {
-            BotaniaInterop.registerBotaniaRecepies();
-        } else {
-            GameRegistry.addShapelessRecipe(new ItemStack(Main.itemSilicondioxide, 5), new ItemStack(Items.quartz), new ItemStack(Main.itemMortar));
-        }
 
-        if(Loader.isModLoaded("Waila"))
-        {
-            FMLInterModComms.sendMessage("Waila", "register", "com.greyfall.necromantia.common.interop.waila.Waila.callbackRegister");
-        }
+            GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ModItems.siliconDioxide, 5), new ItemStack(Items.quartz),"pestleAndMortar"));
+
         //Siliconerubber
-        GameRegistry.addShapelessRecipe(new ItemStack(Main.itemSiliconerubber), new ItemStack(Main.itemSilicondioxide), new ItemStack(Items.coal));
-        GameRegistry.addShapelessRecipe(new ItemStack(Main.itemSiliconerubber), new ItemStack(Main.itemSilicondioxide), new ItemStack(Blocks.sand));
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.siliconeRubber), new ItemStack(ModItems.siliconDioxide), new ItemStack(Items.coal));
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.siliconeRubber), new ItemStack(ModItems.siliconDioxide), new ItemStack(Blocks.sand));
 
         //armour
         //Pink latex
-        GameRegistry.addRecipe(new ItemStack(Main.pinklatexHelmet), new Object[]{"LLL", "L L", 'L', Main.itemSlimelatex});
-        GameRegistry.addRecipe(new ItemStack(Main.pinklatexChestplate), new Object[]{"L L", "LLL", "LLL", 'L', Main.itemSlimelatex});
-        GameRegistry.addRecipe(new ItemStack(Main.pinklatexLeggings), new Object[]{"LLL", "L L", "L L", 'L', Main.itemSlimelatex});
-        GameRegistry.addRecipe(new ItemStack(Main.pinklatexBoots), new Object[]{"L L", "L L", 'L', Main.itemSlimelatex});
+        GameRegistry.addRecipe(new ItemStack(ModItems.pinklatexHelmet), new Object[]{"LLL", "L L", 'L', ModItems.slimeLatex});
+        GameRegistry.addRecipe(new ItemStack(ModItems.pinklatexChestplate), new Object[]{"L L", "LLL", "LLL", 'L', ModItems.slimeLatex});
+        GameRegistry.addRecipe(new ItemStack(ModItems.pinklatexLeggings), new Object[]{"LLL", "L L", "L L", 'L', ModItems.slimeLatex});
+        GameRegistry.addRecipe(new ItemStack(ModItems.pinklatexBoots), new Object[]{"L L", "L L", 'L', ModItems.slimeLatex});
         //Under Armour
-        GameRegistry.addRecipe(new ItemStack(Main.siliconeHelmet), new Object[]{"LLL", "L L", 'L', Main.itemLatex});
-        GameRegistry.addRecipe(new ItemStack(Main.siliconeChestplate), new Object[]{"S S", "LSL", "SSS", 'S', Main.itemSiliconerubber, 'L', Main.itemLatex});
-        GameRegistry.addRecipe(new ItemStack(Main.siliconeLeggings), new Object[]{"LSL", "S S", "L L", 'S', Main.itemSiliconerubber, 'L', Main.itemLatex});
-        GameRegistry.addRecipe(new ItemStack(Main.siliconeBoots), new Object[]{"L L", "L L", 'L', Main.itemLatex});
+        GameRegistry.addRecipe(new ItemStack(ModItems.siliconeHelmet), new Object[]{"LLL", "L L", 'L', ModItems.latex});
+        GameRegistry.addRecipe(new ItemStack(ModItems.siliconeChestplate), new Object[]{"S S", "LSL", "SSS", 'S', ModItems.siliconeRubber, 'L', ModItems.latex});
+        GameRegistry.addRecipe(new ItemStack(ModItems.siliconeLeggings), new Object[]{"LSL", "S S", "L L", 'S', ModItems.siliconeRubber, 'L', ModItems.latex});
+        GameRegistry.addRecipe(new ItemStack(ModItems.siliconeBoots), new Object[]{"L L", "L L", 'L', ModItems.latex});
 
         addSmeltingRecipes();
     }
@@ -76,7 +70,7 @@ public class NormalRecipes {
 
     public static void addSmeltingRecipes()
     {
-        GameRegistry.addSmelting(Main.itemSlimelatex, new ItemStack(Main.itemLatex), 0.1f);
+        GameRegistry.addSmelting(ModItems.slimeLatex, new ItemStack(ModItems.latex), 0.1f);
         GameRegistry.addSmelting(ModBlocks.slimeLatex, new ItemStack(ModBlocks.latex), 0.1f);
 
 
@@ -87,5 +81,6 @@ public class NormalRecipes {
     {
         OreDictionary.registerOre("logWood",ModBlocks.logIronwood);
         OreDictionary.registerOre("plankWood", ModBlocks.enchantedWood);
+        OreDictionary.registerOre("pestleAndMortar",ModItems.mortar);
     }
 }

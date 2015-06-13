@@ -4,9 +4,9 @@ tile.cauldron.name=Cauldron
 //containers
 tile.worktop.name=Worktop
 //standard blocks
-tile.slimeLatex.name=Pink Latex Rubber
-tile.latex.name=Latex Rubber
-tile.wax.name=Wax Block
+tile.slimeLatexBlock.name=Pink Latex Rubber
+tile.latexBlock.name=Latex Rubber
+tile.waxBlock.name=Wax Block
 tile.crate.name=Crate
 tile.enchantedWood.name=Enchanted Wood
 tile.irontreeBrick.name=Iron Tree Brick
@@ -20,32 +20,32 @@ tile.candle.name=Candle
 //adminblock
 tile.adminstone.name=Iron Tree Brick
 //Items
-item.ItemSlimelatex.name=Latex Slime
-item.ItemLatex.name=Latex Rubber
-item.ItemSiliconerubber.name=Silicone Rubber
-item.ItemGoldcoin.name=Gold Coin
-item.ItemWax.name=Wax
-item.ItemRiceseeds.name=Rice seeds
-item.ItemRice.name=Rice
-item.Riceball.name=Rice Ball
-item.Cookedapple.name=Cooked Apple
-item.Boiledleather.name=Boiled Leather
-item.ItemSilicondioxide.name=Silica
-item.ItemMortar.name=Mortar and Pestle
+item.slimeLatex.name=Latex Slime
+item.latex.name=Latex Rubber
+item.siliconeRubber.name=Silicone Rubber
+item.goldCoin.name=Gold Coin
+item.wax.name=Wax
+item.riceSeeds.name=Rice seeds
+item.rice.name=Rice
+item.riceBall.name=Rice Ball
+item.cookedApple.name=Cooked Apple
+item.boiledLeather.name=Boiled Leather
+item.siliconDioxide.name=Silica
+item.mortar.name=Mortar and Pestle
 //books bookEncyclopediaminecraftia1
 item.BookEncyclopediaminecraftia1.name=Encyclopedia Minecraftia: Volume 1
 
 //Armour
     //Pink latex
-item.ItemPinklatexHelmet.name=Pink Latex Hood
-item.ItemPinklatexChestplate.name=Pink Latex Top
-item.ItemPinklatexLeggings.name=Pink Latex Leggings
-item.ItemPinklatexBoots.name=Pink Latex Socks
+item.pinkLatexHelmet.name=Pink Latex Hood
+item.pinkLatexChestplate.name=Pink Latex Top
+item.pinkLatexLeggings.name=Pink Latex Leggings
+item.pinklatexBoots.name=Pink Latex Socks
     //Silicone
-item.ItemSiliconeHelmet.name=Under Armour Mask
-item.ItemSiliconeChestplate.name=Under Armour Chest
-item.ItemSiliconeLeggings.name=Under Armour Legs
-item.ItemSiliconeBoots.name=Under Armour Boots
+item.siliconeHelmet.name=Under Armour Mask
+item.siliconeChestplate.name=Under Armour Chest
+item.siliconeLeggings.name=Under Armour Legs
+item.siliconeBoots.name=Under Armour Boots
 //mobs
 entity.PinkSlime.name=Rubbery Slime
 

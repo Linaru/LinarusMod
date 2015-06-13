@@ -1,14 +1,15 @@
-package com.greyfall.necromantia.common.items;
+package com.greyfall.necromantia.common.items.armor.silicone;
 
+import com.greyfall.necromantia.common.Main;
+import com.greyfall.necromantia.common.items.ModItemArmor;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 
-public class ItemSiliconeArmour extends ItemArmor {
+public class ItemSiliconeArmour extends ModItemArmor {
 
-	public ItemSiliconeArmour(ArmorMaterial armourMaterial, int renderIndex,
-			int armourType) {
-		super(armourMaterial, renderIndex, armourType);
+	public ItemSiliconeArmour(int armourType) {
+		super(Main.siliconeArmourMaterial, 0, armourType);
 	}
 	@Override
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type)

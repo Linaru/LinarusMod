@@ -1,6 +1,7 @@
 package com.greyfall.necromantia.common.mobs;
 
 import com.greyfall.necromantia.common.Main;
+import com.greyfall.necromantia.common.items.ModItems;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.monster.EntitySlime;
 import net.minecraft.item.Item;
@@ -24,7 +25,7 @@ public class EntityPinkslimeMob extends EntitySlime{
 	@Override
 	protected Item getDropItem()
 	{
-		return this.getSlimeSize() == 1 ? Main.itemSlimelatex : Item.getItemById(0);
+		return this.getSlimeSize() == 1 ? ModItems.slimeLatex : Item.getItemById(0);
 	}
 
 	@Override

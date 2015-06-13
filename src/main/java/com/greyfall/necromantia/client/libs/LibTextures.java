@@ -40,6 +40,11 @@ public class LibTextures {
     public static final String ADMINSTONE=PREFIX+"irontreebrick";
 
 
+
+
+
+    // Items
+
     // Tile Entity Rendeeres
     public static final String CANDLE_MODEL =PREFIX+"textures/blocks/candle.png";
     public static final String CAULDRON_MODEL =PREFIX+"textures/blocks/cauldron.png";

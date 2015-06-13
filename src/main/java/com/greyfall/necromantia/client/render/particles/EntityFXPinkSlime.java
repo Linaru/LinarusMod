@@ -1,6 +1,7 @@
 package com.greyfall.necromantia.client.render.particles;
 
 import com.greyfall.necromantia.common.Main;
+import com.greyfall.necromantia.common.items.ModItems;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.Minecraft;
@@ -19,7 +20,7 @@ public class EntityFXPinkSlime extends EntityFX {
 
     public EntityFXPinkSlime(World p_i1219_1_, double p_i1219_2_, double p_i1219_4_, double p_i1219_6_, double p_i1219_8_, double p_i1219_10_, double p_i1219_12_) {
         super(p_i1219_1_, p_i1219_2_, p_i1219_4_, p_i1219_6_, p_i1219_8_, p_i1219_10_, p_i1219_12_);
-        this.setParticleIcon(Main.itemSlimelatex.getIconFromDamage(0));
+        this.setParticleIcon(ModItems.slimeLatex.getIconFromDamage(0));
         this.particleRed = this.particleGreen = this.particleBlue = 1.0F;
         this.particleGravity = Blocks.snow.blockParticleGravity;
         this.particleScale /= 2.0F;
