@@ -48,6 +48,7 @@ item.ItemSiliconeLeggings.name=Under Armour Legs
 item.ItemSiliconeBoots.name=Under Armour Boots
 //mobs
 entity.PinkSlime.name=Rubbery Slime
+
 //Creative tabs
 itemGroup.tabnecromantia=Necromantia Main
 itemGroup.tabnecromantia.armor=Necromantia Armour
