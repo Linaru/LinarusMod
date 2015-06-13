@@ -26,16 +26,15 @@ public class NormalRecipes {
         GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.enchantedWood, 4), new ItemStack(ModBlocks.logIronwood));
         //Wax Block
         GameRegistry.addRecipe(new ItemStack(ModBlocks.wax), new Object[]{"WWW", "WWW", "WWW", 'W', Main.itemWax});
-        GameRegistry.addRecipe(new ItemStack(ModBlocks.crate), new Object[]{"III", "IEI", "III", 'I', Items.iron_ingot, 'E', ModBlocks.enchantedWood});
-        GameRegistry.addRecipe(new ItemStack(ModBlocks.crate), new Object[]{"III", "IWI", "III", 'I', Items.iron_ingot, 'W', Blocks.planks});
+        GameRegistry.addRecipe(new ItemStack(ModBlocks.crate), new Object[]{"III", "IWI", "III", 'I', Items.iron_ingot, 'W',"plankWood"});
         GameRegistry.addShapelessRecipe(new ItemStack(Main.itemWax, 9), new ItemStack(ModBlocks.wax));
         //candle
         GameRegistry.addRecipe(new ItemStack(ModBlocks.candle), new Object[]{"S", "W", "W", 'S', Items.string, 'W', Main.itemWax});
         //Gold Coin
-        GameRegistry.addRecipe(new ItemStack(Main.itemGoldcoin), new Object[]{"GGG", "G G", "GGG", 'G', Items.gold_nugget});
+        GameRegistry.addRecipe(new ItemStack(Main.itemGoldcoin), new Object[]{"GGG", "G G", "GGG", 'G', "nuggetGold"});
         //Mortar and pestle
         if (!Loader.isModLoaded("Botania")) {
-            GameRegistry.addRecipe(new ItemStack(Main.itemMortar), new Object[]{" S", "W ", "B ", 'S', Items.stick, 'W', Blocks.planks, 'B', Items.bowl});
+            GameRegistry.addRecipe(new ItemStack(Main.itemMortar), new Object[]{" S", "W ", "B ", 'S', "stickWood", 'W', "plankWood", 'B', Items.bowl});
         }
         //Silica
         if (Loader.isModLoaded("Botania")) {
