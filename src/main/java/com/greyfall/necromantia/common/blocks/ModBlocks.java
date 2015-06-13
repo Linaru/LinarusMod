@@ -4,6 +4,7 @@ import com.greyfall.necromantia.common.blocks.wood.BlockHardstone;
 import com.greyfall.necromantia.common.blocks.wood.BlockLeavesIronwood;
 import com.greyfall.necromantia.common.blocks.wood.BlockLogIronwood;
 import com.greyfall.necromantia.common.blocks.wood.BlockLogIronwoodOre;
+import com.greyfall.necromantia.common.items.itemBlocks.ItemBlockLatex;
 import com.greyfall.necromantia.common.libs.BlockNames;
 import com.greyfall.necromantia.common.tiles.TileEntityCandle;
 import com.greyfall.necromantia.common.tiles.TileEntityCauldron;
@@ -19,7 +20,7 @@ public class ModBlocks {
     //Containers
     public static Block worktop;
     //standard blocks
-    public static Block slimeLatex;
+    //public static Block slimeLatex;
     public static Block latex;
     public static Block wax;
     public static Block crate;
@@ -44,7 +45,7 @@ public class ModBlocks {
     {
         cauldron = new BlockCauldron();
         worktop = new BlockWorktop();
-        slimeLatex = new BlockSlimeLatex();
+        //slimeLatex = new BlockSlimeLatex();
         latex = new BlockLatex();
         wax = new BlockWax();
         crate = new BlockCrate();
@@ -74,8 +75,8 @@ public class ModBlocks {
         // Containers
         GameRegistry.registerBlock(worktop, BlockNames.WORKTOP);
         // standard blocks
-        GameRegistry.registerBlock(slimeLatex,BlockNames.SLIME_LATEX);
-        GameRegistry.registerBlock(latex, BlockNames.LATEX);
+        //GameRegistry.registerBlock(slimeLatex,BlockNames.SLIME_LATEX);
+        GameRegistry.registerBlock(latex, ItemBlockLatex.class, BlockNames.LATEX);
         GameRegistry.registerBlock(wax, BlockNames.WAX);
         GameRegistry.registerBlock(crate, BlockNames.CRATE);
         GameRegistry.registerBlock(enchantedWood, BlockNames.ENCHANTED_WOOD);

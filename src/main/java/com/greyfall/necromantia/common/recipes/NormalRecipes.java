@@ -27,7 +27,7 @@ public class NormalRecipes {
     {
         GameRegistry.addRecipe(new ItemStack(ModBlocks.cauldron), new Object[]{"I I", "I I", "III", 'I', Items.iron_ingot});
         //Pink Latex Block
-        GameRegistry.addRecipe(new ItemStack(ModBlocks.slimeLatex), new Object[]{"LL", "LL", 'L', ModItems.slimeLatex});
+        GameRegistry.addRecipe(new ItemStack(ModBlocks.latex,1,1), new Object[]{"LL", "LL", 'L', ModItems.slimeLatex});
         //Latex Block
         GameRegistry.addRecipe(new ItemStack(ModBlocks.latex), new Object[]{"LL", "LL", 'L', ModItems.latex});
         //Ironwood
@@ -71,7 +71,7 @@ public class NormalRecipes {
     public static void addSmeltingRecipes()
     {
         GameRegistry.addSmelting(ModItems.slimeLatex, new ItemStack(ModItems.latex), 0.1f);
-        GameRegistry.addSmelting(ModBlocks.slimeLatex, new ItemStack(ModBlocks.latex), 0.1f);
+        GameRegistry.addSmelting(new ItemStack(ModBlocks.latex,1,1), new ItemStack(ModBlocks.latex), 0.1f);
 
 
         addOreDictEntries();

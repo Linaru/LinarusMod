@@ -104,7 +104,7 @@ public class Main {
     public static CreativeTabs tabnecromantia = new CreativeTabs("tabnecromantia") {
         @Override
         public Item getTabIconItem() {
-            return new ItemStack(ModBlocks.slimeLatex).getItem();
+            return new ItemStack(ModBlocks.latex,1,1).getItem();
         }
     };
 
