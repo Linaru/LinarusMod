@@ -11,7 +11,7 @@ public class BlockSlimeLatex extends ModBlock {
 	public BlockSlimeLatex() {
 		super(Material.sponge);
 		this.setHardness(0.2F);
-		this.setStepSound(Block.soundTypeSand);
+		this.setStepSound(new CustomStepSound("Latex", 1.0F, 1.0F));
 		this.setBlockName(BlockNames.SLIME_LATEX);
 		this.setBlockTextureName(LibTextures.SLIME_LATEX);
 	}
