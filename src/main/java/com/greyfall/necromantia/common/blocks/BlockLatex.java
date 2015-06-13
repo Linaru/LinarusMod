@@ -8,7 +8,7 @@ public class BlockLatex extends Block {
 	public BlockLatex(Material material) {
 		super(material);
 		this.setHardness(0.2F);
-		this.setStepSound(Block.soundTypeSand);
+		this.setStepSound(new CustomStepSound("Latex",1.0F,1.0F));
 	}
 
 }
