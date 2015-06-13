@@ -12,6 +12,10 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
+ /**
+ * Created by Katrina on 13/06/2015.
+ */
+
 public class NormalRecipes {
 
 
