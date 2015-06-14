@@ -19,6 +19,9 @@ tile.hardstone.name=Hardened Stone
 tile.candle.name=Candle
 //adminblock
 tile.adminstone.name=Iron Tree Brick
+
+
+tile.saplingIronwood.name=Ironwood Sapling
 //Items
 item.slimeLatex.name=Latex Slime
 item.latex.name=Latex Rubber

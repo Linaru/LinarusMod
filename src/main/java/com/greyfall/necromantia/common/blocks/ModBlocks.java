@@ -1,10 +1,8 @@
 package com.greyfall.necromantia.common.blocks;
 
-import com.greyfall.necromantia.common.blocks.wood.BlockHardstone;
-import com.greyfall.necromantia.common.blocks.wood.BlockLeavesIronwood;
-import com.greyfall.necromantia.common.blocks.wood.BlockLogIronwood;
-import com.greyfall.necromantia.common.blocks.wood.BlockLogIronwoodOre;
+import com.greyfall.necromantia.common.blocks.wood.*;
 import com.greyfall.necromantia.common.items.itemBlocks.ItemBlockLatex;
+import com.greyfall.necromantia.common.items.itemBlocks.ItemBlockSaplings;
 import com.greyfall.necromantia.common.libs.BlockNames;
 import com.greyfall.necromantia.common.tiles.TileEntityCandle;
 import com.greyfall.necromantia.common.tiles.TileEntityCauldron;
@@ -39,6 +37,8 @@ public class ModBlocks {
     //Admin blocks
     public static Block adminstone;
 
+    public static Block sapling;
+
 
 
     public static void registerBlocks()
@@ -65,6 +65,7 @@ public class ModBlocks {
 
         //Admin blocks
         adminstone = new BlockAdminstone();
+        sapling=new BlockIronwoodSapling();
         registerBlockData();
     }
 
@@ -93,7 +94,7 @@ public class ModBlocks {
         GameRegistry.registerBlock(candle, BlockNames.CANDLE);
         //Admin blocks
         GameRegistry.registerBlock(adminstone, BlockNames.ADMINSTONE);
-
+        GameRegistry.registerBlock(sapling, ItemBlockSaplings.class,BlockNames.SAPLINGS);
 
 
         registerTileEntities();
