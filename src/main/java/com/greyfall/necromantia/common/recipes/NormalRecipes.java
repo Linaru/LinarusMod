@@ -12,6 +12,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
@@ -61,7 +62,7 @@ public class NormalRecipes {
         GameRegistry.addRecipe(new ItemStack(ModItems.siliconeChestplate), new Object[]{"S S", "LSL", "SSS", 'S', ModItems.siliconeRubber, 'L', ModItems.latex});
         GameRegistry.addRecipe(new ItemStack(ModItems.siliconeLeggings), new Object[]{"LSL", "S S", "L L", 'S', ModItems.siliconeRubber, 'L', ModItems.latex});
         GameRegistry.addRecipe(new ItemStack(ModItems.siliconeBoots), new Object[]{"L L", "L L", 'L', ModItems.latex});
-
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.riceSeeds),new ItemStack(ModItems.rice));
         addSmeltingRecipes();
     }
 
@@ -83,5 +84,14 @@ public class NormalRecipes {
         OreDictionary.registerOre("logWood",ModBlocks.logIronwood);
         OreDictionary.registerOre("plankWood", ModBlocks.enchantedWood);
         OreDictionary.registerOre("pestleAndMortar",ModItems.mortar);
+        OreDictionary.registerOre("cropRice",ModItems.rice);
+        OreDictionary.registerOre("seedRice",ModItems.riceSeeds);
+        addDrops();
+    }
+
+
+    public static void addDrops()
+    {
+        MinecraftForge.addGrassSeed(new ItemStack(ModItems.riceSeeds),3);
     }
 }

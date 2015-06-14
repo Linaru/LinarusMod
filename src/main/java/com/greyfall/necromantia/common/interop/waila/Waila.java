@@ -2,6 +2,7 @@ package com.greyfall.necromantia.common.interop.waila;
 
 import codechicken.lib.util.LangProxy;
 import com.greyfall.necromantia.common.blocks.BlockCauldron;
+import com.greyfall.necromantia.common.blocks.BlockWildRice;
 import mcp.mobius.waila.api.IWailaRegistrar;
 
 /**
@@ -14,5 +15,6 @@ public class Waila {
     public static void callbackRegister(IWailaRegistrar registrar)
     {
         registrar.registerBodyProvider(new CauldronProvider(), BlockCauldron.class);
+        registrar.registerBodyProvider(new RiceProvider(), BlockWildRice.class);
     }
 }

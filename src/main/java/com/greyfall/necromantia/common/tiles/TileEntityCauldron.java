@@ -404,6 +404,11 @@ public class TileEntityCauldron extends TileEntity implements ISidedInventory, I
             return false;
         else
         {
+            CauldronRecipe recipe=CauldronCrafting.findRecipe(this.inventory[2],tank.getFluid());
+            if(recipe!=null && recipe.isFluidicOutput())
+            {
+                return recipe.isRecepieRight(this.inventory[2],tank.getFluid());
+            }
             ItemStack[] output=CauldronCrafting.getOutput(this.inventory[2],tank.getFluid());
             if(output==null)
                 return false;

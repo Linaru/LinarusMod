@@ -82,6 +82,8 @@ necromantia.block.cauldron=Used for the process of Boiling ingredients.
 necromantia.waila.cauldron.fluidName=Fluid: %s
 necromantia.waila.cauldron.fluidAmount=Amount: %d mb
 necromantia.waila.cauldron.noFluid=Empty
+necromantia.waila.rice.growth=Growth
+necromantia.waila.rice.mature=Mature
 
 
 

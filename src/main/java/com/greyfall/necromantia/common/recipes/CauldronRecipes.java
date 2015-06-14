@@ -8,6 +8,7 @@ import com.greyfall.necromantia.common.items.ModItems;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
@@ -25,13 +26,14 @@ public class CauldronRecipes {
         CauldronCrafting.addNormalRecepie(new ItemStack(Items.apple,1),new FluidStack(FluidRegistry.WATER,250),new ItemStack[] { new ItemStack(ModItems.cookedApple),new ItemStack(ModItems.wax)});
         CauldronCrafting.addNormalRecepie(new ItemStack(Items.golden_apple,1),new FluidStack(FluidRegistry.WATER,250),new ItemStack[] { new ItemStack(ModItems.cookedApple),new ItemStack(ModItems.wax),new ItemStack(Items.gold_nugget,8)});
         CauldronCrafting.addNormalRecepie(new ItemStack(Items.golden_apple,1,1),new FluidStack(FluidRegistry.WATER,250),new ItemStack[] { new ItemStack(ModItems.cookedApple),new ItemStack(ModItems.wax),new ItemStack(Blocks.gold_block,8)});
-        CauldronCrafting.addNormalRecepie(new ItemStack(ModItems.rice,1),new FluidStack(FluidRegistry.WATER,250),new ItemStack[] { new ItemStack(ModItems.riceBall)});
+        CauldronCrafting.addNormalRecepie("cropRice",1,new FluidStack(FluidRegistry.WATER,250),new ItemStack[] { new ItemStack(ModItems.riceBall)});
         CauldronCrafting.addNormalRecepie(new ItemStack(Items.leather,1),new FluidStack(FluidRegistry.WATER,500),new ItemStack[] { new ItemStack(ModItems.boiledLeather)});
         CauldronCrafting.addNormalRecepie(new ItemStack(Items.spider_eye,1),new FluidStack(FluidRegistry.WATER,500),new ItemStack[] { new ItemStack(Items.fermented_spider_eye)});
-        CauldronCrafting.addNormalRecepie(new ItemStack(Items.poisonous_potato,1),new FluidStack(FluidRegistry.WATER,250),new ItemStack[] { new ItemStack(Items.potato)});
+        CauldronCrafting.addNormalRecepie(new ItemStack(Items.poisonous_potato,1),new FluidStack(FluidRegistry.WATER,500),new ItemStack[] { new ItemStack(Items.potato)});
 
         if (FluidRegistry.isFluidRegistered("acid"))
-            CauldronCrafting.addNormalRecepie(new ItemStack(ModItems.siliconDioxide,1,1),new FluidStack(FluidRegistry.WATER,1000),new ItemStack[] { new ItemStack(Items.potato/*Replace this potato with hydrochloric acid.*/)});
+            CauldronCrafting.addNormalRecepie(new ItemStack(ModItems.siliconDioxide,1),new FluidStack(FluidRegistry.WATER,500),new ItemStack[] {FluidContainerRegistry.fillFluidContainer(FluidRegistry.getFluidStack("acid",1000),new ItemStack(Items.bucket))});
+        //TODO: make this a custom recipe that acidifies the water
 
 
         /*

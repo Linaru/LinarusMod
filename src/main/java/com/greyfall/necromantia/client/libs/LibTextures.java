@@ -32,7 +32,7 @@ public class LibTextures {
 
     public static final String IRONWOOD_LEAVES=PREFIX+"leaves_ironwood_opaque";
 
-    public static final String WILD_RICE=PREFIX+"ricecrop_3";
+    public static final String WILD_RICE=PREFIX+"ricecrop_";
 
     public static final String RUNE=PREFIX+"runes/y_base";
 

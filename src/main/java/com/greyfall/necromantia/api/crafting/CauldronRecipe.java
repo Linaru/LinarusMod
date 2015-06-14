@@ -287,4 +287,15 @@ public class CauldronRecipe{
 
         return output;
     }
+
+    /**
+     * Checks if this recipe outputs fluid
+     * @return
+     */
+    public boolean isFluidicOutput()
+    {
+        return false;
+    }
+
+
 }
