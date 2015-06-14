@@ -59,7 +59,7 @@ itemGroup.tabnecromantia.admin=Necromantia Admin
 // ITEM Descs
 necromantia.item.boiledLeather.info1=Boiled leather is much tougher,
 necromantia.item.boiledLeather.info2=but also far more brittle.
-necromantia.item.ironwood.info1=a rare kind of iron ore with plant fibre woven through it
+necromantia.item.ironwood=a rare kind of iron ore with plant fibre woven through it
 necromantia.item.cookedApple=Mmm..  Still warm.
 necromantia.item.goldCoin=A commonly used currency.
 necromantia.item.latex=a resistant rubber used in crafting.
