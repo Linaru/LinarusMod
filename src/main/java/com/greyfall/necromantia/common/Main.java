@@ -4,17 +4,22 @@ import codechicken.lib.util.LangProxy;
 import com.greyfall.necromantia.common.blocks.ModBlocks;
 import com.greyfall.necromantia.common.books.BookEncyclopediaminecraftia1;
 import com.greyfall.necromantia.common.core.CommonProxy;
+import com.greyfall.necromantia.common.core.config.NecromantiaConfig;
 import com.greyfall.necromantia.common.items.*;
 import com.greyfall.necromantia.common.libs.LibMisc;
 import com.greyfall.necromantia.common.mobs.EntityMain;
 import com.greyfall.necromantia.common.recipes.CauldronRecipes;
 import com.greyfall.necromantia.common.recipes.NormalRecipes;
+import com.greyfall.necromantia.common.world.ModBiomes;
+import com.greyfall.necromantia.common.worldgen.BiomeEvents;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.event.FMLInterModComms;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.biome.WorldChunkManager;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.EnumHelper;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -67,7 +72,9 @@ public class Main {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+        NecromantiaConfig.parseConfig(event.getSuggestedConfigurationFile());
         logger=event.getModLog();
+        ModBiomes.registerBiomes();
         EntityMain.mainRegistry(); //? not sure what is wrong here Entity tutorial did not explain this step.
         ModBlocks.registerBlocks();
         ModItems.registerItems();
@@ -76,6 +83,12 @@ public class Main {
         {
             FMLInterModComms.sendMessage("Waila", "register", "com.greyfall.necromantia.common.interop.waila.Waila.callbackRegister");
         }
+        MinecraftForge.EVENT_BUS.register(new BiomeEvents());
+
+
+        // Biome Testing code - DO NOT TOUCH
+        //WorldChunkManager.allowedBiomes.clear();
+        //WorldChunkManager.allowedBiomes.add(ModBiomes.biomeIronwoodForest);
 
     }
 

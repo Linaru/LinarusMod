@@ -3,17 +3,24 @@ package com.greyfall.necromantia.common.blocks.wood;
 import com.greyfall.necromantia.client.libs.LibTextures;
 import com.greyfall.necromantia.common.Main;
 import com.greyfall.necromantia.common.libs.BlockNames;
+import com.greyfall.necromantia.common.worldgen.WorldGenIronwoodTree;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import net.minecraft.world.gen.feature.WorldGenBigTree;
+import net.minecraft.world.gen.feature.WorldGenCanopyTree;
+import net.minecraft.world.gen.feature.WorldGenTrees;
+import net.minecraft.world.gen.feature.WorldGenerator;
 
 import java.util.List;
 import java.util.Random;
@@ -59,13 +66,71 @@ public class BlockIronwoodSapling extends BlockBush implements IGrowable {
 
 
     private void growTree(World world,int x, int y, int z, Random rand) {
+        if (!net.minecraftforge.event.terraingen.TerrainGen.saplingGrowTree(world, rand, x, y, z)) return;
+        int l = world.getBlockMetadata(x, y, z) & 7;
+        Object object = rand.nextInt(10) == 0 ? new WorldGenBigTree(true) : new WorldGenTrees(true);
+        int i1 = 0;
+        int j1 = 0;
+        boolean flag = false;
+        
+        switch (l)
+        {
+            case 0:
+                label78:
+                for (i1 = 0; i1 >= -1; --i1)
+                {
+                    for (j1 = 0; j1 >= -1; --j1)
+                    {
+                        if (this.checkSapling(world, x + i1, y, z + j1, 0) && this.checkSapling(world, x + i1 + 1, y, z + j1, 0) && this.checkSapling(world, x + i1, y, z + j1 + 1, 0) && this.checkSapling(world, x + i1 + 1, y, z + j1 + 1, 0))
+                        {
+                            object = new WorldGenIronwoodTree(true);
+                            flag = true;
+                            break label78;
+                        }
+                    }
+                }
 
+                if (!flag)
+                {
+                    return;
+                }
+        }
+
+
+        Block block = Blocks.air;
+
+        if (flag)
+        {
+            world.setBlock(x+ i1, y, z + j1, block, 0, 4);
+            world.setBlock(x+ i1 + 1, y, z + j1, block, 0, 4);
+            world.setBlock(x+ i1, y, z + j1 + 1, block, 0, 4);
+            world.setBlock(x+ i1 + 1, y, z + j1 + 1, block, 0, 4);
+        }
+        else
+        {
+            world.setBlock(x, y, z, block, 0, 4);
+        }
+
+        if (!((WorldGenerator)object).generate(world, rand, x+ i1, y, z + j1))
+        {
+            if (flag)
+            {
+                world.setBlock(x+ i1, y, z + j1, this, 0, 4);
+                world.setBlock(x+ i1 + 1, y, z + j1, this, 0, 4);
+                world.setBlock(x+ i1, y, z + j1 + 1, this, 0, 4);
+                world.setBlock(x+ i1 + 1, y, z + j1 + 1, this, 0, 4);
+            }
+            else
+            {
+                world.setBlock(x, y, z, this, l, 4);
+            }
+        }
     }
 
 
     public boolean checkSapling(World world,int x,int y,int z,int metadata)
     {
-        return world.getBlock(x,y,z)==this && world.getBlockMetadata(x,y,z)==metadata;
+        return world.getBlock(x,y,z)==this && (world.getBlockMetadata(x,y,z) & 7)==metadata;
     }
 
 

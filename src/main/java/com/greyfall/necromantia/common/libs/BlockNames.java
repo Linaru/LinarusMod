@@ -22,6 +22,7 @@ public class BlockNames {
     public static final String HARDSTONE="hardstone";
     public static final String ADMINSTONE="adminstone";
     public static final String SAPLINGS="sapling";
+    public static final String RICE_BUSH="riceBush";
 
 
 }

@@ -38,6 +38,7 @@ public class ModBlocks {
     public static Block adminstone;
 
     public static Block sapling;
+    public static Block riceBush;
 
 
 
@@ -66,6 +67,7 @@ public class ModBlocks {
         //Admin blocks
         adminstone = new BlockAdminstone();
         sapling=new BlockIronwoodSapling();
+        riceBush=new BlockRiceBush();
         registerBlockData();
     }
 
@@ -95,6 +97,7 @@ public class ModBlocks {
         //Admin blocks
         GameRegistry.registerBlock(adminstone, BlockNames.ADMINSTONE);
         GameRegistry.registerBlock(sapling, ItemBlockSaplings.class,BlockNames.SAPLINGS);
+        GameRegistry.registerBlock(riceBush,BlockNames.RICE_BUSH);
 
 
         registerTileEntities();

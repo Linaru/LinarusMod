@@ -21,6 +21,11 @@ public class WorldGenIronwoodTree extends WorldGenAbstractTree {
     }
 
     @Override
+    protected boolean isReplaceable(World world, int x, int y, int z) {
+        return super.isReplaceable(world, x, y, z);
+    }
+
+    @Override
     public boolean generate(World world, Random rand, int x, int y, int z) {
 
         int height = rand.nextInt(3) + rand.nextInt(2) + 6;

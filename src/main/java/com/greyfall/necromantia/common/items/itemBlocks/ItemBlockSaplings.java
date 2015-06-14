@@ -17,7 +17,7 @@ public class ItemBlockSaplings extends ItemBlock {
 
     @Override
     public String getUnlocalizedName(ItemStack p_77667_1_) {
-        int damage= p_77667_1_.getItemDamage();
+        int damage= p_77667_1_.getItemDamage() & 7;
 
         return "tile."+ BlockNames.SAPLINGS+ BlockIronwoodSapling.treeTypes[damage];
     }

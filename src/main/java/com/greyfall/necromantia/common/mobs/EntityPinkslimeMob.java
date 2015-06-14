@@ -36,6 +36,10 @@ public class EntityPinkslimeMob extends EntitySlime{
 		this.setHealth(this.getMaxHealth());
 	}
 
+	@Override
+	public boolean getCanSpawnHere() {
+		return true;
+	}
 
 	@Override
 	public void onUpdate() {
