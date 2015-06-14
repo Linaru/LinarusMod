@@ -29,10 +29,10 @@ public class CauldronRecipes {
         CauldronCrafting.addNormalRecepie("cropRice",1,new FluidStack(FluidRegistry.WATER,250),new ItemStack[] { new ItemStack(ModItems.riceBall)});
         CauldronCrafting.addNormalRecepie(new ItemStack(Items.leather,1),new FluidStack(FluidRegistry.WATER,500),new ItemStack[] { new ItemStack(ModItems.boiledLeather)});
         CauldronCrafting.addNormalRecepie(new ItemStack(Items.spider_eye,1),new FluidStack(FluidRegistry.WATER,500),new ItemStack[] { new ItemStack(Items.fermented_spider_eye)});
-        CauldronCrafting.addNormalRecepie(new ItemStack(Items.poisonous_potato,1),new FluidStack(FluidRegistry.WATER,500),new ItemStack[] { new ItemStack(Items.potato)});
+        CauldronCrafting.addNormalRecepie(new ItemStack(Items.poisonous_potato,1),new FluidStack(FluidRegistry.WATER,250),new ItemStack[] { new ItemStack(Items.potato)});
 
         if (FluidRegistry.isFluidRegistered("acid"))
-            CauldronCrafting.addNormalRecepie(new ItemStack(ModItems.siliconDioxide,1),new FluidStack(FluidRegistry.WATER,500),new ItemStack[] {FluidContainerRegistry.fillFluidContainer(FluidRegistry.getFluidStack("acid",1000),new ItemStack(Items.bucket))});
+            CauldronCrafting.addNormalRecepie(new ItemStack(ModItems.siliconDioxide,1),new FluidStack(FluidRegistry.WATER,1000),new ItemStack[] {FluidContainerRegistry.fillFluidContainer(FluidRegistry.getFluidStack("acid",1000),new ItemStack(Items.bucket))});
         //TODO: make this a custom recipe that acidifies the water
 
 
