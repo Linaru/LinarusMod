@@ -26,7 +26,7 @@ public class NormalRecipes {
 
     public static void addRecipes()
     {
-        GameRegistry.addRecipe(new ItemStack(ModBlocks.cauldron), new Object[]{"I I", "I I", "IFI", 'I', Items.iron_ingot, 'F', Blocks.furnace});
+        GameRegistry.addRecipe(new ItemStack(ModBlocks.cauldron), new Object[]{"I I", "I I", "IXI", 'I', Items.iron_ingot, 'X', Blocks.furnace});
         //Pink Latex Block
         GameRegistry.addRecipe(new ItemStack(ModBlocks.latex,1,1), new Object[]{"LL", "LL", 'L', ModItems.slimeLatex});
         //Latex Block
