@@ -26,7 +26,7 @@ public class NormalRecipes {
 
     public static void addRecipes()
     {
-        GameRegistry.addRecipe(new ItemStack(ModBlocks.cauldron), new Object[]{"I I", "I I", "III", 'I', Items.iron_ingot});
+        GameRegistry.addRecipe(new ItemStack(ModBlocks.cauldron), new Object[]{"I I", "I I", "IFI", 'I', Items.iron_ingot, 'F', Blocks.furnace});
         //Pink Latex Block
         GameRegistry.addRecipe(new ItemStack(ModBlocks.latex,1,1), new Object[]{"LL", "LL", 'L', ModItems.slimeLatex});
         //Latex Block
@@ -83,15 +83,15 @@ public class NormalRecipes {
     {
         OreDictionary.registerOre("logWood",ModBlocks.logIronwood);
         OreDictionary.registerOre("plankWood", ModBlocks.enchantedWood);
-        OreDictionary.registerOre("pestleAndMortar",ModItems.mortar);
-        OreDictionary.registerOre("cropRice",ModItems.rice);
-        OreDictionary.registerOre("seedRice",ModItems.riceSeeds);
+        OreDictionary.registerOre("pestleAndMortar", ModItems.mortar);
+        OreDictionary.registerOre("cropRice", ModItems.rice);
+        OreDictionary.registerOre("seedRice", ModItems.riceSeeds);
         addDrops();
     }
 
 
     public static void addDrops()
     {
-        MinecraftForge.addGrassSeed(new ItemStack(ModItems.riceSeeds),3);
+        MinecraftForge.addGrassSeed(new ItemStack(ModItems.riceSeeds), 3);
     }
 }
