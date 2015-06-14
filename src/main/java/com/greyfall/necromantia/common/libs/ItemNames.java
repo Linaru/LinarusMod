@@ -15,6 +15,7 @@ public class ItemNames {
     public static final String RICE_BALL="riceBall";
     public static final String COOKED_APPLE="cookedApple";
     public static final String BOILED_LEATHER="boiledLeather";
+    public static final String IRONWOOD="ironwood";
     public static final String SILICON_DIOXIDE="siliconDioxide";
     public static final String MORTAR="mortar";
     public static final String PINK_LATEX_HELMET="pinkLatexHelmet";

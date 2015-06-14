@@ -24,6 +24,7 @@ public class ModItems {
     public static Item riceBall;
     public static Item cookedApple;
     public static Item boiledLeather;
+    public static Item ironwood;
     //books
     public static Item bookEncyclopediaMinecraftia1;
     //tools
@@ -53,6 +54,7 @@ public class ModItems {
         riceBall = new ItemRiceBall(6, 1.0F, false);
         cookedApple = new ItemCookedApple(8, 1.0F, false);
         boiledLeather = new ItemBoiledLeather();
+        ironwood = new ItemIronwood();
         siliconDioxide = new ItemSiliconDioxide();
         //books
         //bookEncyclopediaMinecraftia1 = new BookEncyclopediaminecraftia1().setUnlocalizedName("BookEncyclopediaminecraftia").setTextureName("necromantia:encyclopedia").setCreativeTab(tabnecromantia); //item.itemTable
@@ -86,6 +88,7 @@ public class ModItems {
         GameRegistry.registerItem(riceBall, ItemNames.RICE_BALL);
         GameRegistry.registerItem(cookedApple, ItemNames.COOKED_APPLE);
         GameRegistry.registerItem(boiledLeather, ItemNames.BOILED_LEATHER);
+        GameRegistry.registerItem(ironwood, ItemNames.IRONWOOD);
         GameRegistry.registerItem(siliconDioxide, ItemNames.SILICON_DIOXIDE);
         //Books
         //GameRegistry.registerItem(bookEncyclopediaMinecraftia1, bookEncyclopediaminecraftia1);

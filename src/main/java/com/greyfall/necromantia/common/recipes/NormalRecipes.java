@@ -72,6 +72,7 @@ public class NormalRecipes {
     {
         GameRegistry.addSmelting(ModItems.slimeLatex, new ItemStack(ModItems.latex), 0.1f);
         GameRegistry.addSmelting(new ItemStack(ModBlocks.latex,1,1), new ItemStack(ModBlocks.latex), 0.1f);
+        GameRegistry.addSmelting(ModItems.ironwood, new ItemStack(Items.iron_ingot), 0.1f);
 
 
         addOreDictEntries();

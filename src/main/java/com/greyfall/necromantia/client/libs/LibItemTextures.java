@@ -19,6 +19,7 @@ public class LibItemTextures {
     public static final String RICE_BALL=PREFIX+"riceball";
     public static final String COOKED_APPLE=PREFIX+"apple_cooked";
     public static final String BOILED_LEATHER=PREFIX+"leather_boiled";
+    public static final String IRONWOOD=PREFIX+"ironwood";
     public static final String SILICON_DIOXIDE=PREFIX+"silica";
     public static final String MORTAR=PREFIX+"mortar";
     public static final String PINK_LATEX_HELMET=PREFIX+"itempinklatexhelm";
