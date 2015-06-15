@@ -39,7 +39,7 @@ public class LibTextures {
     public static final String HARDSTONE=PREFIX+"stone_hard";
     public static final String ADMINSTONE=PREFIX+"irontreebrick";
     public static final String SAPLINGS=PREFIX+"sapling_";
-
+    public static final String ETHEREAL_PORTAL=PREFIX+"etherealportal";
 
 
 

@@ -1,17 +1,14 @@
 package com.greyfall.necromantia.common.dimensions;
 
-import com.greyfall.necromantia.common.Main;
 import com.greyfall.necromantia.common.blocks.ModBlocks;
-import com.greyfall.necromantia.common.dimensions.dimensionRegistry;
+import com.greyfall.necromantia.common.core.config.NecromantiaConfig;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPortal;
-import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.world.Teleporter;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -101,10 +98,10 @@ public class BlockEtherealportal extends BlockPortal {
                 if(thePlayer.timeUntilPortal > 0)
                 {
                     thePlayer.timeUntilPortal = 10;
-                }else if(thePlayer.dimension != dimensionRegistry.dimensionID)
+                }else if(thePlayer.dimension != NecromantiaConfig.etherealSanctuaryDimensionID)
                 {
                     thePlayer.timeUntilPortal = 10;
-                    thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, dimensionRegistry.dimensionID, new TeleporterEtherealportal(server.worldServerForDimension(dimensionRegistry.dimensionID)));
+                    thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, NecromantiaConfig.etherealSanctuaryDimensionID, new TeleporterEtherealportal(server.worldServerForDimension(NecromantiaConfig.etherealSanctuaryDimensionID)));
                 }else{
                     thePlayer.timeUntilPortal = 10;
                     thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, 0, new TeleporterEtherealportal(server.worldServerForDimension(0)));

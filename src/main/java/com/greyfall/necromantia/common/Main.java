@@ -5,6 +5,7 @@ import com.greyfall.necromantia.common.blocks.ModBlocks;
 import com.greyfall.necromantia.common.books.BookEncyclopediaminecraftia1;
 import com.greyfall.necromantia.common.core.CommonProxy;
 import com.greyfall.necromantia.common.core.config.NecromantiaConfig;
+import com.greyfall.necromantia.common.dimensions.DimensionRegistry;
 import com.greyfall.necromantia.common.items.*;
 import com.greyfall.necromantia.common.libs.LibMisc;
 import com.greyfall.necromantia.common.mobs.EntityMain;
@@ -75,6 +76,7 @@ public class Main {
         NecromantiaConfig.parseConfig(event.getSuggestedConfigurationFile());
         logger=event.getModLog();
         ModBiomes.registerBiomes();
+        DimensionRegistry.mainRegistry();
         EntityMain.mainRegistry(); //? not sure what is wrong here Entity tutorial did not explain this step.
         ModBlocks.registerBlocks();
         ModItems.registerItems();

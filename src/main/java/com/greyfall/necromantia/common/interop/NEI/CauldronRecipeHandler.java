@@ -9,6 +9,7 @@ import com.greyfall.necromantia.api.crafting.CauldronCrafting;
 import com.greyfall.necromantia.api.crafting.CauldronRecipe;
 import com.greyfall.necromantia.client.render.gui.GuiCauldron;
 import com.greyfall.necromantia.common.Main;
+import com.greyfall.necromantia.common.core.config.NecromantiaConfig;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoor;
 import net.minecraft.client.Minecraft;
@@ -24,6 +25,7 @@ import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.lwjgl.opengl.GL11;
 
 import java.awt.*;
@@ -245,8 +247,11 @@ public class CauldronRecipeHandler extends TemplateRecipeHandler{
                             continue;
                         res = new CachedCauldronRecipe( oreDict, fluid, (ItemStack[]) recipe.getKey().toArray(), rep.getBurnTime());
                     }
-                    else
-                        res=new CachedCauldronRecipe(rep.getInputItem(),fluid,(ItemStack[])recipe.getKey().toArray(),rep.getBurnTime());
+                    else {
+                        Main.logger.info(ToStringBuilder.reflectionToString(recipe.getKey()));
+                        res = new CachedCauldronRecipe(rep.getInputItem(), fluid, (ItemStack[]) recipe.getKey().toArray(), rep.getBurnTime());
+
+                    }
                     if(res.contains(res.input,ingredient))
                     {
                         res.setIngredientPermutation(res.input,ingredient);

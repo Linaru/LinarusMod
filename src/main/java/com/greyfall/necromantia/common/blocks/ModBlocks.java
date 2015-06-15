@@ -39,6 +39,7 @@ public class ModBlocks {
 
     public static Block sapling;
     public static Block riceBush;
+    public static Block etherealPortal;
 
 
 
@@ -62,7 +63,7 @@ public class ModBlocks {
         rune = new BlockRune();
         hardstone = new BlockHardstone();
         //etherealportal = new BlockEtherealportal().setBlockName("BlockblockEtherealportal").setBlockTextureName("necromantia:etherealportal").setCreativeTab(tabnecromantia);
-
+        etherealPortal=new BlockEtherealPortal();
 
         //Admin blocks
         adminstone = new BlockAdminstone();
@@ -98,7 +99,7 @@ public class ModBlocks {
         GameRegistry.registerBlock(adminstone, BlockNames.ADMINSTONE);
         GameRegistry.registerBlock(sapling, ItemBlockSaplings.class,BlockNames.SAPLINGS);
         GameRegistry.registerBlock(riceBush,BlockNames.RICE_BUSH);
-
+        GameRegistry.registerBlock(etherealPortal,BlockNames.ETHEREAL_PORTAL);
 
         registerTileEntities();
     }
