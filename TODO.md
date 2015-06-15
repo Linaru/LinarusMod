@@ -11,11 +11,11 @@
 * Make crate blocks pushable with shift click. pushed onto pressure plates triggers them.. weighs same as player? more wight with contents in slot?
 * make rune blocks glow when stood on? add rune block crafting.  output redstone signal when stood on?
 * Add staff
-* Add wild rice / compatbaility with biomes o' plenty rice block
-* add iron wood tree... possibly forest biome?
+* ~~Add wild rice~~
+* ~~Add iron wood tree... possibly forest biome?~~
 * Add Inventory slot Gui / underarmour layer
 * Add iron tree building Generation Code.
-* Add enchanted wood compatability with thaumcrafts
+* Add enchanted wood compatability with thaumcrafts?
 * Add skeleton model override or custom teir 1 skeleton entity
 * Add slabs and stairs for new blocks, fences for new wood
 
@@ -30,8 +30,6 @@
 ##Art:
 * Add Armour icons
 
-##Recipies:
-* add water + apple = cooked apple + wax
 
 ##Magic concept:
 * artificium
