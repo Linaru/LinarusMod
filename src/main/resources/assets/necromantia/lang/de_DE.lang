@@ -1,0 +1,95 @@
+//machines
+tile.cauldron.name=Kessel
+//containers
+tile.worktop.name=Arbeitsplatte
+//standard blocks
+tile.slimeLatexBlock.name=Rosa Latexgummi
+tile.latexBlock.name=Latexgummi
+tile.waxBlock.name=Wachsblock
+tile.crate.name=Kiste
+tile.enchantedWood.name=Verzaubertes Holz
+tile.irontreeBrick.name=Eisenholzziegel
+tile.ironwoodLog.name=Eisenolzstamm
+tile.logIronwoodOre.name=Eisenholzstamm
+tile.leavesIronwood.name=Eisenholzblätter
+tile.wildRice.name=Reis
+tile.rune.name=Runenstein
+tile.hardstone.name=Gehärteter Stein
+tile.candle.name=Kerze
+//adminblock
+tile.adminstone.name=Eisenholzziegel
+
+
+tile.saplingIronwood.name=Eisenholzsetzling
+//Items
+item.slimeLatex.name=Latexschleim
+item.latex.name=Latexgummi
+item.siliconeRubber.name=Silikongummi
+item.goldCoin.name=Goldmünze
+item.wax.name=Wach
+item.riceSeeds.name= Reissamen
+item.rice.name=Reis
+item.riceBall.name=Reisball
+item.cookedApple.name=Gekochter Apfel
+item.boiledLeather.name=Hartgekochtes Leder
+item.ironwood.name=Eisenholz
+item.siliconDioxide.name=Silizium
+item.mortar.name=Mörser und Stößel
+//books bookEncyclopediaminecraftia1
+item.BookEncyclopediaminecraftia1.name=Encyclopedia Minecraftia: Band 1
+
+//Armour
+//Pink latex
+item.pinkLatexHelmet.name=Rosa Latexkapuze
+item.pinkLatexChestplate.name=Rosa Latexoberteil
+item.pinkLatexLeggings.name=Rosa Latexleggins
+item.pinklatexBoots.name=Rosa Latexsocken
+//Silicone
+item.siliconeHelmet.name=Unterrüstung Maske
+item.siliconeChestplate.name=Unterrüstung Brust
+item.siliconeLeggings.name=Unterrüstung Beine
+item.siliconeBoots.name=Unterrüstung Stiefel
+//mobs
+entity.PinkSlime.name=Gummiartiger Schleim
+
+//Creative tabs
+itemGroup.tabnecromantia=Necromantia Haupt
+itemGroup.tabnecromantia.armor=Necromantia Rüstung
+itemGroup.tabnecromantia.admin=Necromantia Administrator
+
+
+// ITEM Descs
+necromantia.item.boiledLeather.info1=Hartgekochtes Leder ist viel Zäher.
+necromantia.item.boiledLeather.info2=Aber auch viel zerbrechlicher.
+necromantia.item.ironwood=Eine seltene Art des Eisenerzes mit Pflanzenfasern durchwoben
+necromantia.item.cookedApple=Mmm.. Immer noch warm.
+necromantia.item.goldCoin=Eine gebräuchliche Währung.
+necromantia.item.latex=Ein Widerstandsfähiges Gummi, wird in der Manufaktur benutzt.
+necromantia.item.mortar.info1=Ein Werkzeug um Zutaten zu rerreiben.
+necromantia.item.mortar.info2=In eine feine Paste oder feines Puder.
+necromantia.item.rice=Reiskörner
+necromantia.item.riceBall=Ein leckerer Snack, hergestellt aus gekochtem Reis.
+necromantia.item.riceSeeds=Samen aus dem Reis wächst.
+necromantia.item.siliconDioxide=Pulverisiertes Silikondioxid.
+necromantia.item.siliconeRubber=Ein widerstandsfähiges Gummi, wird in der Manufaktur benutzt.
+necromantia.item.slimeLatex=Ein schleimiges Gummi mit Ähnlichkeiten zu Latex.
+necromantia.item.wax=Ein Nebenprodukt der Honigbiene.
+
+
+// Block Descs
+necromantia.block.adminStone=Unzerbrechlicher Steinziegel.
+necromantia.block.cauldron=Wird im Prozess des Kochens von Zutaten verwendet.
+
+// WAILA
+necromantia.waila.cauldron.fluidName=Flüssigkeit: %s
+necromantia.waila.cauldron.fluidAmount=Menge: %d mb
+necromantia.waila.cauldron.noFluid=Leer
+necromantia.waila.rice.growth=Wachstum
+necromantia.waila.rice.mature=Ausgewachsen
+
+
+
+// NEI
+necromantia.nei.cauldron=Kessel
+necromantia.cauldron.fluidName=Flüssigkeit: %s
+necromantia.cauldron.fluidAmount=Menge: %d mb
