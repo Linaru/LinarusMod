@@ -248,7 +248,7 @@ public class CauldronRecipeHandler extends TemplateRecipeHandler{
                         res = new CachedCauldronRecipe( oreDict, fluid, (ItemStack[]) recipe.getKey().toArray(), rep.getBurnTime());
                     }
                     else {
-                        Main.logger.info(ToStringBuilder.reflectionToString(recipe));
+                        //Main.logger.info(ToStringBuilder.reflectionToString(recipe));
                         res = new CachedCauldronRecipe(rep.getInputItem(), fluid, (ItemStack[]) recipe.getKey().toArray(), rep.getBurnTime());
 
                     }
