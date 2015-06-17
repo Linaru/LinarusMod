@@ -19,7 +19,7 @@ import java.util.List;
 
 public class BlockDungeonruinsbrick extends ModBlock {
 
-    private int maxMeta = 9;
+    private int maxMeta = 8;
 
     private IIcon[] icons;
     public BlockDungeonruinsbrick() {
@@ -36,7 +36,14 @@ public class BlockDungeonruinsbrick extends ModBlock {
     public void registerBlockIcons(IIconRegister p_149651_1_)
     {
         icons[0]=p_149651_1_.registerIcon(LibTextures.DUNGEONRUINSBRICK);
-        icons[1]=p_149651_1_.registerIcon(LibTextures.DUNGEONRUINSBRICKBOTTOM);
+        icons[1]=p_149651_1_.registerIcon(LibTextures.DUNGEONRUINSBRICKMOSSY);
+        icons[2]=p_149651_1_.registerIcon(LibTextures.DUNGEONRUINSBRICKBOTTOM);
+        icons[3]=p_149651_1_.registerIcon(LibTextures.DUNGEONRUINSBRICKDECORATIVE);
+        icons[4]=p_149651_1_.registerIcon(LibTextures.DUNGEONRUINSBRICKDECORATIVEMOSSY);
+        icons[5]=p_149651_1_.registerIcon(LibTextures.DUNGEONRUINSBRICKSIDE);
+        icons[6]=p_149651_1_.registerIcon(LibTextures.DUNGEONRUINSBRICKSIDEMOSSY);
+        icons[7]=p_149651_1_.registerIcon(LibTextures.DUNGEONRUINSBRICKTOP);
+        icons[8]=p_149651_1_.registerIcon(LibTextures.DUNGEONRUINSBRICKTOPMOSSY);
     }
 
     public void addInformation(ItemStack stack, EntityPlayer player, List lines, boolean advancedTooltips) {
