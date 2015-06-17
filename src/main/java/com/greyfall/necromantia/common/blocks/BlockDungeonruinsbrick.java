@@ -156,7 +156,8 @@ public class BlockDungeonruinsbrick extends ModBlock {
                         return icons[4];
                 }
             case 5:
-                switch (p_149691_1_) {
+                switch (p_149691_1_)
+                {
                     case 0: // top
                         return icons[0];
                     case 1: // bottom
@@ -171,7 +172,8 @@ public class BlockDungeonruinsbrick extends ModBlock {
                         return icons[5];
                 }
             case 6:
-                switch (p_149691_1_) {
+                switch (p_149691_1_)
+                {
                     case 0: // top
                         return icons[1];
                     case 1: // bottom
@@ -187,7 +189,8 @@ public class BlockDungeonruinsbrick extends ModBlock {
                 }
 
             case 7:
-                switch (p_149691_1_) {
+                switch (p_149691_1_)
+                {
                     case 0: // top
                         return icons[0];
                     case 1: // bottom
@@ -209,7 +212,7 @@ public class BlockDungeonruinsbrick extends ModBlock {
 
 
     @Override
-    public EnumCreativeTab getCreativTab() {
+    public EnumCreativeTab getCreativeTab() {
         return EnumCreativeTab.ADMIN;
     }
 }
