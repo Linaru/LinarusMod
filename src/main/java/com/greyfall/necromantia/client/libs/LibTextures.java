@@ -37,6 +37,7 @@ public class LibTextures {
     public static final String RUNE=PREFIX+"runes/y_base";
 
     public static final String HARDSTONE=PREFIX+"stone_hard";
+    public static final String DARKNESS=PREFIX+"dungeons/common/darkness";
     public static final String DUNGEONRUINSBRICK=PREFIX+"dungeons/ruins/dungeonbrick";
     public static final String DUNGEONRUINSBRICKMOSSY=PREFIX+"dungeons/ruins/dungeonbrick_mossy";
     public static final String DUNGEONRUINSBRICKBOTTOM=PREFIX+"dungeons/ruins/dungeonbrick_bottom";
@@ -46,6 +47,7 @@ public class LibTextures {
     public static final String DUNGEONRUINSBRICKSIDEMOSSY=PREFIX+"dungeons/ruins/dungeonbrick_side_mossy";
     public static final String DUNGEONRUINSBRICKTOP=PREFIX+"dungeons/ruins/dungeonbrick_top";
     public static final String DUNGEONRUINSBRICKTOPMOSSY=PREFIX+"dungeons/ruins/dungeonbrick_top_mossy";
+    public static final String DUNGEONRUINSBRICKPIT=PREFIX+"dungeons/ruins/dungeonbrick_pit";
     public static final String SAPLINGS=PREFIX+"sapling_";
     public static final String ETHEREAL_PORTAL=PREFIX+"etherealportal";
 
