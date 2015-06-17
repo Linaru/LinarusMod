@@ -1,6 +1,7 @@
 package com.greyfall.necromantia.common.blocks;
 
 import com.greyfall.necromantia.common.blocks.wood.*;
+import com.greyfall.necromantia.common.core.helpers.BlockReplaceHelper;
 import com.greyfall.necromantia.common.items.itemBlocks.ItemBlockLatex;
 import com.greyfall.necromantia.common.items.itemBlocks.ItemBlockSaplings;
 import com.greyfall.necromantia.common.libs.BlockNames;
@@ -75,7 +76,8 @@ public class ModBlocks {
 
     public static void registerBlockData()
     {
-        GameRegistry.registerBlock(cauldron, BlockNames.CAULDRON);
+        //GameRegistry.registerBlock(cauldron, BlockNames.CAULDRON);
+        BlockReplaceHelper.replaceBlock(ModBlocks.cauldron,cauldron);
         // Containers
         GameRegistry.registerBlock(worktop, BlockNames.WORKTOP);
         // standard blocks

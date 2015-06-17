@@ -73,16 +73,86 @@ public class BlockDungeonruinsbrick extends ModBlock {
     public IIcon getIcon(int p_149691_1_, int p_149691_2_) {
         switch (p_149691_2_)
         {
-            case 0:
-                return icons[0];
+            case 0: // block number
+                switch (p_149691_1_)
+                {
+                    case 0: // top
+                        return icons[0];
+                    case 1:
+                        return icons[0]; // bottom
+                    case 2: // north
+                        return icons[0];
+                    case 3: // east
+                        return icons[0];
+                    case 4: // south
+                        return icons[0];
+                    case 5: // west
+                        return icons[0];
+                }
             case 1:
-                return icons[1];
+                switch (p_149691_1_)
+                {
+                    case 0: // top
+                        return icons[1];
+                    case 1:
+                        return icons[1]; // bottom
+                    case 2: // north
+                        return icons[1];
+                    case 3: // east
+                        return icons[1];
+                    case 4: // south
+                        return icons[1];
+                    case 5: // west
+                        return icons[1];
+                }
             case 2:
-                return icons[2];
+                switch (p_149691_1_)
+                {
+                    case 0: // top
+                        return icons[2];
+                    case 1:
+                        return icons[2]; // bottom
+                    case 2: // north
+                        return icons[2];
+                    case 3: // east
+                        return icons[2];
+                    case 4: // south
+                        return icons[2];
+                    case 5: // west
+                        return icons[2];
+                }
             case 3:
-                return icons[3];
+                switch (p_149691_1_)
+                {
+                    case 0: // top
+                        return icons[3];
+                    case 1:
+                        return icons[3]; // bottom
+                    case 2: // north
+                        return icons[3];
+                    case 3: // east
+                        return icons[3];
+                    case 4: // south
+                        return icons[3];
+                    case 5: // west
+                        return icons[3];
+                }
             case 4:
-                return icons[4];
+                switch (p_149691_1_)
+                {
+                    case 0: // top
+                        return icons[4];
+                    case 1:
+                        return icons[4]; // bottom
+                    case 2: // north
+                        return icons[4];
+                    case 3: // east
+                        return icons[4];
+                    case 4: // south
+                        return icons[4];
+                    case 5: // west
+                        return icons[4];
+                }
             case 5:
                 return icons[5];
             case 6:

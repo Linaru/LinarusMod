@@ -20,8 +20,16 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
 public class BlockReplaceHelper{
-    public static boolean replaceBlock(Block toReplace, Class<? extends Block> blockClass){
+    public static boolean replaceBlock(Block toReplace, Block blockClass){
 
+        try {
+            GameRegistry.addSubstitutionAlias("minecraft:cauldron", GameRegistry.Type.BLOCK, blockClass);
+            GameRegistry.addSubstitutionAlias("minecraft:cauldron", GameRegistry.Type.ITEM,new ItemBlock(blockClass));
+        }
+        catch (Exception e)
+        {
+
+        }
         return true;
     }
 
