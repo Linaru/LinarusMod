@@ -21,6 +21,7 @@ public class BlockNames {
     public static final String RUNE="rune";
     public static final String HARDSTONE="hardstone";
     public static final String DUNGEON_RUINS_BRICK ="dungeonRuinsBrick";
+    public static final String DARKNESS ="darkness";
     public static final String SAPLINGS="sapling";
     public static final String RICE_BUSH="riceBush";
     public static final String ETHEREAL_PORTAL="etherealPortal";

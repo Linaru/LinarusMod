@@ -191,9 +191,9 @@ public class BlockDungeonRuinsBrick extends ModBlock {
                 switch (p_149691_1_)
                 {
                     case 0: // top
-                        return icons[0];
-                    case 1: // bottom
                         return icons[10];
+                    case 1: // bottom
+                        return icons[0];
                     case 2: // north
                         return icons[9];
                     case 3: // east

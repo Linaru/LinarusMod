@@ -36,7 +36,8 @@ public class ModBlocks {
     public static Block hardstone;
     //public static Block etherealportal;
     //Admin blocks
-    public static Block adminstone;
+    public static Block dungeonruinsbrick;
+    public static Block darkness;
 
     public static Block sapling;
     public static Block riceBush;
@@ -67,7 +68,8 @@ public class ModBlocks {
         etherealPortal=new BlockEtherealPortal();
 
         //Admin blocks
-        adminstone = new BlockDungeonRuinsBrick();
+        dungeonruinsbrick = new BlockDungeonRuinsBrick();
+        darkness = new BlockDarkness();
         sapling=new BlockIronwoodSapling();
         riceBush=new BlockRiceBush();
         registerBlockData();
@@ -98,7 +100,8 @@ public class ModBlocks {
         //GameRegistry.registerBlock(blockEtherealportal, blockEtherealportal.getUnlocalizedName().substring(5));
         GameRegistry.registerBlock(candle, BlockNames.CANDLE);
         //Admin blocks
-        GameRegistry.registerBlock(adminstone, ItemBlockDungeonRuinsBrick.class, BlockNames.DUNGEON_RUINS_BRICK);
+        GameRegistry.registerBlock(dungeonruinsbrick, ItemBlockDungeonRuinsBrick.class, BlockNames.DUNGEON_RUINS_BRICK);
+        GameRegistry.registerBlock(darkness,BlockNames.DARKNESS);
         GameRegistry.registerBlock(sapling, ItemBlockSaplings.class,BlockNames.SAPLINGS);
         GameRegistry.registerBlock(riceBush,BlockNames.RICE_BUSH);
         GameRegistry.registerBlock(etherealPortal,BlockNames.ETHEREAL_PORTAL);

@@ -18,7 +18,16 @@ tile.rune.name=Rune Stone
 tile.hardstone.name=Hardened Stone
 tile.candle.name=Candle
 //adminblock
-tile.dungeonRuinsBrick.name=Weathered Iron Tree Brick
+item.dungeonRuinsBrick.0.name=Weathered Iron Tree Brick
+item.dungeonRuinsBrick.1.name=Weathered Mossy Iron Tree Brick
+item.dungeonRuinsBrick.2.name=Weathered Iron Tree Brick
+item.dungeonRuinsBrick.3.name=Weathered Iron Tree Brick
+item.dungeonRuinsBrick.4.name=Weathered Mossy Iron Tree Brick
+item.dungeonRuinsBrick.5.name=Weathered Iron Tree Paving
+item.dungeonRuinsBrick.6.name=Weathered Mossy Iron Tree Paving
+item.dungeonRuinsBrick.7.name=Weathered Iron Tree Brick
+item.darkness.name=Darkness
+
 
 
 tile.saplingIronwood.name=Ironwood Sapling

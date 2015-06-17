@@ -133,7 +133,7 @@ public class Main {
     public static CreativeTabs tabnecromantiaadmin = new CreativeTabs("tabnecromantia.admin") {
         @Override
         public Item getTabIconItem() {
-            return new ItemStack(ModBlocks.adminstone).getItem();
+            return new ItemStack(ModBlocks.irontreeBrick).getItem();
         }
     };
 
