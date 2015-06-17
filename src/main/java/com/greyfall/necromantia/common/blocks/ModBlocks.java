@@ -76,8 +76,8 @@ public class ModBlocks {
 
     public static void registerBlockData()
     {
-        //GameRegistry.registerBlock(cauldron, BlockNames.CAULDRON);
-        BlockReplaceHelper.replaceBlock(ModBlocks.cauldron,cauldron);
+        GameRegistry.registerBlock(cauldron, BlockNames.CAULDRON);
+        //BlockReplaceHelper.replaceBlock(ModBlocks.cauldron,cauldron);
         // Containers
         GameRegistry.registerBlock(worktop, BlockNames.WORKTOP);
         // standard blocks
