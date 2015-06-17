@@ -19,7 +19,7 @@ import java.util.List;
 
 public class BlockDungeonruinsbrick extends ModBlock {
 
-    private int maxMeta = 9;
+    private int maxMeta = 11;
 
     private IIcon[] icons;
     public BlockDungeonruinsbrick() {
