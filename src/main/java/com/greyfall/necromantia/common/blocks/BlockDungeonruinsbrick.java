@@ -19,7 +19,7 @@ import java.util.List;
 
 public class BlockDungeonruinsbrick extends ModBlock {
 
-    private int maxMeta = 8;
+    private int maxMeta = 9;
 
     private IIcon[] icons;
     public BlockDungeonruinsbrick() {
@@ -29,7 +29,7 @@ public class BlockDungeonruinsbrick extends ModBlock {
         this.setResistance(3000);
         this.setBlockName(BlockNames.DUNGEONRUINSBRICK);
         icons=new IIcon[maxMeta];
-        this.setBlockTextureName(LibTextures.DUNGEONRUINSBRICK);
+
     }
 
     @Override
@@ -60,6 +60,12 @@ public class BlockDungeonruinsbrick extends ModBlock {
     public void getSubBlocks(Item p_149666_1_, CreativeTabs p_149666_2_, List p_149666_3_) {
         p_149666_3_.add(new ItemStack(this,1,0));
         p_149666_3_.add(new ItemStack(this,1,1));
+        p_149666_3_.add(new ItemStack(this,1,2));
+        p_149666_3_.add(new ItemStack(this,1,3));
+        p_149666_3_.add(new ItemStack(this,1,4));
+        p_149666_3_.add(new ItemStack(this,1,5));
+        p_149666_3_.add(new ItemStack(this,1,6));
+        p_149666_3_.add(new ItemStack(this,1,7));
     }
 
     @Override
@@ -71,6 +77,18 @@ public class BlockDungeonruinsbrick extends ModBlock {
                 return icons[0];
             case 1:
                 return icons[1];
+            case 2:
+                return icons[2];
+            case 3:
+                return icons[3];
+            case 4:
+                return icons[4];
+            case 5:
+                return icons[5];
+            case 6:
+                return icons[6];
+            case 7:
+                return icons[7];
             default:
                 return icons[0];
         }
