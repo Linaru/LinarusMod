@@ -29,7 +29,8 @@ public class BlockLatex extends ModBlock {
 	}
 
 	@Override
-	public void registerBlockIcons(IIconRegister p_149651_1_) {
+	public void registerBlockIcons(IIconRegister p_149651_1_)
+	{
 		icons[0]=p_149651_1_.registerIcon(LibTextures.LATEX);
 		icons[1]=p_149651_1_.registerIcon(LibTextures.SLIME_LATEX);
 	}

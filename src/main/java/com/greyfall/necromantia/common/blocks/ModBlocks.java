@@ -66,7 +66,7 @@ public class ModBlocks {
         etherealPortal=new BlockEtherealPortal();
 
         //Admin blocks
-        adminstone = new BlockAdminstone();
+        adminstone = new BlockDungeonruinsbrick();
         sapling=new BlockIronwoodSapling();
         riceBush=new BlockRiceBush();
         registerBlockData();
@@ -96,7 +96,7 @@ public class ModBlocks {
         //GameRegistry.registerBlock(blockEtherealportal, blockEtherealportal.getUnlocalizedName().substring(5));
         GameRegistry.registerBlock(candle, BlockNames.CANDLE);
         //Admin blocks
-        GameRegistry.registerBlock(adminstone, BlockNames.ADMINSTONE);
+        GameRegistry.registerBlock(adminstone, BlockNames.DUNGEONRUINSBRICK);
         GameRegistry.registerBlock(sapling, ItemBlockSaplings.class,BlockNames.SAPLINGS);
         GameRegistry.registerBlock(riceBush,BlockNames.RICE_BUSH);
         GameRegistry.registerBlock(etherealPortal,BlockNames.ETHEREAL_PORTAL);

@@ -18,7 +18,7 @@ tile.rune.name=Rune Stone
 tile.hardstone.name=Hardened Stone
 tile.candle.name=Candle
 //adminblock
-tile.adminstone.name=Iron Tree Brick
+tile.dungeonRuinsBrick.name=Weathered Iron Tree Brick
 
 
 tile.saplingIronwood.name=Ironwood Sapling
@@ -78,7 +78,7 @@ necromantia.item.wax=A byproduct of the Honey Bee.
 
 
 // Block Descs
-necromantia.block.adminStone=Unbreakable Stone Brick.
+necromantia.block.dungeonRuinsBrick=Unbreakable Stone Brick.
 necromantia.block.cauldron=Used for the process of Boiling ingredients.
 
 // WAILA
