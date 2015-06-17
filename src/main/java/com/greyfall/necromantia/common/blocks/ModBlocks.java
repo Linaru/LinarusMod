@@ -1,7 +1,7 @@
 package com.greyfall.necromantia.common.blocks;
 
 import com.greyfall.necromantia.common.blocks.wood.*;
-import com.greyfall.necromantia.common.core.helpers.BlockReplaceHelper;
+import com.greyfall.necromantia.common.items.itemBlocks.ItemBlockDungeonRuinsBrick;
 import com.greyfall.necromantia.common.items.itemBlocks.ItemBlockLatex;
 import com.greyfall.necromantia.common.items.itemBlocks.ItemBlockSaplings;
 import com.greyfall.necromantia.common.libs.BlockNames;
@@ -67,7 +67,7 @@ public class ModBlocks {
         etherealPortal=new BlockEtherealPortal();
 
         //Admin blocks
-        adminstone = new BlockDungeonruinsbrick();
+        adminstone = new BlockDungeonRuinsBrick();
         sapling=new BlockIronwoodSapling();
         riceBush=new BlockRiceBush();
         registerBlockData();
@@ -98,7 +98,7 @@ public class ModBlocks {
         //GameRegistry.registerBlock(blockEtherealportal, blockEtherealportal.getUnlocalizedName().substring(5));
         GameRegistry.registerBlock(candle, BlockNames.CANDLE);
         //Admin blocks
-        GameRegistry.registerBlock(adminstone, BlockNames.DUNGEONRUINSBRICK);
+        GameRegistry.registerBlock(adminstone, ItemBlockDungeonRuinsBrick.class, BlockNames.DUNGEON_RUINS_BRICK);
         GameRegistry.registerBlock(sapling, ItemBlockSaplings.class,BlockNames.SAPLINGS);
         GameRegistry.registerBlock(riceBush,BlockNames.RICE_BUSH);
         GameRegistry.registerBlock(etherealPortal,BlockNames.ETHEREAL_PORTAL);

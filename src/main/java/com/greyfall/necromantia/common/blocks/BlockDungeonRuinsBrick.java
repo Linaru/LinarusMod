@@ -6,7 +6,6 @@ import com.greyfall.necromantia.common.core.enums.EnumCreativeTab;
 import com.greyfall.necromantia.common.libs.BlockNames;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -17,17 +16,17 @@ import net.minecraft.util.IIcon;
 
 import java.util.List;
 
-public class BlockDungeonruinsbrick extends ModBlock {
+public class BlockDungeonRuinsBrick extends ModBlock {
 
     private int maxMeta = 11;
 
     private IIcon[] icons;
-    public BlockDungeonruinsbrick() {
+    public BlockDungeonRuinsBrick() {
         super(Material.ground);
         this.setHardness(-1F);
         this.setBlockUnbreakable();
         this.setResistance(3000);
-        this.setBlockName(BlockNames.DUNGEONRUINSBRICK);
+        this.setBlockName(BlockNames.DUNGEON_RUINS_BRICK);
         icons=new IIcon[maxMeta];
 
     }
