@@ -16,6 +16,7 @@
 * Fix Candles Float
 * Fix Rice seed drops (multiples from immature crops?)
 * Fix Rice can be placed on grass
+* Fix Wild Rice break sounds
 * Fix Ironwood Sapling sound effects
 * Fix Ironwood tree textures
 * Add Ironwood Log Ore to generation
