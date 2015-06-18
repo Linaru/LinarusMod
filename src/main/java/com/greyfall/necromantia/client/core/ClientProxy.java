@@ -3,6 +3,7 @@ package com.greyfall.necromantia.client.core;
 import com.greyfall.necromantia.client.render.items.ItemCauldronRegister;
 import com.greyfall.necromantia.client.render.particles.EntityFXPinkSlime;
 import com.greyfall.necromantia.client.render.tiles.TileEntityCauldronRenderer;
+import com.greyfall.necromantia.client.render.tiles.TileEntityDarknessRenderer;
 import com.greyfall.necromantia.common.blocks.ModBlocks;
 import com.greyfall.necromantia.common.core.CommonProxy;
 import com.greyfall.necromantia.common.tiles.TileEntityCandle;
@@ -13,6 +14,7 @@ import com.greyfall.necromantia.common.mobs.EntityPinkslimeMob;
 import com.greyfall.necromantia.client.render.mobs.EntityRenderPinkslimeMob;
 
 import com.greyfall.necromantia.common.tiles.TileEntityCauldron;
+import com.greyfall.necromantia.common.tiles.TileEntityDarkness;
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import net.minecraft.client.Minecraft;
@@ -41,6 +43,7 @@ public class ClientProxy extends CommonProxy {
 
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCauldron.class, new TileEntityCauldronRenderer());
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(ModBlocks.cauldron),new ItemCauldronRegister());
+		//ClientRegistry.bindTileEntitySpecialRenderer(TileEntityDarkness.class,new TileEntityDarknessRenderer());
 	}
 
 

@@ -37,7 +37,7 @@ public class LibTextures {
     public static final String RUNE=PREFIX+"runes/y_base";
 
     public static final String HARDSTONE=PREFIX+"stone_hard";
-    public static final String DARKNESS=PREFIX+"dungeons/common/darkness";
+    public static final String DARKNESS=PREFIX+"black_transparency";
     public static final String DUNGEONRUINSBRICK=PREFIX+"dungeons/ruins/dungeonbrick";
     public static final String DUNGEONRUINSBRICKMOSSY=PREFIX+"dungeons/ruins/dungeonbrick_mossy";
     public static final String DUNGEONRUINSBRICKBOTTOM=PREFIX+"dungeons/ruins/dungeonbrick_bottom";
@@ -58,6 +58,7 @@ public class LibTextures {
     // Tile Entity Rendeeres
     public static final String CANDLE_MODEL =PREFIX+"textures/blocks/candle.png";
     public static final String CAULDRON_MODEL =PREFIX+"textures/blocks/cauldron.png";
+    public static final String DARK_MODEL=PREFIX+"textures/blocks/black_transparency.png";
 
 
     // Mobs
