@@ -5,17 +5,17 @@ import com.greyfall.necromantia.common.libs.BlockNames;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
-public class BlockDarkness extends ModBlock {
+public class BlockDungeonRuinsWood extends ModBlock {
 
-    public BlockDarkness() {
-        super(Material.ground);
+    public BlockDungeonRuinsWood()
+    {
+        super(Material.wood);
         this.setHardness(-1F);
         this.setBlockUnbreakable();
         this.setResistance(3000);
         this.setStepSound(Block.soundTypeStone);
-        this.setBlockName(BlockNames.DARKNESS);
-        this.setBlockTextureName(LibTextures.DARKNESS);
-        this.setLightLevel(0.0F);
+        this.setBlockName(BlockNames.DUNGEON_RUINS_WOOD);
+        this.setBlockTextureName(LibTextures.DUNGEONRUINSWOOD);
     }
 
 }
