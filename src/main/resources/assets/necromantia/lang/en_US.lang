@@ -26,7 +26,8 @@ item.dungeonRuinsBrick.4.name=Weathered Mossy Iron Tree Brick
 item.dungeonRuinsBrick.5.name=Weathered Iron Tree Paving
 item.dungeonRuinsBrick.6.name=Weathered Mossy Iron Tree Paving
 item.dungeonRuinsBrick.7.name=Weathered Iron Tree Brick
-item.darkness.name=Darkness
+tile.dungeonRuinsWood.name=Weathered Wood
+tile.darkness.name=Darkness
 
 
 

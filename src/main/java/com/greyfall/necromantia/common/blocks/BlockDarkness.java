@@ -14,11 +14,13 @@ public class BlockDarkness extends ModBlockContainer {
 
     public BlockDarkness() {
         super(Material.ground);
-        this.setHardness(0.2F);
+        this.setHardness(-1F);
+        this.setBlockUnbreakable();
+        this.setResistance(3000);
         this.setStepSound(Block.soundTypeStone);
         this.setBlockName(BlockNames.DARKNESS);
         this.setBlockTextureName(LibTextures.DARKNESS);
-        this.setLightLevel(-0.9F);
+        this.setLightLevel(0.0F);
 
     }
 
@@ -41,6 +43,9 @@ public class BlockDarkness extends ModBlockContainer {
     @Override
     public boolean isOpaqueCube() {
         return false;
+=======
+
+>>>>>>> 7864b0b638a11852052ae7d56ecedc8f720ec0ed
     }
 
     @Override
