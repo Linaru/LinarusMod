@@ -84,7 +84,7 @@ public class BlockWildRice extends ModCrop implements IFactoryHarvestable {
     @Override
     @Optional.Method(modid = "MineFactoryReloaded")
     public boolean canBeHarvested(World world, Map<String, Boolean> harvesterSettings, int x, int y, int z) {
-        return world.getBlockMetadata(x,y,z)>=8;
+        return world.getBlockMetadata(x,y,z)>=maxGrowthStage;
     }
 
     @Override
