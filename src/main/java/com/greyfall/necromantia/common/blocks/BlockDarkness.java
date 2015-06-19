@@ -6,6 +6,7 @@ import com.greyfall.necromantia.common.libs.BlockNames;
 import com.greyfall.necromantia.common.tiles.TileEntityDarkness;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.Entity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.EntityViewRenderEvent;
@@ -20,7 +21,7 @@ public class BlockDarkness extends ModBlockContainer {
         this.setStepSound(Block.soundTypeStone);
         this.setBlockName(BlockNames.DARKNESS);
         this.setBlockTextureName(LibTextures.DARKNESS);
-        this.setLightLevel(0.0F);
+
 
     }
 
@@ -33,6 +34,11 @@ public class BlockDarkness extends ModBlockContainer {
     @Override
     public TileEntity createNewTileEntity(World p_149915_1_, int p_149915_2_) {
         return new TileEntityDarkness();
+    }
+
+    public void onEntityCollidedWithBlock(World world, int i, int j, int k, Entity entity)
+    {
+        entity.attackEntityFrom(null, 100);
     }
 
     /*@Override
