@@ -6,6 +6,7 @@ import com.greyfall.necromantia.common.books.BookEncyclopediaminecraftia1;
 import com.greyfall.necromantia.common.core.CommonProxy;
 import com.greyfall.necromantia.common.core.config.NecromantiaConfig;
 import com.greyfall.necromantia.common.dimensions.DimensionRegistry;
+import com.greyfall.necromantia.common.interop.MineFactoryReloaded;
 import com.greyfall.necromantia.common.items.*;
 import com.greyfall.necromantia.common.libs.LibMisc;
 import com.greyfall.necromantia.common.mobs.EntityMain;
@@ -84,6 +85,10 @@ public class Main {
         if(Loader.isModLoaded("Waila"))
         {
             FMLInterModComms.sendMessage("Waila", "register", "com.greyfall.necromantia.common.interop.waila.Waila.callbackRegister");
+        }
+        if(Loader.isModLoaded("MineFactoryReloaded"))
+        {
+            MineFactoryReloaded.registerCrops();
         }
         MinecraftForge.EVENT_BUS.register(new BiomeEvents());
 
