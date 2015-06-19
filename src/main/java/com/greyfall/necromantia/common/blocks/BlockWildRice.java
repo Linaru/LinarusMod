@@ -33,8 +33,11 @@ public class BlockWildRice extends ModCrop implements IFactoryHarvestable {
 
 
     @Override
-    public int quantityDropped(Random p_149745_1_) {
-        return net.minecraft.util.MathHelper.getRandomIntegerInRange(p_149745_1_,2,3);
+    public int quantityDropped(int meta, int fortune, Random random) {
+        if(meta>=maxGrowthStage)
+            return net.minecraft.util.MathHelper.getRandomIntegerInRange(random,2,3);
+        else
+            return 1;
     }
 
     @Override
