@@ -15,8 +15,8 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import powercrystals.minefactoryreloaded.api.HarvestType;
 import powercrystals.minefactoryreloaded.api.IFactoryHarvestable;
-import scala.actors.threadpool.Arrays;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -90,7 +90,7 @@ public class BlockWildRice extends ModCrop implements IFactoryHarvestable {
     @Override
     @Optional.Method(modid = "MineFactoryReloaded")
     public List<ItemStack> getDrops(World world, Random rand, Map<String, Boolean> harvesterSettings, int x, int y, int z) {
-        return Arrays.asList(new ItemStack[]{new ItemStack(ModItems.rice, net.minecraft.util.MathHelper.getRandomIntegerInRange(rand,2,5))});
+        return Arrays.asList(new ItemStack[]{new ItemStack(ModItems.rice, net.minecraft.util.MathHelper.getRandomIntegerInRange(rand, 2, 5))});
     }
 
     @Override
