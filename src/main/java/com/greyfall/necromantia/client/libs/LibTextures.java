@@ -37,6 +37,7 @@ public class LibTextures {
     public static final String RUNE=PREFIX+"runes/y_base";
 
     public static final String HARDSTONE=PREFIX+"stone_hard";
+    public static final String GRADDARKNESS=PREFIX+"dungeons/common/pit";
     public static final String DARKNESS=PREFIX+"black_transparency";
     public static final String DUNGEONRUINSBRICK=PREFIX+"dungeons/ruins/dungeonbrick";
     public static final String DUNGEONRUINSBRICKMOSSY=PREFIX+"dungeons/ruins/dungeonbrick_mossy";

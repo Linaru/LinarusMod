@@ -18,7 +18,7 @@ import java.util.List;
 
 public class BlockDungeonRuinsBrick extends ModBlock {
 
-    private int maxMeta = 11;
+    private int maxMeta = 12;
 
     private IIcon[] icons;
     public BlockDungeonRuinsBrick() {
@@ -44,7 +44,8 @@ public class BlockDungeonRuinsBrick extends ModBlock {
         icons[7]=p_149651_1_.registerIcon(LibTextures.DUNGEONRUINSBRICKTOP);
         icons[8]=p_149651_1_.registerIcon(LibTextures.DUNGEONRUINSBRICKTOPMOSSY);
         icons[9]=p_149651_1_.registerIcon(LibTextures.DUNGEONRUINSBRICKPIT);
-        icons[10]=p_149651_1_.registerIcon(LibTextures.DARKNESS);
+        icons[10]=p_149651_1_.registerIcon(LibTextures.GRADDARKNESS);
+        icons[11]=p_149651_1_.registerIcon(LibTextures.DARKNESS);
     }
 
     public void addInformation(ItemStack stack, EntityPlayer player, List lines, boolean advancedTooltips) {
@@ -67,6 +68,7 @@ public class BlockDungeonRuinsBrick extends ModBlock {
         p_149666_3_.add(new ItemStack(this,1,5));
         p_149666_3_.add(new ItemStack(this,1,6));
         p_149666_3_.add(new ItemStack(this,1,7));
+        p_149666_3_.add(new ItemStack(this,1,8));
     }
 
     @Override
@@ -191,7 +193,7 @@ public class BlockDungeonRuinsBrick extends ModBlock {
                 switch (p_149691_1_)
                 {
                     case 0: // top
-                        return icons[10];
+                        return icons[11];
                     case 1: // bottom
                         return icons[0];
                     case 2: // north
@@ -202,6 +204,23 @@ public class BlockDungeonRuinsBrick extends ModBlock {
                         return icons[9];
                     case 5: // west
                         return icons[9];
+                }
+
+            case 8:
+                switch (p_149691_1_)
+                {
+                    case 0: // top
+                        return icons[11];
+                    case 1: // bottom
+                        return icons[11];
+                    case 2: // north
+                        return icons[10];
+                    case 3: // east
+                        return icons[10];
+                    case 4: // south
+                        return icons[10];
+                    case 5: // west
+                        return icons[10];
                 }
             default:
                 return icons[0];
