@@ -2,12 +2,14 @@ package com.greyfall.necromantia.common.blocks;
 
 import com.greyfall.necromantia.client.libs.LibTextures;
 import com.greyfall.necromantia.common.Main;
+import com.greyfall.necromantia.common.core.enums.EnumCreativeTab;
 import com.greyfall.necromantia.common.libs.BlockNames;
 import com.greyfall.necromantia.common.tiles.TileEntityDarkness;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.EntityViewRenderEvent;
 
@@ -38,7 +40,7 @@ public class BlockDarkness extends ModBlockContainer {
 
     public void onEntityCollidedWithBlock(World world, int i, int j, int k, Entity entity)
     {
-        entity.attackEntityFrom(null, 100);
+        entity.attackEntityFrom(DamageSource.cactus, 100);
     }
 
     /*@Override
@@ -58,4 +60,9 @@ public class BlockDarkness extends ModBlockContainer {
     public boolean renderAsNormalBlock() {
         return false;
     }*/
+
+    @Override
+    public EnumCreativeTab getCreativeTab() {
+        return EnumCreativeTab.ADMIN;
+    }
 }

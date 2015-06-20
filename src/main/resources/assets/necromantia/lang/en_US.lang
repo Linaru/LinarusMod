@@ -27,6 +27,7 @@ item.dungeonRuinsBrick.5.name=Weathered Iron Tree Paving
 item.dungeonRuinsBrick.6.name=Weathered Mossy Iron Tree Paving
 item.dungeonRuinsBrick.7.name=Weathered Iron Tree Brick
 tile.dungeonRuinsWood.name=Weathered Wood
+item.dungeonRuinsBrick.8.name=Darkness
 tile.darkness.name=Darkness
 
 
@@ -37,6 +38,8 @@ item.slimeLatex.name=Latex Slime
 item.latex.name=Latex Rubber
 item.siliconeRubber.name=Silicone Rubber
 item.goldCoin.name=Gold Coin
+item.silverCoin.name=Silver Coin
+item.copperCoin.name=Copper Coin
 item.wax.name=Wax
 item.riceSeeds.name=Rice seeds
 item.rice.name=Rice
@@ -75,6 +78,8 @@ necromantia.item.boiledLeather.info2=but also far more brittle.
 necromantia.item.ironwood=a rare kind of iron ore with plant fibre woven through it
 necromantia.item.cookedApple=Mmm..  Still warm.
 necromantia.item.goldCoin=A commonly used currency.
+necromantia.item.silverCoin=A commonly used currency.
+necromantia.item.copperCoin=A commonly used currency.
 necromantia.item.latex=a resistant rubber used in crafting.
 necromantia.item.mortar.info1=A tool used for grinding ingredients
 necromantia.item.mortar.info2=into a fine paste or powder.

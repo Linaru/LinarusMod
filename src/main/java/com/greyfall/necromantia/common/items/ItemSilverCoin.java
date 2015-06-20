@@ -13,13 +13,13 @@ public class ItemSilverCoin extends ModItem {
 
     public ItemSilverCoin() {
         super();
-        this.setUnlocalizedName(ItemNames.GOLD_COIN);
-        this.setTextureName(LibItemTextures.GOLD_COIN);
+        this.setUnlocalizedName(ItemNames.SILVER_COIN);
+        this.setTextureName(LibItemTextures.SILVER_COIN);
     }
 
     @Override
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean show) {
-        list.add(Main.itemLang.translate("goldCoin"));
+        list.add(Main.itemLang.translate("silverCoin"));
     }
 
 }
