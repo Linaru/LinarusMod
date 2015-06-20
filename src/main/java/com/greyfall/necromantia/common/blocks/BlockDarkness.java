@@ -38,6 +38,7 @@ public class BlockDarkness extends ModBlockContainer {
         return new TileEntityDarkness();
     }
 
+    @Override
     public void onEntityCollidedWithBlock(World world, int i, int j, int k, Entity entity)
     {
         entity.attackEntityFrom(DamageSource.cactus, 100);
