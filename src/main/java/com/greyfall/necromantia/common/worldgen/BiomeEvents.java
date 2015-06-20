@@ -51,17 +51,18 @@ public class BiomeEvents {
     @SubscribeEvent
     public void addIronWoodTrees(DecorateBiomeEvent.Post event) {
 
-        int j;
-        int k;
-        int l;
-        int i1;
-        for (j = 0; j < 1; ++j)
-        {
-            k = event.chunkX + event.rand.nextInt(16) + 8;
-            l = event.chunkZ+ event.rand.nextInt(16) + 8;
-            i1 = event.rand.nextInt(event.world.getHeightValue(k, l) * 2);
-            WorldGenerator worldgenerator = new WorldGenWildRice();
-             worldgenerator.generate(event.world, event.rand, k, i1, l);
+        if(event.world.provider.dimensionId==0) {
+            int j;
+            int k;
+            int l;
+            int i1;
+            for (j = 0; j < 1; ++j) {
+                k = event.chunkX + event.rand.nextInt(16) + 8;
+                l = event.chunkZ + event.rand.nextInt(16) + 8;
+                i1 = event.rand.nextInt(event.world.getHeightValue(k, l) * 2);
+                WorldGenerator worldgenerator = new WorldGenWildRice();
+                worldgenerator.generate(event.world, event.rand, k, i1, l);
+            }
         }
     }
 }
