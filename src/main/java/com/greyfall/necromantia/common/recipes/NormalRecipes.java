@@ -39,8 +39,13 @@ public class NormalRecipes {
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.wax, 9), new ItemStack(ModBlocks.wax));
         //candle
         GameRegistry.addRecipe(new ItemStack(ModBlocks.candle), new Object[]{"S", "W", "W", 'S', Items.string, 'W', ModItems.wax});
-        //Gold Coin
+        //Coins
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.goldCoin), new Object[]{"GGG", "G G", "GGG", Character.valueOf('G'), "nuggetGold"}));
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.goldCoin), new Object[]{"SSS", "SSS", "SSS", Character.valueOf('S'), ModItems.silverCoin}));
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.silverCoin), new Object[]{"CCC", "CCC", "CCC", Character.valueOf('C'), ModItems.copperCoin}));
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.goldCoin),new ItemStack(ModItems.silverCoin,9));
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.silverCoin),new ItemStack(ModItems.copperCoin,9));
+
         //Mortar and pestle
             GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.mortar), new Object[]{" S", "W ", "B ", Character.valueOf('S'), "stickWood", Character.valueOf('W'), "plankWood", Character.valueOf('B'), Items.bowl}));
         //Silica

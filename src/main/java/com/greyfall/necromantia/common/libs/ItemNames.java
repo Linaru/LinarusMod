@@ -9,6 +9,8 @@ public class ItemNames {
     public static final String LATEX="latex";
     public static final String SILICONE_RUBBER="siliconeRubber";
     public static final String GOLD_COIN="goldCoin";
+    public static final String SILVER_COIN="silverCoin";
+    public static final String COPPER_COIN="copperCoin";
     public static final String WAX="wax";
     public static final String RICE_SEEDS="riceSeeds";
     public static final String RICE="rice";

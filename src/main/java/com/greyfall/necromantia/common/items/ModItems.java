@@ -17,6 +17,8 @@ public class ModItems {
     public static Item latex;
     public static Item siliconeRubber;
     public static Item goldCoin;
+    public static Item silverCoin;
+    public static Item copperCoin;
     public static Item wax;
     public static Item siliconDioxide;
     public static Item riceSeeds;
@@ -48,6 +50,8 @@ public class ModItems {
         latex = new ItemLatex();
         siliconeRubber = new ItemSiliconeRubber();
         goldCoin = new ItemGoldCoin();
+        silverCoin = new ItemSilverCoin();
+        copperCoin = new ItemCopperCoin();
         wax = new ItemWax();
         riceSeeds = new ItemRiceSeeds();
         rice = new ItemRice();
@@ -82,6 +86,8 @@ public class ModItems {
         GameRegistry.registerItem(latex, ItemNames.LATEX);
         GameRegistry.registerItem(siliconeRubber, ItemNames.SILICONE_RUBBER);
         GameRegistry.registerItem(goldCoin, ItemNames.GOLD_COIN);
+        GameRegistry.registerItem(silverCoin, ItemNames.SILVER_COIN);
+        GameRegistry.registerItem(copperCoin, ItemNames.COPPER_COIN);
         GameRegistry.registerItem(wax, ItemNames.WAX);
         GameRegistry.registerItem(riceSeeds, ItemNames.RICE_SEEDS);
         GameRegistry.registerItem(rice, ItemNames.RICE);

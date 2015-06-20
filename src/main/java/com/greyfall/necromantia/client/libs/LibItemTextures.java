@@ -12,7 +12,9 @@ public class LibItemTextures {
     public static final String SLIME_LATEX=PREFIX+"slimelatex";
     public static final String LATEX=PREFIX+"latex";
     public static final String SILICONE_RUBBER=PREFIX+"siliconerubber";
-    public static final String GOLD_COIN=PREFIX+"goldcoin";
+    public static final String GOLD_COIN=PREFIX+"coin_gold";
+    public static final String SILVER_COIN=PREFIX+"coin_silver";
+    public static final String COPPER_COIN=PREFIX+"coin_copper";
     public static final String WAX=PREFIX+"wax";
     public static final String RICE_SEEDS=PREFIX+"rice_seeds";
     public static final String RICE=PREFIX+"rice";
