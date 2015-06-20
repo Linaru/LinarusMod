@@ -41,7 +41,10 @@ public class ModCrop extends BlockBush implements IGrowable {
         return p_149854_1_== Blocks.farmland;
     }
 
-
+    @Override
+    public boolean canBlockStay(World p_149718_1_, int p_149718_2_, int p_149718_3_, int p_149718_4_) {
+        return super.canBlockStay(p_149718_1_, p_149718_2_, p_149718_3_, p_149718_4_);
+    }
 
     public void incrementGrowthStage(World world,Random rand,int x,int y,int z)
     {

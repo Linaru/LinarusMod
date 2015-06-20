@@ -14,6 +14,8 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
+import static net.minecraftforge.common.util.ForgeDirection.*;
+
 public class BlockCandle extends ModBlockContainer {
 
 	public BlockCandle() {
@@ -89,6 +91,79 @@ public class BlockCandle extends ModBlockContainer {
 		{
 			p_149734_1_.spawnParticle("smoke", d0, d1, d2, 0.0D, 0.0D, 0.0D);
 			p_149734_1_.spawnParticle("flame", d0, d1, d2, 0.0D, 0.0D, 0.0D);
+		}
+	}
+
+	private boolean func_150107_m(World p_150107_1_, int p_150107_2_, int p_150107_3_, int p_150107_4_)
+	{
+		if (World.doesBlockHaveSolidTopSurface(p_150107_1_, p_150107_2_, p_150107_3_, p_150107_4_))
+		{
+			return true;
+		}
+		else
+		{
+			Block block = p_150107_1_.getBlock(p_150107_2_, p_150107_3_, p_150107_4_);
+			return block.canPlaceTorchOnTop(p_150107_1_, p_150107_2_, p_150107_3_, p_150107_4_);
+		}
+	}
+
+	/**
+	 * Checks to see if its valid to put this block at the specified coordinates. Args: world, x, y, z
+	 */
+	@Override
+	public boolean canPlaceBlockAt(World p_149742_1_, int p_149742_2_, int p_149742_3_, int p_149742_4_)
+	{
+		return func_150107_m(p_149742_1_, p_149742_2_, p_149742_3_ - 1, p_149742_4_);
+	}
+
+	public void onNeighborBlockChange(World p_149695_1_, int p_149695_2_, int p_149695_3_, int p_149695_4_, Block p_149695_5_)
+	{
+		this.func_150108_b(p_149695_1_, p_149695_2_, p_149695_3_, p_149695_4_, p_149695_5_);
+	}
+
+	protected boolean func_150108_b(World p_150108_1_, int p_150108_2_, int p_150108_3_, int p_150108_4_, Block p_150108_5_)
+	{
+		if (this.func_150109_e(p_150108_1_, p_150108_2_, p_150108_3_, p_150108_4_))
+		{
+			boolean flag = false;
+
+			if (!this.func_150107_m(p_150108_1_, p_150108_2_, p_150108_3_ - 1, p_150108_4_))
+			{
+				flag = true;
+			}
+
+			if (flag)
+			{
+				this.dropBlockAsItem(p_150108_1_, p_150108_2_, p_150108_3_, p_150108_4_, p_150108_1_.getBlockMetadata(p_150108_2_, p_150108_3_, p_150108_4_), 0);
+				p_150108_1_.setBlockToAir(p_150108_2_, p_150108_3_, p_150108_4_);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		else
+		{
+			return true;
+		}
+	}
+
+	protected boolean func_150109_e(World p_150109_1_, int p_150109_2_, int p_150109_3_, int p_150109_4_)
+	{
+		if (!this.canPlaceBlockAt(p_150109_1_, p_150109_2_, p_150109_3_, p_150109_4_))
+		{
+			if (p_150109_1_.getBlock(p_150109_2_, p_150109_3_, p_150109_4_) == this)
+			{
+				this.dropBlockAsItem(p_150109_1_, p_150109_2_, p_150109_3_, p_150109_4_, p_150109_1_.getBlockMetadata(p_150109_2_, p_150109_3_, p_150109_4_), 0);
+				p_150109_1_.setBlockToAir(p_150109_2_, p_150109_3_, p_150109_4_);
+			}
+
+			return false;
+		}
+		else
+		{
+			return true;
 		}
 	}
 }

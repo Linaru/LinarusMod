@@ -90,7 +90,7 @@ public class BlockWildRice extends ModCrop implements IFactoryHarvestable {
     @Override
     @Optional.Method(modid = "MineFactoryReloaded")
     public List<ItemStack> getDrops(World world, Random rand, Map<String, Boolean> harvesterSettings, int x, int y, int z) {
-        return Arrays.asList(new ItemStack[]{new ItemStack(ModItems.rice, net.minecraft.util.MathHelper.getRandomIntegerInRange(rand, 2, 5))});
+        return Arrays.asList(new ItemStack[]{new ItemStack(ModItems.rice, net.minecraft.util.MathHelper.getRandomIntegerInRange(rand, 2, 5)),new ItemStack(ModItems.riceSeeds,1)});
     }
 
     @Override
