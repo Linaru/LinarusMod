@@ -5,7 +5,7 @@
 * ~~Add Cauldron gui + recipies~~
 * ~~Add wild rice~~
 * ~~Add iron wood tree... possibly forest biome?~~
-
+* ~~Fixed damage on darkness~~
 * Fix up dimension code so it dosent crash or cause future issues.
 * make rune blocks glow when stood on? add rune block crafting.  output redstone signal when stood on?
 
@@ -13,8 +13,8 @@
 * Add slabs and stairs for new blocks, fences for new wood
 
 * Add Candles rotation when placed.
-* Fix Candles Float
-* Fix Rice seed drops (multiples from immature crops?)
+* ~~Fix Candles Float~~
+* ~~Fix Rice seed drops (multiples from immature crops?)~~
 * Fix Rice can be placed on grass
 * Fix Wild Rice break sounds
 * Fix Ironwood Sapling sound effects
