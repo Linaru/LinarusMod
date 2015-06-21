@@ -100,7 +100,7 @@ public class Main {
     }
 
     @EventHandler
-    public void init(FMLInitializationEvent event) {
+    public void init(FMLInitializationEvent event) throws Exception {
         //Proxy, TileEntity, entity, Gui and Packet Registering
         proxy.init();
         proxy.registerRenderThings();

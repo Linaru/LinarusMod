@@ -25,8 +25,7 @@ public class CauldronCrafting {
      * @param output recipe result
      * @return Cauldron recipe object
      */
-    public static CauldronRecipe addNormalRecepie(ItemStack input,FluidStack fluid,ItemStack[] output)
-    {
+    public static CauldronRecipe addNormalRecepie(ItemStack input,FluidStack fluid,ItemStack[] output) throws Exception {
         if(!recipeMap.containsKey(output))
             recipeMap.put(Arrays.asList(output),new ArrayList<CauldronRecipe>());
         CauldronRecipe recipe=new CauldronRecipe(output,input,fluid);
@@ -40,8 +39,7 @@ public class CauldronCrafting {
      * @param output recipe result
      * @return Cauldron recipe object
      */
-    public static CauldronRecipe addNormalRecepie(ItemStack input,ItemStack[] output)
-    {
+    public static CauldronRecipe addNormalRecepie(ItemStack input,ItemStack[] output) throws Exception {
         return addNormalRecepie(input,defaultFluid,output);
     }
 
@@ -53,8 +51,7 @@ public class CauldronCrafting {
      * @param output recipe result
      * @return Cauldron recipe object
      */
-    public static CauldronRecipe addNormalRecepie(String input,int amount,FluidStack fluid,ItemStack[] output)
-    {
+    public static CauldronRecipe addNormalRecepie(String input,int amount,FluidStack fluid,ItemStack[] output) throws Exception {
         if(!recipeMap.containsKey(output))
             recipeMap.put(Arrays.asList(output),new ArrayList<CauldronRecipe>());
         CauldronRecipe recipe=new CauldronRecipe(output,input,amount,fluid);
@@ -69,8 +66,7 @@ public class CauldronCrafting {
      * @param output recipe result
      * @return Cauldron recipe object
      */
-    public static CauldronRecipe addNormalRecepie(String input,int amount,ItemStack[] output)
-    {
+    public static CauldronRecipe addNormalRecepie(String input,int amount,ItemStack[] output) throws Exception {
         return addNormalRecepie(input,amount,defaultFluid,output);
     }
 
@@ -82,8 +78,7 @@ public class CauldronCrafting {
      * @param output recipe result
      * @return Cauldron recipe object
      */
-    public static CauldronRecipe addNormalRecepie(ItemStack input,String fluid,int amount,ItemStack[] output)
-    {
+    public static CauldronRecipe addNormalRecepie(ItemStack input,String fluid,int amount,ItemStack[] output) throws Exception {
         if(!recipeMap.containsKey(output))
             recipeMap.put(Arrays.asList(output),new ArrayList<CauldronRecipe>());
         CauldronRecipe recipe=new CauldronRecipe(output,input,fluid,amount);
@@ -99,8 +94,7 @@ public class CauldronCrafting {
      * @param fluidAmount input fluid amount
      * @return Cauldron recipe object
      */
-    public static CauldronRecipe addNormalRecepie(String input,int amount,String fluid,int fluidAmount,ItemStack[] output)
-    {
+    public static CauldronRecipe addNormalRecepie(String input,int amount,String fluid,int fluidAmount,ItemStack[] output) throws Exception {
         if(!recipeMap.containsKey(output))
             recipeMap.put(Arrays.asList(output),new ArrayList<CauldronRecipe>());
         CauldronRecipe recipe=new CauldronRecipe(output,input,amount,fluid,amount);

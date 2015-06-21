@@ -1,5 +1,9 @@
 package com.greyfall.necromantia.api.crafting;
 
+import com.greyfall.necromantia.common.Main;
+import cpw.mods.fml.client.CustomModLoadingErrorDisplayException;
+import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.gui.GuiErrorScreen;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.fluids.Fluid;
@@ -102,7 +106,15 @@ public class CauldronRecipe{
      * Sets the recipe's output
      * @param output output for the recipe
      */
-    public void setOutput(ItemStack[] output) {
+    public void setOutput(ItemStack[] output) throws Exception {
+
+        for(ItemStack stack:output)
+        {
+            if(stack==null)
+            {
+                throw Main.proxy.throwBadRecipeException(this);
+            }
+        }
         this.output = output;
     }
 
@@ -162,12 +174,12 @@ public class CauldronRecipe{
      * @param inputItem input item of the recipe
      * @param inputFluid input fluid of the recipe
      */
-    public CauldronRecipe(ItemStack[] output, ItemStack inputItem, FluidStack inputFluid) {
-        this.output = output;
+    public CauldronRecipe(ItemStack[] output, ItemStack inputItem, FluidStack inputFluid) throws Exception {
         this.inputItem = inputItem;
         this.inputFluid = inputFluid;
         this.fluidAmount=inputFluid.amount;
         this.itemAmount=inputItem.stackSize;
+        setOutput(output);
     }
 
     /**
@@ -178,13 +190,12 @@ public class CauldronRecipe{
      * @param inputFluid input fluid
      * @param fluidAmount input fluid amount
      */
-    public CauldronRecipe(ItemStack[] output,String inputItem, int inputAmount,String inputFluid,int fluidAmount)
-    {
-        this.output=output;
+    public CauldronRecipe(ItemStack[] output,String inputItem, int inputAmount,String inputFluid,int fluidAmount) throws Exception {
         this.oreDictItem=inputItem;
         this.itemAmount=inputAmount;
         this.oreDictFluid=inputFluid;
         this.fluidAmount=fluidAmount;
+        setOutput(output);
     }
 
     /**
@@ -194,13 +205,12 @@ public class CauldronRecipe{
      * @param inputAmount input amount
      * @param inputFluid input fluid of the recipe
      */
-    public CauldronRecipe(ItemStack[] output,String inputItem,int inputAmount,FluidStack inputFluid)
-    {
-        this.output=output;
+    public CauldronRecipe(ItemStack[] output,String inputItem,int inputAmount,FluidStack inputFluid) throws Exception {
         this.oreDictItem=inputItem;
         this.itemAmount=inputAmount;
         this.inputFluid=inputFluid;
         this.fluidAmount=inputFluid.amount;
+        setOutput(output);
     }
 
     /**
@@ -210,13 +220,12 @@ public class CauldronRecipe{
      * @param inputFluid input fluid
      * @param fluidAmount input fluid amount
      */
-    public CauldronRecipe(ItemStack[] output,ItemStack inputItem,String inputFluid,int fluidAmount)
-    {
-        this.output=output;
+    public CauldronRecipe(ItemStack[] output,ItemStack inputItem,String inputFluid,int fluidAmount) throws Exception {
         this.inputItem=inputItem;
         this.itemAmount=inputItem.stackSize;
         this.oreDictFluid=inputFluid;
         this.fluidAmount=fluidAmount;
+        setOutput(output);
     }
     /**
      * Is the input item correct and the right amount of them?

@@ -1,5 +1,7 @@
 package com.greyfall.necromantia.client.core;
 
+import com.greyfall.necromantia.api.crafting.CauldronRecipe;
+import com.greyfall.necromantia.client.render.gui.BadRecipeException;
 import com.greyfall.necromantia.client.render.items.ItemCauldronRegister;
 import com.greyfall.necromantia.client.render.particles.EntityFXPinkSlime;
 import com.greyfall.necromantia.client.render.tiles.TileEntityCauldronRenderer;
@@ -52,5 +54,11 @@ public class ClientProxy extends CommonProxy {
 		EntityFXPinkSlime slimeFX=new EntityFXPinkSlime(world,x,y,z,velX,velY,velZ);
 
 		Minecraft.getMinecraft().effectRenderer.addEffect(slimeFX);
+	}
+
+
+	@Override
+	public Exception throwBadRecipeException(CauldronRecipe recipe) throws Exception {
+		return new BadRecipeException("The Recipe output can not be null",new Throwable("The Recipe output can not be null"),recipe);
 	}
 }

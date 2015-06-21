@@ -1,5 +1,6 @@
 package com.greyfall.necromantia.common.core;
 
+import com.greyfall.necromantia.api.crafting.CauldronRecipe;
 import com.greyfall.necromantia.common.Main;
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.common.network.NetworkRegistry;
@@ -19,5 +20,10 @@ public class CommonProxy {
 	public void spawnPinkSlimeParticle(World world,double x,double y,double z,double velX,double velY,double velZ)
 	{
 
+	}
+
+
+	public Exception throwBadRecipeException(CauldronRecipe recipe) throws Exception {
+		throw new Exception("The Recipe output can not be null");
 	}
 }

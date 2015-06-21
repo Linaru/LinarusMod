@@ -20,8 +20,7 @@ public class CauldronRecipes {
 
 
 
-    public static void initRecipes()
-    {
+    public static void initRecipes() throws Exception {
 
         CauldronCrafting.addNormalRecepie(new ItemStack(Items.apple,1),new FluidStack(FluidRegistry.WATER,250),new ItemStack[] { new ItemStack(ModItems.cookedApple),new ItemStack(ModItems.wax)});
         CauldronCrafting.addNormalRecepie(new ItemStack(Items.golden_apple,1),new FluidStack(FluidRegistry.WATER,250),new ItemStack[] { new ItemStack(ModItems.cookedApple),new ItemStack(ModItems.wax),new ItemStack(Items.gold_nugget,8)});
@@ -32,10 +31,10 @@ public class CauldronRecipes {
         CauldronCrafting.addNormalRecepie(new ItemStack(Items.poisonous_potato,1),new FluidStack(FluidRegistry.WATER,250),new ItemStack[] { new ItemStack(Items.potato)});
 
         //if (FluidRegistry.isFluidRegistered("acid"))
-            //CauldronCrafting.addNormalRecepie(new ItemStack(ModItems.siliconDioxide,1),new FluidStack(FluidRegistry.WATER,1000),new ItemStack[] {FluidContainerRegistry.fillFluidContainer(FluidRegistry.getFluidStack("acid",1000),new ItemStack(Items.bucket))});
+           //CauldronCrafting.addNormalRecepie(new ItemStack(ModItems.siliconDioxide,1),new FluidStack(FluidRegistry.WATER,1000),new ItemStack[] {FluidContainerRegistry.fillFluidContainer(FluidRegistry.getFluidStack("acid",1000),new ItemStack(Items.bucket))});
         //TODO: make this a custom recipe that acidifies the water
 
-
+        //CauldronCrafting.addNormalRecepie(new ItemStack(ModItems.siliconDioxide,1),new FluidStack(FluidRegistry.WATER,1000),new ItemStack[] {null});
         /*
         if(FluidRegistry.isFluidRegistered("fuel"))
         CauldronCrafting.addNormalRecepie(new ItemStack(ModItems.rice),new FluidStack(FluidRegistry.getFluid("fuel"),1000),new ItemStack[]{new ItemStack(ModItems.latex)});
