@@ -7,6 +7,7 @@ import com.greyfall.necromantia.common.items.itemBlocks.ItemBlockSaplings;
 import com.greyfall.necromantia.common.libs.BlockNames;
 import com.greyfall.necromantia.common.tiles.TileEntityCandle;
 import com.greyfall.necromantia.common.tiles.TileEntityCauldron;
+import com.greyfall.necromantia.common.tiles.TileEntityDarkness;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 
@@ -117,5 +118,6 @@ public class ModBlocks {
     {
         GameRegistry.registerTileEntity(TileEntityCauldron.class,BlockNames.CAULDRON);
         GameRegistry.registerTileEntity(TileEntityCandle.class,BlockNames.CANDLE);
+        GameRegistry.registerTileEntity(TileEntityDarkness.class,BlockNames.DARKNESS);
     }
 }
