@@ -68,5 +68,5 @@ public class LibTextures {
 
 
     // GUIS
-    public static final String GUI_CAULDRON=PREFIX+"textures/gui/cauldron.png";
+    public static final String GUI_CAULDRON=PREFIX+"textures/gui/vanilla/cauldron.png";
 }
