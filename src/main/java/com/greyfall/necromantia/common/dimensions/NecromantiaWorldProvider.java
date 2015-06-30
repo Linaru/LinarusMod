@@ -24,7 +24,8 @@ public class NecromantiaWorldProvider extends WorldProvider {
 
 
     @Override
-    public IChunkProvider createChunkGenerator() {
+    public IChunkProvider createChunkGenerator()
+    {
         return new ChunkProviderVoid(worldObj,worldObj.getSeed(),true);
     }
 
@@ -41,7 +42,7 @@ public class NecromantiaWorldProvider extends WorldProvider {
     }
 
     @Override
-/** Is sky clolured ? **/
+/** Is sky coloured ? **/
     public boolean isSkyColored()
     {
         return true;
